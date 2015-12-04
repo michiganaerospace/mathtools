@@ -7,6 +7,6 @@ import numpy as np
 class Fit(object):
 
     def __init__(self, x=None, y=None, fit_method='legendre', reg_y=0,\
-                 reg_dy=None, reg_d2y=0):
-        pass
+                 reg_dy=0, reg_d2y=0, existing_basis=None, filename=None):
+       pass 
     
