@@ -195,7 +195,8 @@ def FS_width(Fsig,pBasis):
 
     return pwidth,pavg
 
-# yields truncated fourier series approximation of pixel space boxcar blur of function
+# yields truncated fourier series approximation of pixel space boxcar blur of
+# function
 def FS_blur_basis(B,delta,pix,x0,alpha):
     NFterms = (B.shape[1]-1)/2
     blrB = 1.0*B
