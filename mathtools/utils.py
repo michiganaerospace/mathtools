@@ -3,7 +3,7 @@ import numpy as np
 
 
 def validate_type(var, white_list, var_name='Input'):
-    '''Ensure that the variable type is the supplied whitelist. 
+    '''Ensure that the variable type is in the supplied whitelist. 
     INPUTS
         var - variable or object
             A valid Python variable or object.
@@ -48,13 +48,16 @@ def scale_to_interval(x, interval):
 
     if type(interval) == list:
         interval = np.array(interval)
-    
-    # Start with the original vector.
-    x_ = np.array(x)
 
-    # Apply appropriate shift.
-    shift = x.mean() - interval.mean()
-    x_ -= shift
+    if len(interval) != 2:
+        raise ValueError('The interval must be a size 2 vector: [a, b]')
+    
+    # Define the shift and scale parameters.
+    scale = (interval.max() - interval.min())/(x.max() - x.min())
+    shift = x.min() - interval.min()/scale
+
+    # Scale & shift the vector.
+    x_ = scale * (x - shift)
 
     return x_
     

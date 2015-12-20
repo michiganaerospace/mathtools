@@ -12,7 +12,12 @@ class Fit(object):
 
         # Assign object properties.
         self.basis_type = basis_type
+        self.x = x
+        self.y = y
+        self.nb_orders = nb_orders
+        
 
     def _create_basis(self):
         # Create the basis vectors on the domain.
-        pass
+        if self.basis_type == 'legendre':
+           pass 
