@@ -1,5 +1,7 @@
 from scipy import *
 from pylab import *
+from mathtools.utils import map_to_interval
+
 
 # tool for making a multi-dimensional basis
 def cartesian_product_basis(BX,BY):
@@ -224,6 +226,7 @@ def Legendre_basis(Nterms,abscissa,icenter=1,inorm=1):
         L = 1.0
 
     x = (abscissa-x0)/L
+    x = map_to_interval(abscissa, [-1, 1])
 
     Lbasis = zeros((N,Nterms),dtype='double')
     Pkm1 = ones(N,dtype='double')
@@ -258,6 +261,7 @@ def dLegendre_basis(Nterms,abscissa,icenter=1,inorm=1):
         L = 1.0
 
     x = (abscissa-x0)/L
+    x = map_to_interval(abscissa, [-1, 1])
 
     dLbasis = zeros((N,Nterms),dtype='double')
     Pkm1 = ones(N,dtype='double')
@@ -297,6 +301,7 @@ def d2Legendre_basis(Nterms,abscissa,icenter=1,inorm=1):
         L = 1.0
 
     x = (abscissa-x0)/L
+    x = map_to_interval(abscissa, [-1, 1])
 
     d2Lbasis = zeros((N,Nterms),dtype='double')
     Pkm1 = ones(N,dtype='double')

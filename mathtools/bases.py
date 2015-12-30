@@ -108,8 +108,8 @@ def d2_legendre_basis(x, nb_bases):
         nb_bases - int
             The number of basis vectors to create.
     OUTPUTS
-        B - array_like
-            A len(x) by nb_bases array. The columns of the array correspond to 
+        d2B - array_like
+            A len(x) by nb_bases array. The columns of the array correspond to
             the the second derivative of the Legendre polynomial basis vectors. 
     '''
     # A little error checking.
@@ -121,38 +121,32 @@ def d2_legendre_basis(x, nb_bases):
     nb_samples = len(x_)
 
     # Initialize the basis matrix.
-    d2B = np.zeros((nb_samples, nb_bases), dtype='double')
-    p_km1 = np.ones(nb_samples, dtype='double')
-    p_k = x_
-    dp_km1 = np.zeros(nb_samples, dtype='double')
-    dp_k = np.ones(nb_samples, dtype='double')
+    d2B         = np.zeros((nb_samples, nb_bases), dtype='double')
+    p_km1       = np.ones(nb_samples, dtype='double')
+    p_k         = x_
+    dp_km1      = np.zeros(nb_samples, dtype='double')
+    dp_k        = np.ones(nb_samples, dtype='double')
+    d2p_km1     = np.zeros(nb_samples, dtype='double')
+    d2p_k       = np.zeros(nb_samples, dtype='double')
 
+    # Add the first two bases.
+    d2B[:,1]    = d2p_km1
+    d2B[:,2]    = d2p_k
 
+    # Define remaining basis vectors via recursion.
+    for k in np.r_[2:nb_bases]:
+        m       = k-1
+        c       = (2.0 * m + 1.0)
+        p_kp1   = (c * x_ * p_k - m * p_km1)/np.double(m+1)
+        dp_kp1  = (c * (p_k + x_ * dp_k) - m * dp_km1)/np.double(m+1)
+        d2p_kp1 = (c * (dp_k + x_ * d2p_k + dp_k) - m * d2p_km1)/np.double(m+1)
 
-    # d2Lbasis = zeros((N,Nterms),dtype='double')
-    # Pkm1 = ones(N,dtype='double')
-    # Pk = x
-    # dPkm1 = zeros(N,dtype='double')
-    # dPk = ones(N,dtype='double')
-
-    # d2Pkm1 = zeros(N,dtype='double')
-    # d2Pk = zeros(N,dtype='double')
-
+        d2B[:,k]    = d2p_kp1
+        p_km1       = p_k
+        p_k         = p_kp1
+        dp_km1      = dp_k
+        dp_k        = dp_kp1
+        d2p_km1     = d2p_k
+        d2p_k       = d2p_kp1
     
-    # d2Lbasis[:,1] = d2Pkm1
-    # d2Lbasis[:,2] = d2Pk
-    # for k in r_[2:Nterms]:
-    #     m = k-1
-    #     c = (2.0*m+1.0)
-    #     Pkp1 = (c*x*Pk - m*Pkm1)/double(m+1)
-    #     dPkp1 = (c*(Pk+x*dPk) - m*dPkm1)/double(m+1)
-    #     d2Pkp1 = (c*(dPk + x*d2Pk + dPk) - m*d2Pkm1)/double(m+1)
-
-    #     d2Lbasis[:,k] = d2Pkp1
-
-    #     Pkm1 = Pk
-    #     Pk = Pkp1
-    #     dPkm1 = dPk
-    #     dPk = dPkp1        
-    #     d2Pkm1 = d2Pk
-    #     d2Pk = d2Pkp1        
+    return d2B
