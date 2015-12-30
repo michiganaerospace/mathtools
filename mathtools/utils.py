@@ -27,7 +27,7 @@ def validate_type(var, white_list, var_name='Input'):
         raise ValueError(error_message)
    
 
-def scale_to_interval(x, interval):
+def map_to_interval(x, interval, return_all=False):
     '''Shift and scale vector so that its elements live in the specified 
        interval.
     INPUTS
@@ -36,10 +36,21 @@ def scale_to_interval(x, interval):
         interval - array_like
             The interval, [a,b], into which we will shift and stretch the
             elements of vector <x>.
+        return_all - Boolean
+            If True, the function returns scaled data, as well as the shift
+            and scaling functions: 
+                (x_, shift, scale)
+            such that x_ = scale * (x - shift)
     OUTPUTS
         x_ - array_like
             A new vector, with the same dimensions as <x>, but each of whose 
             elements now live the within the interval specified in <interval>.
+        shift - float
+            The amount by which the data is shifted before it is scaled.
+            This is returned only if return_all=True.
+        scale - float
+            The amount by which the data was scaled, after it was shifted. 
+            This is returned only if return_all=True.
     '''
 
     # Ensure we are working with numpy arrays or lists.
@@ -59,6 +70,8 @@ def scale_to_interval(x, interval):
     # Scale & shift the vector.
     x_ = scale * (x - shift)
 
-    return x_
-    
+    if return_all:
+        return x_, shift, scale
+    else:
+        return x_
 

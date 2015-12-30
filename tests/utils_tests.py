@@ -22,27 +22,39 @@ def fail_single_type_validation_test():
 
 def scale_vector_data_to_unit_interval_test():
     x = np.random.rand(50)
-    x_ = scale_to_interval(x, [0, 1])
+    x_ = map_to_interval(x, [0, 1])
     assert_equals(x_.min(), 0)
     assert_almost_equals(x_.max(), 1)
 
 
 def scale_to_straddling_test():
     x = np.random.rand(50)
-    x_ = scale_to_interval(x, [-3, 3])
+    x_ = map_to_interval(x, [-3, 3])
     assert_almost_equals(x_.min(), -3)
     assert_almost_equals(x_.max(), 3)
 
 
 def scale_to_negative_interval_test():
     x = np.random.rand(50)
-    x_ = scale_to_interval(x, [-3, -1])
+    x_ = map_to_interval(x, [-3, -1])
     assert_almost_equals(x_.min(), -3)
     assert_almost_equals(x_.max(), -1)
 
 
 def scale_to_positive_interval_test():
     x = np.random.rand(50)
-    x_ = scale_to_interval(x, [13, 21])
+    x_ = map_to_interval(x, [13, 21])
     assert_almost_equals(x_.min(), 13)
     assert_almost_equals(x_.max(), 21)
+
+
+def return_all_test():
+    x = np.random.rand(50)
+    x_, shf, scl = map_to_interval(x, [0,1], return_all=True)
+    assert_almost_equals(x_.min(), 0)
+    assert_almost_equals(x_.max(), 1)
+
+
+
+
+    

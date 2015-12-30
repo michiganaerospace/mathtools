@@ -6,6 +6,10 @@
 *.swn
 *.swm
 *.swo
+*.swh
+*.swi
+*.swj
+*.swk
 *.swl
 
 # Byte-compiled / optimized / DLL files:
