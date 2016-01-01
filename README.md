@@ -31,12 +31,12 @@ Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 
 Vector of ordinate values — an ```nb_samples``` length vector 'y values'.
 
-```nb_orders``` - int [default: 0]
+```nb_orders``` — int [default: 0]
 
 The number of basis vectors to use when fitting the data. In the case of a
 cubic spline basis, this corresponds to the number of knots used.
 
-```basis_type``` - string [default: ```'legendre'```]
+```basis_type``` — string [default: ```'legendre'```]
 
 The type of basis to use for the fits. May have values of 'legendre',
 'fourier', or 'cubic-spline'.
@@ -47,7 +47,7 @@ The type of basis to use for the fits. May have values of 'legendre',
    An instance of a ```Fit``` object.
 
 
-### Examples
+#### Examples
 
 To get a sense of what
 ```Fit``` can do, consider the following example: We have data ```y``` sampled
