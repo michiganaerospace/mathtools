@@ -29,8 +29,12 @@ Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0
 ```y``` — array_like
     Vector of ordinate values — an ```nb_samples``` length vector 'y values'.
 
-This returns an instance of a ```Fit``` object. The fit object allows you to 
-easily fit data using regularized least squares.
+
+#### Outputs
+
+```fit``` — Fit Object
+   An instance of a ```Fit``` object.
+
 
 ### Examples
 
