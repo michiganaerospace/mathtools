@@ -34,25 +34,25 @@ class Fit(object):
 
     def _create_legendre_basis(self):
         # Create the legendre bases.
+        # TODO: add the regularization coefficients & the identity matrix.
+        reg_coefs   = self.reg_coefs
         self.B      = legendre_basis(self.x, self.nb_orders)
-        self.dB     = legendre_basis(self.x, self.nb_orders)
-        self.d2B    = legendre_basis(self.x, self.nb_orders)
+        self.I      = reg_coefs[0] * np.eye(self.nb_orders)
+        self.dB     = reg_coefs[1] * legendre_basis(self.x, self.nb_orders)
+        self.d2B    = reg_coefs[2] * legendre_basis(self.x, self.nb_orders)
 
         # Create the 'brick' by stacking these bases on top of one another.
-        self.B_     = np.r_[self.B, self.dB, self.d2B] 
+        self.B_     = np.r_[self.B, self.I, self.dB, self.d2B] 
+
+        # Compute the inverse operator for the least squares problem.
         self._compute_inverse()
 
     def _compute_inverse(self):
         # Find the inverse associated with the 'brick'. Keep it around for
-        # computational efficiency.
-        M = self.B_.T.dot(self.B_)
-        U, s, V_T = np.linalg.svd(M)
-        self.inverse = U.dot(np.diag(1.0/s).dot(V_T)).dot(self.B_.T)
-
-        # 
-
-
-
+        # computational efficiency. Using the pinv function, which in turn
+        # uses numpy's SVD to compute the pseudoinverse of the brick
+        # B_.
+        self.inverse = np.linalg.pinv(self.B_)
 
 
        

@@ -14,7 +14,7 @@ squares using different bases.
 ## Fit 
 
 The ```fit``` module provides the ```Fit``` machine, which allows you to easily
-fit data using regularized least squares. The goal is to provide flexibility
-and computational flexibility with an easy-to-use API. To get a sense of what
+fit data using regularized least squares. The goal is to fuse flexibility
+and computational efficiency with an easy-to-use API. To get a sense of what
 ```Fit``` can do, consider the following example: We have data ```y``` sampled
-at points ```x```.
+at points ```x```, as illustrated in the following figure.
