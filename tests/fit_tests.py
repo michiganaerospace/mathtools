@@ -40,6 +40,7 @@ def legendre_basis_test():
     assert_equals(f.dB.shape, (len(t), 15))
     assert_equals(f.d2B.shape, (len(t), 15))
 
+
 if __name__ == '__main__':
     
     t = np.linspace(0,2*np.pi)
