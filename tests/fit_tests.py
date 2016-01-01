@@ -5,6 +5,18 @@ from numpy.testing import assert_array_almost_equal_nulp, assert_array_equal
 import numpy as np
 
 
+# SETUP -----------------------------------------------------
+
+def setup():
+    global t, y
+    t = np.linspace(0,2*np.pi)
+    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+
+
+def teardown():
+    pass
+
+
 # BEGIN TESTS ------------------------------------------------------
 
 # Can you create a fit object?
@@ -20,29 +32,26 @@ def legendre_by_default_test():
 
 def default_regularization_coefficients_test():
     f = Fit()
-    assert_array_almost_equal_nulp(f.reg_coefs,[0.0, 0.0, 0.0]) 
+    assert_array_almost_equal_nulp(f.reg_coefs, [0.0, 0.0, 0.0]) 
 
 
+@with_setup(setup, teardown)
 def legendre_basis_test():
-    t = np.linspace(0,2*np.pi)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
     f = Fit(t, y, 15)
+    assert_array_almost_equal_nulp(f.x, t)
+    assert_array_almost_equal_nulp(f.y, y)
     assert_equals(f.B.shape, (len(t), 15))
     assert_equals(f.dB.shape, (len(t), 15))
     assert_equals(f.d2B.shape, (len(t), 15))
 
 
-def legendre_basis_test():
-    t = np.linspace(0,2*np.pi)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+@with_setup(setup, teardown)
+def brick_creation_test():
+   f = Fit(t, y, 15) 
+   assert_equals(f.B_.shape, (3*len(t), 15))
+
+
+@with_setup(setup, teardown)
+def inverse_creation_test():
     f = Fit(t, y, 15)
-    assert_equals(f.B.shape, (len(t), 15))
-    assert_equals(f.dB.shape, (len(t), 15))
-    assert_equals(f.d2B.shape, (len(t), 15))
-
-
-if __name__ == '__main__':
-    
-    t = np.linspace(0,2*np.pi)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-    f = Fit(t, y, nb_orders=15)
+    assert_equals(f.inverse.shape, (15,150))

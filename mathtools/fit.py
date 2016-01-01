@@ -26,15 +26,33 @@ class Fit(object):
         if self.basis_type == 'legendre':
            self._create_legendre_basis() 
         elif self.basis_type == 'fourier':
+            # TODO
             pass
         elif self.basis_type == 'cubic-spline':
+            # TODO
             pass
 
     def _create_legendre_basis(self):
         # Create the legendre bases.
-        self.B   = legendre_basis(self.x, self.nb_orders)
-        self.dB  = legendre_basis(self.x, self.nb_orders)
-        self.d2B = legendre_basis(self.x, self.nb_orders)
+        self.B      = legendre_basis(self.x, self.nb_orders)
+        self.dB     = legendre_basis(self.x, self.nb_orders)
+        self.d2B    = legendre_basis(self.x, self.nb_orders)
+
+        # Create the 'brick' by stacking these bases on top of one another.
+        self.B_     = np.r_[self.B, self.dB, self.d2B] 
+        self._compute_inverse()
+
+    def _compute_inverse(self):
+        # Find the inverse associated with the 'brick'. Keep it around for
+        # computational efficiency.
+        M = self.B_.T.dot(self.B_)
+        U, s, V_T = np.linalg.svd(M)
+        self.inverse = U.dot(np.diag(1.0/s).dot(V_T)).dot(self.B_.T)
+
+        # 
+
+
+
 
 
        
