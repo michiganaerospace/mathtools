@@ -21,6 +21,11 @@ flexibility and computational efficiency with an easy-to-use API.
 Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
 ```
 
+#### Inputs
+
+```x``` — array_like
+    Vector of abscissa values — an ```nb_samples```
+
 This returns an instance of a ```Fit``` object. The fit object allows you to 
 easily fit data using regularized least squares.
 
