@@ -38,8 +38,8 @@ cubic spline basis, this corresponds to the number of knots used.
 
 ```basis_type``` — string [default: ```'legendre'```]
 
-The type of basis to use for the fits. May have values of 'legendre',
-'fourier', or 'cubic-spline'.
+The type of basis to use for the fits. May have values of ```legendre```,
+```fourier```, or```cubic-spline```.
 
 #### Outputs
 
