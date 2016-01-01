@@ -29,17 +29,17 @@ Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 
 ```y``` — array_like [default: None]
 
-    Vector of ordinate values — an ```nb_samples``` length vector 'y values'.
+Vector of ordinate values — an ```nb_samples``` length vector 'y values'.
 
 ```nb_orders``` - int [default: 0]
 
-    The number of basis vectors to use when fitting the data. In the case of a
-    cubic spline basis, this corresponds to the number of knots used.
+The number of basis vectors to use when fitting the data. In the case of a
+cubic spline basis, this corresponds to the number of knots used.
 
 ```basis_type``` - string [default: ```'legendre'```]
 
-    The type of basis to use for the fits. May have values of 'legendre', 
-    'fourier', or 'cubic-spline'.
+The type of basis to use for the fits. May have values of 'legendre',
+'fourier', or 'cubic-spline'.
 
 #### Outputs
 
