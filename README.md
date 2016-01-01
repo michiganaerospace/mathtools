@@ -20,6 +20,6 @@ and computational efficiency with an easy-to-use API. To get a sense of what
 at points ```x```, as illustrated in the following figure.
 
 ```python
-Fit(x=None, y=None, nb_orders=0, basis_type='legendre',  \
+Fit(x=None, y=None, nb_orders=0, basis_type='legendre',  
     reg_coefs=[0.0, 0.0, 0.0], existing_basis=None, filename=None):
 ```
