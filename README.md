@@ -18,3 +18,8 @@ fit data using regularized least squares. The goal is to fuse flexibility
 and computational efficiency with an easy-to-use API. To get a sense of what
 ```Fit``` can do, consider the following example: We have data ```y``` sampled
 at points ```x```, as illustrated in the following figure.
+
+```python
+Fit(x=None, y=None, nb_orders=0, basis_type='legendre',  \
+    reg_coefs=[0.0, 0.0, 0.0], existing_basis=None, filename=None):
+```
