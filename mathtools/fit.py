@@ -13,8 +13,7 @@ class Fit(object):
 
 
     def __init__(self, x=None, y=None, nb_orders=0, basis_type='legendre',  \
-                 reg_coefs=[0.0, 0.0, 0.0], existing_basis=None,            \
-                 filename=None):
+                 reg_coefs=[0.0, 0.0, 0.0])
 
         # Assign object properties.
         self.basis_type = basis_type
