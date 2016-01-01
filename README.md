@@ -23,9 +23,9 @@ Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0
 
 #### Inputs
 
-```x``` — array_like [default: None]
+    ```x``` — array_like [default: None]
     
-Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
+    Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 
 ```y``` — array_like [default: None]
 
