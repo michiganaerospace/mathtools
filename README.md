@@ -24,7 +24,10 @@ Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0
 #### Inputs
 
 ```x``` — array_like
-    Vector of abscissa values — an ```nb_samples```
+    Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
+
+```y``` — array_like
+    Vector of ordinate values — an ```nb_samples``` length vector 'y values'.
 
 This returns an instance of a ```Fit``` object. The fit object allows you to 
 easily fit data using regularized least squares.
