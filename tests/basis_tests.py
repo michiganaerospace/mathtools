@@ -1,3 +1,5 @@
+'''Test basis generation algorithms for cubic splines, Legendre polynomials,
+and Fourier series.'''
 from mathtools.fit import *
 import mathtools.FS_Tools as fs
 from mathtools.utils import *

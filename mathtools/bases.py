@@ -97,7 +97,6 @@ def d_legendre_basis(x, nb_bases):
     return dB
 
 
-
 def d2_legendre_basis(x, nb_bases):
     '''Define the second derivative of the legendre basis.
     INPUTS
