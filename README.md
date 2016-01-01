@@ -13,13 +13,21 @@ squares using different bases.
 
 ## Fit 
 
-The ```fit``` module provides the ```Fit``` machine, which allows you to easily
-fit data using regularized least squares. The goal is to fuse flexibility
-and computational efficiency with an easy-to-use API. To get a sense of what
-```Fit``` can do, consider the following example: We have data ```y``` sampled
-at points ```x```, as illustrated in the following figure.
+The ```fit``` module provides the ```Fit``` object, — a machine, which allows
+you to easily fit data using regularized least squares. The goal is to fuse
+flexibility and computational efficiency with an easy-to-use API. 
 
 ```python
 Fit(x=None, y=None, nb_orders=0, basis_type='legendre',  
     reg_coefs=[0.0, 0.0, 0.0], existing_basis=None, filename=None):
 ```
+
+This returns an instance of a ```Fit``` object. The fit object allows you to 
+easily fit data using regularized least squares.
+
+### Examples
+
+To get a sense of what
+```Fit``` can do, consider the following example: We have data ```y``` sampled
+at points ```x```, as illustrated in the following figure.
+
