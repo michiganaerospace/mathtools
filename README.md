@@ -13,8 +13,8 @@ squares using different bases.
 
 ## Fit 
 
-The ```fit``` module provides the ```Fit``` object, — a machine, which allows
-you to easily fit data using regularized least squares. The goal is to fuse
+The ```fit``` module provides the ```Fit``` object — a machine that allows you
+to easily fit data using regularized least squares. The goal is to fuse
 flexibility and computational efficiency with an easy-to-use API. 
 
 ```python
