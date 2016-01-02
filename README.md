@@ -38,7 +38,10 @@ f = Fit(x,y,nb_orders=15)
 All code in the ```mathtools``` is fully tested. The tests are available in the
 ```/tests``` directory, and can be run using the nose testing framework. For a
 good introduction to nose, check out this
-[resource](http://pythontesting.net/framework/nose/nose-introduction/).
+[resource](http://pythontesting.net/framework/nose/nose-introduction/). 
+
+As a general rule, before any code is checked in to the repository, one should
+verify that all unit tests are passing.
 
 
 ## Available modules
