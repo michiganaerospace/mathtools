@@ -26,7 +26,7 @@ if __name__ == '__main__':
     plot(t, y, 'o', markerfacecolor=pomegranate, markeredgecolor=pomegranate,\
          alpha=0.6)
     hold(True)
-    plot(f.results.x, f.results.y, color=belize_hole, linewidth=2)
+    plot(f.results.x, f.results.y, '.-', color=belize_hole, linewidth=2)
     grid(True)
     xlabel('Time (seconds)')
     ylabel('Amplitude (volts)')
