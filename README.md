@@ -49,7 +49,7 @@ An instance of a ```Fit``` object.
 
 #### Methods
 
-```.fit(x=None, y=None)```
+```Fit.fit(x=None, y=None)```
 
 The method fits the data using the current configurations of the ```Fit```
 object.
