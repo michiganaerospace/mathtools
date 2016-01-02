@@ -17,13 +17,22 @@ clone this repository, simply:
 ```
 
 Enter your git username and password, and the repository will be cloned into
-your local directory, say ```/Users/mjl/develop/local_python/mathtools```. In our
-```.bash_rc``` file (or similar), add this path to your ```PYTHONPATH```
+your local directory, say ```/Users/mjl/develop/local_python/mathtools```. In
+your ```.bash_rc``` file (or similar), add this path to your ```PYTHONPATH```
 variable:
 
 ```unix
 export PYTHONPATH="${PYTHONPATH}:/Users/mjl/develop/local-python/mathtools"
 ```
+
+Now you can import the ```mathtools``` package anywhere on your machine:
+
+```python
+from mathtools.fit import Fit
+
+f = Fit(x,y,nb_orders=15)
+```
+
 
 ### Available modules.
 
