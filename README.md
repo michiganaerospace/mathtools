@@ -90,7 +90,7 @@ t = np.linspace(0,15*np.pi, 300)
 y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
 ```
 
-The noisy sine data is shown in the following Figure:
+The noisy sine data is shown in the following figure.
 
 ![Noisy Data](https://goo.gl/elq37W)
 
@@ -98,9 +98,16 @@ We'd like to fit this data with a smooth curve. We can use the ```Fit``` object
 to do this in just one line:
 
 ```python
-f = Fit(t, y, 50)
+f = Fit(t, y, 15)
 ```
 
 This will create a ```Fit``` object, generate a Legendre polynomial basis for
 the provided abscissa (here, the vector ```t```) with 15 basis vectors, and fit
-the data ```y``` using this basis.
+the data ```y``` using this basis. The results of the fit are always available
+in the ```results``` property of the Fit instance. To see how well our fit 
+worked, let's plot it on top of the noisy data.
+
+```python
+r = f.results
+plot(r.x, r.y, )
+```
