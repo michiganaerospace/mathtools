@@ -3,7 +3,8 @@
 The ```mathtools```  module provides algorithms for processing and
 manipulating data. At the current time, Math Tools contains only the ```fit```
 module, which provides algorithms for efficient fitting data using regularized
-least squares. For more details on the individual modules, please see below.
+least squares. For more details on the individual modules, please [see
+below](#available-modules).
 
 ### Available modules.
 
