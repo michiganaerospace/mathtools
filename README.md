@@ -132,7 +132,7 @@ plot(r.x, r.y, linewidth=2)
 ![Noisy Data](https://goo.gl/9ozbXw)
 
 Note that although the blue curve smooths the red data points, we are not
-explicitly regularizing the derivatives here. We are instead effectively
+explicitly penalizing the derivatives here. We are instead effectively
 regularizing by using a small number (15) of basis vectors.
 
 What if we wanted to sample this function at a different set of points? As it
