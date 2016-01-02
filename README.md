@@ -51,22 +51,22 @@ Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0
 
 #### Arguments
 
-```x``` — array_like [default: None]
+```x — array_like [default: None]```
     
 Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 
-```y``` — array_like [default: None]
+```y — array_like [default: None]```
 
 Vector of ordinate values — an ```nb_samples``` length vector 'y values'.
 
-```nb_orders``` — int [default: 0]
+```nb_orders — int [default: 0]```
 
 The number of basis vectors to use when fitting the data. In the case of a
 cubic spline basis, this corresponds to the number of knots used.
 
 ```basis_type — string [default: 'legendre']```
 
-The type of basis to use for the fits. May have values of ```legendre```,
+The type of basis to use for the fitting. May have values of ```legendre```,
 ```fourier```, or```cubic-spline```.
 
 #### Methods
