@@ -99,5 +99,6 @@ to do this in just one line:
 f = Fit(t, y, 50)
 ```
 
-This will create a ```Fit``` object, generate bases for the provided abscissa
-(here represented by the vector ```t```).
+This will create a ```Fit``` object, generate a Legendre polynomial basis for
+the provided abscissa (here, the vector ```t```) with 15 basis vectors, and fit
+the data ```y``` using this basis.
