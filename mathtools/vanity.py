@@ -1,4 +1,7 @@
-'''Let's try to make plots look nice, shall we?'''
+'''Let's try to make plots look nice, shall we?
+To preview the colors defined below, check out:
+    http://flatuicolors.com/
+'''
 from pylab import *
 
 
@@ -34,6 +37,7 @@ def setup_plotting():
     # Turn on interactive plotting.
     ion()
     close('all')
+
     # Set font to something reasonable.
-    font = {'family': 'Helvetica', 'weight': 'light', 'size': 16}
+    font = {'family': 'Arial', 'weight': 'light', 'size': 16}
     matplotlib.rc('font', **font)

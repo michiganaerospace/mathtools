@@ -9,12 +9,13 @@ if __name__ == '__main__':
     setup_plotting()
 
     # Create some noisy data.
-    t = np.linspace(0,15*np.pi, 300)
+    t = np.linspace(0,5*np.pi, 300)
     y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-    f = Fit(t,y, 55, reg_coefs=[0,1e-3,1e-4])
+    f = Fit(t,y, 15, reg_coefs=[0,1e-3,1e-4])
 
     figure(100)
-    plot(t, y, color=pomegranate, linewidth=2, alpha=0.6)
+    plot(t, y, 'o', markerfacecolor=pomegranate, markeredgecolor=pomegranate,\
+         alpha=0.6)
     grid(True)
     xlabel('Time (seconds)')
     ylabel('Amplitude (volts)')
@@ -22,7 +23,8 @@ if __name__ == '__main__':
 
     
     figure(200)
-    plot(t, y, color=pomegranate, linewidth=2, alpha=0.6)
+    plot(t, y, 'o', markerfacecolor=pomegranate, markeredgecolor=pomegranate,\
+         alpha=0.6)
     hold(True)
     plot(f.results.x, f.results.y, color=belize_hole, linewidth=2)
     grid(True)
