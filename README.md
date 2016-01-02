@@ -112,5 +112,5 @@ r = f.results
 plot(r.x, r.y, linewidth=2)
 ```
 
-![Noisy Data](https://goo.gl/elq37W)
+![Noisy Data](https://goo.gl/ZrRXta)
 
