@@ -10,7 +10,20 @@ below](#available-modules).
 
 Math tools is currently installed by cloning the git repository to your local
 machine and adding the ```mathtools``` path to your Python path variable. To
-clone this repository
+clone this repository, simply:
+
+```unix
+>> git clone https://github.com/michiganaerospace/mathtools.git
+```
+
+Enter your git username and password, and the repository will be cloned into
+your local directory, say ```/Users/mjl/develop/local_python/mathtools```. In our
+```.bash_rc``` file (or similar), add this path to your ```PYTHONPATH```
+variable:
+
+```unix
+export PYTHONPATH="${PYTHONPATH}:/Users/mjl/develop/local-python/mathtools"
+```
 
 ### Available modules.
 
