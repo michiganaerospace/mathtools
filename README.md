@@ -109,5 +109,8 @@ worked, let's plot it on top of the noisy data.
 
 ```python
 r = f.results
-plot(r.x, r.y, )
+plot(r.x, r.y, linewidth=2)
 ```
+
+![Noisy Data](https://goo.gl/elq37W)
+
