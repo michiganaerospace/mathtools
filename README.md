@@ -135,8 +135,8 @@ Note that although the blue curve smooths the red data points, we are not
 explicitly regularizing the derivatives here. We are instead effectively
 regularizing by using a small number (15) of basis vectors.
 
-What if we wanted this function at a higher sampling rate? As it stands, our
-smooth curve is sampled only at the same values of ``` x``` as the original
-data. If we wish to sample our smooth curve at a different set of data points,
-we can use the ```Fit``` object's ```resample``` method. For example, suppose 
-we wish to sample 
+What if we wanted to sample this function at a different set of points? As it
+stands, our smooth curve is sampled only at the same values of ```x``` as the
+original data. If we wish to sample our smooth curve on a different set of data
+points, we can use the ```Fit``` object's ```resample``` method. For example,
+suppose we wish to sample 
