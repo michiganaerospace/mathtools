@@ -71,7 +71,9 @@ The type of basis to use for the fitting. May have values of ```legendre```,
 
 #### Methods
 
-```Fit.fit(x=None, y=None)```
+```python
+Fit.fit(x=None, y=None)
+```
 
 The method fits the data using the current configurations of the ```Fit```
 object.
