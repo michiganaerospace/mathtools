@@ -21,7 +21,7 @@ to easily fit data using regularized least squares.
 Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
 ```
 
-#### Inputs
+#### Arguments
 
 ```x``` — array_like [default: None]
     
@@ -40,12 +40,6 @@ cubic spline basis, this corresponds to the number of knots used.
 
 The type of basis to use for the fits. May have values of ```legendre```,
 ```fourier```, or```cubic-spline```.
-
-#### Outputs
-
-```f``` — Fit Object
-
-An instance of a ```Fit``` object.
 
 #### Methods
 
