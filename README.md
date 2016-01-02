@@ -33,6 +33,14 @@ f = Fit(x,y,nb_orders=15)
 ```
 
 
+## Tests
+
+All code in the ```mathtools``` is fully tested. The tests are available in the
+```/tests``` directory, and can be run using the nose testing framework. For a
+good introduction to nose, check out this
+[resource](http://pythontesting.net/framework/nose/nose-introduction/).
+
+
 ## Available modules
 
 - [Fit](#fit) — The ```fit``` module provides algorithms for reguarlized least
