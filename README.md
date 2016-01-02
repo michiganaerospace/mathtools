@@ -14,18 +14,8 @@ squares using different bases.
 ## Fit 
 
 The ```fit``` module provides the ```Fit``` object — a machine that allows you
-to easily fit data using regularized least squares. The goal is to fuse
-flexibility and computational efficiency with an easy-to-use API. 
+to easily fit data using regularized least squares. 
 
-For example, suppose we have some noisy data, ```y``` sampled at points
-```x```.  We wish to fit this data using smoothed Legendre polynomials. Well,
-it's pretty easy.
-
-```python
-f = Fit(x, y, nb_orders=15, reg_coefs=[0,1e-1, 1e-2])
-f.config(x, nb_orders, reg_coefs)
-f.fit(x,y)
-```
 
 ```python
 Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
@@ -57,10 +47,28 @@ The type of basis to use for the fits. May have values of ```legendre```,
 
 An instance of a ```Fit``` object.
 
+#### Methods
+
+```.fit(x=None, y=None)```
+
+The method fits the data using the current configurations of the ```Fit```
+object.
 
 #### Examples
 
-To get a sense of what
-```Fit``` can do, consider the following example: We have data ```y``` sampled
-at points ```x```, as illustrated in the following figure.
+The goal is to fuse flexibility and computational efficiency with an
+easy-to-use API. 
 
+To get a sense of what ```Fit``` can do, consider the following example: We
+have data ```y``` sampled at points ```x```, as illustrated in the following
+figure.
+
+For example, suppose we have some noisy data, ```y``` sampled at points
+```x```.  We wish to fit this data using smoothed Legendre polynomials. Well,
+it's pretty easy.
+
+```python
+f = Fit(x, y, nb_orders=15, reg_coefs=[0,1e-1, 1e-2])
+f.config(x, nb_orders, reg_coefs)
+f.fit(x,y)
+```
