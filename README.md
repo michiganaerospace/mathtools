@@ -33,7 +33,7 @@ f = Fit(x,y,nb_orders=15)
 ```
 
 
-### Available modules
+## Available modules
 
 - [Fit](#fit) — The ```fit``` module provides algorithms for reguarlized least
 squares using different bases.
