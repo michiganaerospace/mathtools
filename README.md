@@ -32,7 +32,6 @@ from mathtools.fit import Fit
 f = Fit(x,y,nb_orders=15)
 ```
 
-
 ## Tests
 
 All code in the ```mathtools``` is fully tested. The tests are available in the
@@ -42,7 +41,6 @@ good introduction to nose, check out this
 
 As a general rule, before any code is checked in to the repository, one should
 verify that all unit tests are passing.
-
 
 ## Available modules
 
@@ -88,6 +86,14 @@ Fit.fit(x=None, y=None)
 
 The method fits the data using the current configurations of the ```Fit```
 object.
+
+```python
+Fit.resample(x=None)
+```
+
+Resamples the current fit to the specified domain ```x``` using the existing
+coefficients. If any part of ```x``` lies outside the original domain of the
+fit, the fit values for that region are set to zero.
 
 #### Examples
 
