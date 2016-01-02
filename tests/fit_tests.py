@@ -105,7 +105,6 @@ def results_struct_test():
     assert_equals(f.results.dy.shape, f.x.shape)
     assert_equals(f.results.d2y.shape, f.x.shape)
 
-
 #TODO -- Implement resampling.
 
 if __name__ == "__main__":
