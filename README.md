@@ -6,6 +6,12 @@ module, which provides algorithms for efficient fitting data using regularized
 least squares. For more details on the individual modules, please [see
 below](#available-modules).
 
+## Installation
+
+Math tools is currently installed by cloning the git repository to your local
+machine and adding the ```mathtools``` path to your Python path variable. To
+clone this repository
+
 ### Available modules.
 
 - [Fit](#fit) — The ```fit``` module provides algorithms for reguarlized least
