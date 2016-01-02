@@ -82,12 +82,11 @@ To get a sense of what ```Fit``` can do, consider the following example: We
 have data ```y``` sampled at points ```x```, as illustrated in the following
 figure.
 
-For example, suppose we have some noisy data, ```y``` sampled at points
-```x```.  We wish to fit this data using smoothed Legendre polynomials. Well,
-it's pretty easy.
-
 ```python
-f = Fit(x, y, nb_orders=15, reg_coefs=[0,1e-1, 1e-2])
-f.config(x, nb_orders, reg_coefs)
-f.fit(x,y)
+# Create some noisy data.
+t = np.linspace(0,15*np.pi, 300)
+y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+f = Fit(t,y, 55, reg_coefs=[0,1e-3,1e-4])
 ```
+
+![Noisy Data](https://goo.gl/BOu6HO)
