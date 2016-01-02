@@ -129,7 +129,7 @@ r = f.results
 plot(r.x, r.y, linewidth=2)
 ```
 
-![Noisy Data](https://goo.gl/ZrRXta)
+![Noisy Data](https://goo.gl/9ozbXw)
 
 Note that although the blue curve smooths the red data points, we are not
 explicitly regularizing the derivatives here. We are instead effectively
