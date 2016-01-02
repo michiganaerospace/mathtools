@@ -53,8 +53,9 @@ The type of basis to use for the fits. May have values of ```legendre```,
 
 #### Outputs
 
-```fit``` — Fit Object
-   An instance of a ```Fit``` object.
+```f``` — Fit Object
+
+An instance of a ```Fit``` object.
 
 
 #### Examples
