@@ -19,6 +19,7 @@ def fail_single_type_validation_test():
     valid_types = [list]
     assert_raises(ValueError, validate_type, 42, valid_types)
 
+
 # Mapping data to a specified interval.
 def scale_vector_data_to_unit_interval_test():
     x = np.random.rand(50)
