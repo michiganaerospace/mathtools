@@ -13,7 +13,7 @@ machine and adding the ```mathtools``` path to your Python path variable. To
 clone this repository, simply:
 
 ```unix
->> git clone https://github.com/michiganaerospace/mathtools.git
+$~> git clone https://github.com/michiganaerospace/mathtools.git
 ```
 
 Enter your git username and password, and the repository will be cloned into
