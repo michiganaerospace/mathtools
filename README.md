@@ -78,15 +78,26 @@ object.
 
 #### Examples
 
-To get a sense of what ```Fit``` can do, consider the following example: We
-have data ```y``` sampled at points ```x```, as illustrated in the following
-figure.
+To get a sense of what ```Fit``` can do, let's try to fit some noisy data. We 
+generate a sine wave, and add a little noise to it, as illustrated in the 
+following code.
 
 ```python
 # Create some noisy data.
 t = np.linspace(0,15*np.pi, 300)
 y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-f = Fit(t,y, 55, reg_coefs=[0,1e-3,1e-4])
 ```
 
+The noisy sine data is shown in the following Figure:
+
 ![Noisy Data](https://goo.gl/BOu6HO)
+
+We'd like to fit this data with a smooth curve. We can use the ```Fit``` object
+to do this in just one line:
+
+```python
+f = Fit(t, y, 50)
+```
+
+This will create a ```Fit``` object, generate bases for the provided abscissa
+(here represented by the vector ```t```).
