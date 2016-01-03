@@ -131,12 +131,30 @@ plot(r.x, r.y, linewidth=2)
 
 ![Noisy Data](https://goo.gl/9ozbXw)
 
-Note that although the blue curve smooths the red data points, we are not
+Note that although the blue curve smoothly fits the red data points, we are not
 explicitly penalizing the derivatives here. We are instead effectively
-regularizing by using a small number (15) of basis vectors.
+regularizing by using a small number of Legendre polynomial basis vectors — in
+this case, fifteen basis vectors.
 
-What if we wanted to sample this function at a different set of points? As it
-stands, our smooth curve is sampled only at the same values of ```x``` as the
-original data. If we wish to sample our smooth curve on a different set of data
-points, we can use the ```Fit``` object's ```resample``` method. For example,
-suppose we wish to sample 
+But what if we wanted to sample this function at a different set of points? As
+it stands, our smooth curve is sampled only at the values of ```x```
+corresponding to the original data. If we wish to sample our smooth curve on a
+different set of data points, we can use the ```Fit``` object's ```resample```
+method. For example, suppose we wish to sample at a much higher resolution,
+```t_high```:
+
+```python
+t_high = np.linspace(-np.pi, 20*np.pi, 500)
+```
+
+Using the previously computed ```Fit``` object, we compute a new results
+object:
+
+```python r = f.resample(t_high) ```
+
+The new fit now samples the same curve (i.e., using the same fit coefficients),
+but at different points. We have deliberately chosen to resample the curve on a
+domain that extends beyond the support of the original data. Of course, we
+cannot expect to fit data in this region (the ```Fit``` object does not
+extrapolate). The convention is to set the data to zero in the region that does
+not overlap the domain of the original data.  
