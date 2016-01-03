@@ -150,7 +150,9 @@ t_high = np.linspace(-np.pi, 20*np.pi, 500)
 Using the previously computed ```Fit``` object, we compute a new results
 object:
 
-```python r = f.resample(t_high) ```
+```python 
+r = f.resample(t_high) 
+```
 
 The new fit now samples the same curve (i.e., using the same fit coefficients),
 but at different points. We have deliberately chosen to resample the curve on a
