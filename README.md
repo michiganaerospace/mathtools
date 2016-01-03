@@ -115,14 +115,15 @@ We'd like to fit this data with a smooth curve. We can use the ```Fit``` object
 to do this in just one line:
 
 ```python
+# Fit the noisy data.
 f = Fit(t, y, 15)
 ```
 
-This will create a ```Fit``` object, generate a Legendre polynomial basis for
-the provided abscissa (here, the vector ```t```) with 15 basis vectors, and fit
-the data ```y``` using this basis. The results of the fit are always available
-in the ```results``` property of the Fit instance. To see how well our fit 
-worked, let's plot it on top of the noisy data.
+This will create an instance of a ```Fit``` object, generate a Legendre
+polynomial basis for the provided abscissa (here, the vector ```t```) with 15
+basis vectors, and fit the data ```y``` using this basis. The results of the
+fit are always available in the ```results``` property of the Fit instance. To
+see how well our fit worked, let's plot it on top of the noisy data.
 
 ```python
 r = f.results
@@ -134,28 +135,31 @@ plot(r.x, r.y, linewidth=2)
 Note that although the blue curve smoothly fits the red data points, we are not
 explicitly penalizing the derivatives here. We are instead effectively
 regularizing by using a small number of Legendre polynomial basis vectors — in
-this case, fifteen basis vectors.
+this case, fifteen basis vectors. For more on this topic, check out the
+techical discussion at ...
 
 But what if we wanted to sample this function at a different set of points? As
 it stands, our smooth curve is sampled only at the values of ```x```
 corresponding to the original data. If we wish to sample our smooth curve on a
 different set of data points, we can use the ```Fit``` object's ```resample```
-method. For example, suppose we wish to sample at a higher resolution,
+method. For example, suppose we wish to sample on a different number of points,
+and on a different domain.
 
 ```python
-t_high = np.linspace(-np.pi, 20*np.pi, 500)
+t_new = np.linspace(-np.pi, 20*np.pi, 500)
 ```
 
 Using the previously computed ```Fit``` object, we compute a new results
-object:
+object,
 
 ```python 
-r = f.resample(t_high) 
+rs = f.resample(t_new) 
 ```
 
 The new fit now samples the same curve (i.e., using the same fit coefficients),
-but at different points. In this example, we have deliberately resample the
+but at different points. In this example, we have deliberately resampled the
 curve on a domain that extends beyond the support of the original data. Of
 course, we cannot expect to fit data in this region (i.e. the ```Fit``` object
 does not extrapolate). The convention is to set the data to zero in the regions
-that do not intersect the domain of the original data.  
+that do not intersect the domain of the original data. We can illustrate this
+by plotting the resampled data.
