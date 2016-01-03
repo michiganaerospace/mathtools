@@ -154,8 +154,8 @@ r = f.resample(t_high)
 ```
 
 The new fit now samples the same curve (i.e., using the same fit coefficients),
-but at different points. We have deliberately chosen to resample the curve on a
-domain that extends beyond the support of the original data. Of course, we
-cannot expect to fit data in this region (the ```Fit``` object does not
-extrapolate). The convention is to set the data to zero in the region that does
-not overlap the domain of the original data.  
+but at different points. In this example, we have deliberately resample the
+curve on a domain that extends beyond the support of the original data. Of
+course, we cannot expect to fit data in this region (the ```Fit``` object does
+not extrapolate). The convention is to set the data to zero in the region that
+does not overlap the domain of the original data.  
