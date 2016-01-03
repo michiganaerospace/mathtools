@@ -161,5 +161,5 @@ but at different points. In this example, we have deliberately resampled the
 curve on a domain that extends beyond the support of the original data. Of
 course, we cannot expect to fit data in this region (i.e. the ```Fit``` object
 does not extrapolate). The convention is to set the data to zero in the regions
-that do not intersect the domain of the original data. We can illustrate this
-by plotting the resampled data.
+that do not intersect the domain of the original data. We illustrate this by
+plotting the resampled data.
