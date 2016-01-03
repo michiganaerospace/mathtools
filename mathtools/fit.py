@@ -143,6 +143,11 @@ class Fit(object):
         self._results.y      = self.B.dot(self.fit_coefs)
         self._results.dy     = self.dB.dot(self.fit_coefs)
         self._results.d2y    = self.d2B.dot(self.fit_coefs)
+
+    def resample(self, x=None):
+        # Resample the current fit to a different domain.
+        self.x_resampled = x
+        #TODO -- Resample in some smart way here. Probably need refactor.
    
     @property
     def results(self):
