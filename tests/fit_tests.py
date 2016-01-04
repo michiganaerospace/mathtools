@@ -81,6 +81,30 @@ def precompute_bases_test():
 
 
 @with_setup(setup, teardown)
+def bases_present_test():
+    f = Fit(x=t, nb_orders=15)
+    assert_equals(f.B.shape, (200,15))
+
+
+@with_setup(setup, teardown)
+def identity_present_test():
+    f = Fit(x=t, nb_orders=15)
+    assert_equals(f.I.shape, (15,15))
+
+
+@with_setup(setup, teardown)
+def derivative_present_test():
+    f = Fit(x=t, nb_orders=15)
+    assert_equals(f.dB.shape, (200,15))
+
+
+@with_setup(setup, teardown)
+def second_derivative_present_test():
+    f = Fit(x=t, nb_orders=15)
+    assert_equals(f.d2B.shape, (200,15))
+
+
+@with_setup(setup, teardown)
 def raises_error_on_domain_mismatch_test():
     bad_t = np.linspace(0,5*np.pi,100)
     assert_raises(ValueError, Fit, bad_t, y, 15)

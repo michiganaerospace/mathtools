@@ -120,10 +120,11 @@ f = Fit(t, y, 15)
 ```
 
 This will create an instance of a ```Fit``` object, generate a Legendre
-polynomial basis for the provided abscissa (here, the vector ```t```) with 15
+polynomial basis for the provided abscissa — here, the vector ```t``` — with 15
 basis vectors, and fit the data ```y``` using this basis. The results of the
-fit are always available in the ```results``` property of the Fit instance. To
-see how well our fit worked, let's plot it on top of the noisy data.
+fit are always available in the ```results``` property of the ```Fit```
+instance. To see how well our fit worked, let's plot it on top of the noisy
+data.
 
 ```python
 r = f.results
@@ -143,14 +144,14 @@ it stands, our smooth curve is sampled only at the values of ```x```
 corresponding to the original data. If we wish to sample our smooth curve on a
 different set of data points, we can use the ```Fit``` object's ```resample```
 method. For example, suppose we wish to sample on a different number of points,
-and on a different domain.
+on a different domain.
 
 ```python
-t_new = np.linspace(-np.pi, 20*np.pi, 500)
+t_new = np.linspace(-np.pi, 16*np.pi, 500)
 ```
 
-Using the previously computed ```Fit``` object, we compute a new results
-object,
+Note that we are now sampling at 500 points, extending from -pi to 16pi. Using
+the previously computed ```Fit``` object, we compute a new results object,
 
 ```python 
 rs = f.resample(t_new) 
