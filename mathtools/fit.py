@@ -6,6 +6,7 @@ import pdb
 
 
 class Struct(object):
+    # Structure for conveniently holding properties.
     pass
 
 
