@@ -81,12 +81,15 @@ def map_to_interval(x, interval, return_all=False):
         return x_
 
 
-def pseudoinverse(M):
+def pseudoinverse(M, return_condition_number=False):
     '''Find the pseudoinverse of the matrix M using singular value
        decomposition.
     INPUT
         M - array_like
             An (m x n) matrix whose pseudoinverse we want to find.
+        return_condition_number - bool [default: False]
+            If True, the function will also return the condition number
+            associated with the inversion.
     OUTPUT
         pinv - array_like
             The Moore-Penrose pseudoinverse of the matrix M.
@@ -95,8 +98,15 @@ def pseudoinverse(M):
             largest to smallest singular values).
     '''
     # Compute the singular value decomposition.
-    U, s, Vt = np.linalg.svd(N)
+    U, s, Vt = np.linalg.svd(M)
     V = Vt.T
-    max_dim = len(s)
-    M_pinv = V[:,:max_dim].dot(np.diag(1/s)).dot(U[:,:max_dim].T)
+
+    # What is the effective rank?
+    rank = len(s)
+    M_pinv = V[:,:rank].dot(np.diag(1/s)).dot(U[:,:rank].T)
     condition_number = s.max()/s.min() 
+
+    if return_condition_number:
+        return M_pinv, condition_number
+    else:
+        return M_pinv

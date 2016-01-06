@@ -56,6 +56,22 @@ def return_all_test():
     assert_almost_equals(x_.max(), 1)
 
 
+def pseudoinverse_test():
+    M = np.random.rand(15,10)
+    M_inv = pseudoinverse(M)
+    assert_array_almost_equal_nulp(M_inv, np.linalg.pinv(M), 500)
+    assert_equals(M_inv.shape, (10,15))
 
 
-    
+def pseudoinverse_test_2():
+    M = np.random.rand(10,15)
+    M_inv = pseudoinverse(M)
+    assert_array_almost_equal_nulp(M_inv, np.linalg.pinv(M), 500)
+    assert_equals(M_inv.shape, (15,10))
+
+
+def pseudoinverse_test_3():
+    M = np.random.rand(10,15)
+    M_inv, condition_number = pseudoinverse(M, True)
+    assert_equals(condition_number<100, True)
+
