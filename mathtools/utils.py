@@ -94,4 +94,9 @@ def pseudoinverse(M):
             The condition number of the inversion (i.e., the ratio of the
             largest to smallest singular values).
     '''
-    U,s,V_T = np.linalg.svd(M)
+    # Compute the singular value decomposition.
+    U, s, Vt = np.linalg.svd(N)
+    V = Vt.T
+    max_dim = len(s)
+    M_pinv = V[:,:max_dim].dot(np.diag(1/s)).dot(U[:,:max_dim].T)
+    condition_number = s.max()/s.min() 
