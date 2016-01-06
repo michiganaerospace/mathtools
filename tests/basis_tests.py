@@ -1,7 +1,7 @@
 '''Test basis generation algorithms for cubic splines, Legendre polynomials,
 and Fourier series.'''
 from mathtools.fit import *
-import mathtools.FS_Tools as fs
+import mathtools.refs.FS_Tools as fs
 from mathtools.utils import *
 from mathtools.legendre import *
 from nose.tools import assert_equals, assert_almost_equals, assert_raises
