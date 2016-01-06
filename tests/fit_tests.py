@@ -27,6 +27,11 @@ def create_struct_test():
     assert_equals(s.id, 31415)
 
 
+@with_setup(setup, teardown)
+def create_unknown_basis_test():
+    assert_raises(ValueError, create_basis, t, 5, 'Matthew')
+
+
 # Can you create a fit object?
 def init_test():
     f = Fit()
@@ -117,7 +122,7 @@ def bases_struct_test():
     assert_array_equal(f.bases.dB, f.dB)
     assert_array_equal(f.bases.d2B, f.d2B)
     assert_array_equal(f.bases.B_, f.B_)
-    assert_equals(str(type(f.bases)), "<class 'mathtools.fit.Struct'>") 
+    assert_equals(str(type(f.bases)), "<class 'mathtools.utils.Struct'>") 
 
 
 @with_setup(setup, teardown)

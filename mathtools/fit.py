@@ -1,14 +1,49 @@
 '''An interpolation object for fitting data with Splines, Legendre Polynomials, 
 and Fourier Series.'''
 import numpy as np    
-from mathtools.bases import *
+from mathtools.legendre import *
+from mathtools.utils import Struct
 import pdb
 
 
-class Struct(object):
-    # Structure for conveniently holding properties.
-    pass
+def pseudoinverse(M):
+    '''Find the pseudoinverse of the matrix M using singular value
+       decomposition.
+    INPUT
+        M - array_like
+            An (m x n) matrix whose pseudoinverse we want to find.
+    OUTPUT
+    '''
+    U,s,V_T = np.linalg.svd(M)
 
+
+def create_basis(x, nb_bases, basis_type='legendre', x_reference=None):
+    '''Create a basis structure.
+    INPUTS
+        x - array_like
+            Domain over which we wish to build the basis matrix.
+        nb_bases - int
+            The number of basis vectors to use.
+        basis_type - str
+            Type of basis functions to uses. May be 'legendre', 'fourier', or
+            'cubic-spline'.
+    OUTPUT
+        basis - Struct object
+            A Struct object containing the following properties:
+                - B
+                - dB
+                - d2B
+                - I
+                - 
+    '''
+    # Error checking.
+    if basis_type not in ['legendre', 'fourier', 'cubic-spline']:
+        raise ValueError('Unknown basis type requested.')
+
+    # Create hold structure.
+    basis = Struct()
+
+    # Build basis.
 
 # Fit class. A general purpose interpolation machine.
 class Fit(object):
@@ -91,6 +126,13 @@ class Fit(object):
     def _can_compute_basis(self):
         return (self.x is not None) and (self.nb_orders > 1)
 
+    def _build_basis(self, x, basis_type=None, x_orig=None):
+        # Build a basis of specified type given the data points x. If shift and
+        # scale numbers are provided, data will be shifted and scaled -- x_ =
+        # scale * (x_ - shift) before the basis is created. 
+        pass
+        
+
     def _create_basis(self):
         # Compute the basis vector matrices.
 
@@ -124,6 +166,7 @@ class Fit(object):
         # Find the inverse associated with the 'brick'. Keep it around for
         # computational efficiency. Using the pinv function, which in turn
         # uses numpy's SVD to compute the pseudoinverse of the brick B_.
+        U,s,V_transpose = np.linalg.svd(self.B_)
         self.inverse = np.linalg.pinv(self.B_)
 
     def _augment_y(self):

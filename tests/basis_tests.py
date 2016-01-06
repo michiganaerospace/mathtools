@@ -3,7 +3,7 @@ and Fourier series.'''
 from mathtools.fit import *
 import mathtools.FS_Tools as fs
 from mathtools.utils import *
-from mathtools.bases import *
+from mathtools.legendre import *
 from nose.tools import assert_equals, assert_almost_equals, assert_raises
 from numpy.testing import assert_array_almost_equal_nulp, assert_array_equal
 from nose import with_setup

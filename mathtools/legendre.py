@@ -1,7 +1,7 @@
 '''Create bases for useful functions, including Fourier series, Legendre 
 polynomials, and cubic splines.'''
 import numpy as np
-from mathtools.utils import map_to_interval
+from mathtools.utils import map_to_interval, pseudoinverse
 
 
 # LEGENDRE Polynomials ----------------------------------------------------
@@ -149,3 +149,37 @@ def d2_legendre_basis(x, nb_bases):
         d2p_k       = d2p_kp1
     
     return d2B
+
+
+def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0]):
+    '''Build legendre polynomial bases.
+    INPUTS
+        x - array_like
+            An array of points -- the domain on which we will build the basis.
+        nb_bases - int
+            The number of basis vectors to generate.
+        reg_coefs - array_like (default: [0.0, 0.0, 0.0])
+            An array or list of three numerical coefficients that specify 
+            the regularization penalty for the magnitude of coefficients, as
+            well as the the magnitude of the first and second derivatives.
+    OUTPUTS
+        basis - Struct object
+            A struct object containing the following fields:
+    '''
+    # Build a structure to hold the data.
+    basis           = Struct()
+    basis.nb_bases  = nb_bases 
+    basis.reg_coefs = reg_coefs
+    basis.x         = x
+    
+    # Build bases and the 'brick'.
+    basis.B      = legendre_basis(x, nb_bases)
+    basis.I      = reg_coefs[0] * np.eye(nb_bases)
+    basis.dB     = reg_coefs[1] * d_legendre_basis(x, nb_bases)
+    basis.d2B    = reg_coefs[2] * d2_legendre_basis(x, nb_bases)
+
+    # Create the 'brick' by stacking these bases on top of one another.
+    basis.B_     = np.r_[basis.B, basis.I, basis.dB, basis.d2B] 
+
+    # Find the inverse of the brick.
+    bas

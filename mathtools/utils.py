@@ -2,6 +2,11 @@
 import numpy as np
 
 
+class Struct(object):
+    '''Generic structure for conveniently holding properties.'''
+    pass
+
+
 def validate_type(var, white_list, var_name='Input'):
     '''Ensure that the variable type is in the supplied whitelist. 
     INPUTS
@@ -75,3 +80,18 @@ def map_to_interval(x, interval, return_all=False):
     else:
         return x_
 
+
+def pseudoinverse(M):
+    '''Find the pseudoinverse of the matrix M using singular value
+       decomposition.
+    INPUT
+        M - array_like
+            An (m x n) matrix whose pseudoinverse we want to find.
+    OUTPUT
+        pinv - array_like
+            The Moore-Penrose pseudoinverse of the matrix M.
+        cond - float
+            The condition number of the inversion (i.e., the ratio of the
+            largest to smallest singular values).
+    '''
+    U,s,V_T = np.linalg.svd(M)
