@@ -165,6 +165,18 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0]):
     OUTPUTS
         basis - Struct object
             A struct object containing the following fields:
+                - nb_bases: the number of basis vectors
+                - reg_coefs: a list of regularization coefficients
+                - x: the domain over which the basis is defined
+                - B: Legendre basis vectors (as columns)
+                - dB: derivative of basis vectors in B (times reg_coefs[1])
+                - d2B: second derivative of basis vectors in B (times 
+                       reg_coefs[2])
+                - I: identity matrix (times reg_coefs[0])
+                - B_: the 'brick', a concatenation of B, I, dB, and d2B
+                - inverse: the pseudo-inverse of the brick, B_
+                - condition_number: the condition number of the inverse of the
+                  brick.
     '''
     # Build a structure to hold the data.
     basis           = Struct()
@@ -181,5 +193,7 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0]):
     # Create the 'brick' by stacking these bases on top of one another.
     basis.B_     = np.r_[basis.B, basis.I, basis.dB, basis.d2B] 
 
-    # Find the inverse of the brick.
-    bas
+    # Find the inverse of the brick. Keep the condition number around, too.
+    basis.inverse, basis.condition_number = pseudoinverse(basis.B_, True)
+
+    return basis
