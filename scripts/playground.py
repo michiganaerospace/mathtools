@@ -13,13 +13,9 @@ if __name__ == '__main__':
     Minv = np.linalg.pinv(M)
     Ninv = np.linalg.pinv(N)
 
-    # Compute the thing that does the stuff
-    U, s, Vt = np.linalg.svd(N)
-    V = Vt.T
-    maxdim = len(s)
-    M_inv = V[:,0:maxdim].dot(np.diag(1/s)).dot(U[:,0:maxdim].T)
-
-
+    # Use our version of the pseudoinverse.
+    M_inv_mt, condition_M = pseudoinverse(M, True)
+    N_inv_mt, condition_N = pseudoinverse(N, True)
 
 
 
