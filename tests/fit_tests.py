@@ -66,7 +66,7 @@ def brick_creation_test():
 
 @with_setup(setup, teardown)
 def inverse_creation_test():
-    # size of brick is 15 x (3*len(t) + 15)
+    # Size of brick is 15 x (3*len(t) + 15)
     f = Fit(t, y, 15)
     assert_equals(f.inverse.shape, (15,3*len(t) + 15))
 

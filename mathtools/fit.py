@@ -6,15 +6,6 @@ from mathtools.utils import Struct
 import pdb
 
 
-def pseudoinverse(M):
-    '''Find the pseudoinverse of the matrix M using singular value
-       decomposition.
-    INPUT
-        M - array_like
-            An (m x n) matrix whose pseudoinverse we want to find.
-    OUTPUT
-    '''
-    U,s,V_T = np.linalg.svd(M)
 
 
 def create_basis(x, nb_bases, basis_type='legendre', x_reference=None):
@@ -75,7 +66,7 @@ class Fit(object):
             self._fit()
         
     def config(self, x=None, y=None, nb_orders=None, basis_type=None,\
-            reg_coefs=None):
+               reg_coefs=None):
         # Configure the current Fit object to have new abscissa, order,
         # basis-type, etc.
         if (x is not None):

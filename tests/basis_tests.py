@@ -64,3 +64,33 @@ def throw_error_on_too_few_bases_test():
     assert_raises(ValueError, d_legendre_basis, x, nb_bases)
     assert_raises(ValueError, d2_legendre_basis, x, nb_bases)
 
+
+def create_legendre_test_01():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases)
+    assert_equals(basis.nb_bases, 25)
+
+
+def create_legendre_shape_test():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases)
+    assert_equals(basis.B.shape, (100, 25))
+    assert_equals(basis.dB.shape, (100, 25))
+    assert_equals(basis.d2B.shape, (100, 25))
+    assert_equals(basis.B_.shape, (325, 25))
+
+
+def create_legendre_shape_test():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases)
+    assert_equals(basis.inverse.shape, (25, 325))
+
+
+def create_legendre_condition_number_test():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases)
+    assert_equals(basis.condition_number < 50, True)

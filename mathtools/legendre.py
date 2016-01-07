@@ -1,7 +1,7 @@
 '''Create bases for useful functions, including Fourier series, Legendre 
 polynomials, and cubic splines.'''
 import numpy as np
-from mathtools.utils import map_to_interval, pseudoinverse
+from mathtools.utils import map_to_interval, pseudoinverse, Struct
 
 
 # LEGENDRE Polynomials ----------------------------------------------------
