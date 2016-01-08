@@ -72,7 +72,7 @@ cubic spline basis, this corresponds to the number of knots used.
 The type of basis to use for the fitting. May have values of ```legendre```,
 ```fourier```, or```cubic-spline```.
 
-###### reg_coefs — array_like
+###### ```reg_coefs — array_like```
 
 A list or array of three regularization coefficients for penalizing the
 magnitude of the fit and its first and second derivatives, respectively. The
@@ -89,7 +89,7 @@ Resamples the current fit to the specified domain ```x``` using the existing
 coefficients. If any part of ```x``` lies outside the original domain of the
 fit, the values for the fit in that region are set to zero.
 
-#### Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
+##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 
 ```python
 Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
