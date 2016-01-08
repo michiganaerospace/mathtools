@@ -143,6 +143,16 @@ much regularization is used.
 > ```reg_coefs=[0.0, 0.0, 0.0]```.
 
 
+#### Properties
+
+When the ```Fit``` class is instantiated, it makes several properties available
+to the us
+
+> **```nb_bases — int```**: The number of basis vectors currently used in the
+> basis.
+
+
+
 #### Examples
 
 To get a sense of what the ```Fit``` class can do, let's try to fit some noisy
