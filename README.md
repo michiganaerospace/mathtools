@@ -148,6 +148,9 @@ much regularization is used.
 When the ```Fit``` class is instantiated, it makes several properties available
 to the user.
 
+> **```basis — object```**: The current basis object. For details on what basis
+> objects are and how to use them, check out ...
+>
 > **```basis_type — str```**: The type of basis to use for the fitting. May
 > have values of ```legendre```, ```fourier```, or```cubic-spline```.
 >
