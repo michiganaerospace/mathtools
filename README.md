@@ -200,8 +200,8 @@ But what if we wanted to sample this function at a different set of points? As
 it stands, our smooth curve is sampled only at the values of ```x```
 corresponding to the original data. If we wish to sample our smooth curve on a
 different set of data points, we can use the ```Fit``` object's ```resample```
-method. For example, suppose we wish to sample on a different number of points,
-on a different domain.
+method. For example, suppose we wish to sample on a larger number of points,
+and on a different domain.
 
 ```python
 t_new = np.linspace(-np.pi, 6*np.pi, 500)
