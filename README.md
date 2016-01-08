@@ -83,10 +83,7 @@ default value is ```reg_coefs=[0.0, 0.0, 0.0]```
 The method fits the data using the current configurations of the ```Fit```
 object.
 
-#### Fit.resample(x)
-```python
-Fit.resample(x)
-```
+##### ```Fit.resample(x)```
 
 Resamples the current fit to the specified domain ```x``` using the existing
 coefficients. If any part of ```x``` lies outside the original domain of the
