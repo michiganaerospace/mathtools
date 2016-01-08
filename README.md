@@ -59,7 +59,7 @@ to easily fit data using regularized least squares.
 
 ##### ```Fit.__init__(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0])```
 
-**```x — array_like```** — Vector of abscissa values — an ```nb_samples``` 
+**```x — array_like```**: Vector of abscissa values — an ```nb_samples``` 
 length vector of 'x values'.
 
 ###### ```nb_bases — int```
