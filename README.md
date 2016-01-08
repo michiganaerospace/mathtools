@@ -94,8 +94,8 @@ object.
 > the basis was constructed.
 >
 > OUTPUTS  
-> **```results```**: An object containing fit results. It has the following
-> properties:
+> **```results — object```**: An object containing fit results. It has the
+> following properties:
 >   - ```x — array_like```: the domain associated with the fit
 >   - ```y — array_like```: the fit sampled on the domain 
 >   - ```dy — array_like```: the derivative of the fit
@@ -110,12 +110,12 @@ fit, the values for the fit in that region are set to zero. The ```fit()```
 must have been run before the fit can be resampled.
 
 > ARGUMENTS    
-> **```x```**: A vector of abscissa values — an ```nb_samples``` length vector
-> of x-values.
+> **```x — array_like```**: A vector of abscissa values — an ```nb_samples```
+> length vector of x-values.
 >
 > OUTPUTS  
-> **```results```**: An object containing fit results. It has the following
-> properties:
+> **```results — object```**: An object containing fit results. It has the
+> following properties:
 >   - ```x — array_like```: the domain associated with the fit
 >   - ```y — array_like```: the fit sampled on the domain 
 >   - ```dy — array_like```: the derivative of the fit
@@ -188,7 +188,7 @@ let's plot the fit on top of the original, noisy data.
 plot(r.x, r.y, linewidth=2)
 ```
 
-![Noisy Data](https://goo.gl/9ozbXw)
+![A Good Fit](https://goo.gl/9ozbXw)
 
 Note that although the blue curve smoothly fits the red data points, we are not
 explicitly penalizing the derivatives here (the regularization coefficients
@@ -218,7 +218,7 @@ The new fit now samples the same curve (i.e., using the same fit coefficients),
 but at different points. In this example, we have deliberately resampled the
 curve on a domain that extends beyond the support of the original data. Of
 course, we cannot expect to fit data in this region (i.e. the ```Fit``` object
-does not extrapolate). The convention here is to set the data to zero in the
+does not extrapolate). The convention here is to set the fit to zero in those
 regions that do not intersect the original domain. We illustrate this by
 plotting the resampled data:
 
@@ -226,16 +226,15 @@ plotting the resampled data:
 plot(rs.x, rs.y, linewidth=2)
 ```
 
-![Noisy Data](https://goo.gl/uxq5ju)
+![Resampled Data](https://goo.gl/uxq5ju)
 
 Where the resampled domain intersects the support of the original data, we
-reproduce the fit. However, once we leave the support of that data, the fit 
-simply returns the data.
+reproduce the fit. However, once we leave the support of that data, the fit
+returns zero.
 
-As mentioned above, the object returned from the fit method also contains the
-derivatives of the fit, which may be useful. To take a look at the  first
-derivative, for example, we can plot ```r.dy```:
-
+As mentioned above, the results object returned from the ```fit``` method also
+contains the derivatives of the fit, which may be useful. To take a look at the
+first derivative, for example, we can plot ```r.dy```:
 
 ```python
 plot(r.x, r.dy, linewidth=2)
