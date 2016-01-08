@@ -163,7 +163,7 @@ Note that we are now sampling at 500 points, extending from -pi to 6pi. Using
 the previously computed ```Fit``` object, we compute a new results object,
 
 ```python 
-rs = f.resample(t_new) 
+rs = f.resample(t_new)
 ```
 
 The new fit now samples the same curve (i.e., using the same fit coefficients),
@@ -174,3 +174,4 @@ does not extrapolate). The convention here is to set the data to zero in the
 regions that do not intersect the original domain. We illustrate this by
 plotting the resampled data:
 
+![Noisy Data](https://goo.gl/uxq5ju)
