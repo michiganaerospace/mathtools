@@ -128,6 +128,7 @@ def best_fit(basis, data=None, coefs=None):
     OUTPUT
        fit - Struct
             A Struct containing the following fields:
+                - x:    the domain on which fit is defined
                 - y:    the best fit to the data
                 - dy:   the derivative of the best fit
                 - d2y:  the second derivative of the best fit

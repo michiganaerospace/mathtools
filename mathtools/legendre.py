@@ -211,12 +211,15 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
 
     # Build bases and the 'brick'.
     basis.B      = legendre_basis(x_, nb_bases)
-    basis.I      = reg_coefs[0] * np.eye(nb_bases)
-    basis.dB     = reg_coefs[1] * d_legendre_basis(x_, nb_bases)
-    basis.d2B    = reg_coefs[2] * d2_legendre_basis(x_, nb_bases)
+    basis.I      = np.eye(nb_bases)
+    basis.dB     = d_legendre_basis(x_, nb_bases)
+    basis.d2B    = d2_legendre_basis(x_, nb_bases)
 
     # Create the 'brick' by stacking these bases on top of one another.
-    basis.B_     = np.r_[basis.B, basis.I, basis.dB, basis.d2B] 
+    basis.B_     = np.r_[basis.B, 
+                         reg_coefs[0]*basis.I, 
+                         reg_coefs[1]*basis.dB, 
+                         reg_coefs[2]*basis.d2B] 
 
     # Find the inverse of the brick. Keep the condition number around, too.
     basis.inverse, basis.condition_number = pseudoinverse(basis.B_, True)

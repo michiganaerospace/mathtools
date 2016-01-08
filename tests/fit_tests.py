@@ -91,33 +91,34 @@ def fit_contains_domain_test():
 def fit_contains_fit_stuff_test():
     f = Fit(t,25)
     fit = f.fit(y)
+    assert_equals(fit.x.shape, (len(t),))
     assert_equals(fit.y.shape, (len(t),))
     assert_equals(fit.dy.shape, (len(t),))
     assert_equals(fit.d2y.shape, (len(t),))
     assert_equals(fit.coefs.shape, (25,))
 
-# def raise_error_test():
-#     f = Fit()
+
+@with_setup(setup, teardown)
+def fit_is_done_test():
+    f = Fit(t,25)
+    fit = f.fit(y)
+    assert_array_almost_equal_nulp(fit.x, t)
+    assert_equals(fit.y.shape, (len(t),))
 
 
-# def legendre_by_default_test():
-#     f = Fit()
-#     assert_equals(f.basis_type, 'legendre') 
+@with_setup(setup, teardown)
+def resample_test():
+    f = Fit(t,25)
+    fit = f.fit(y)
+    
+    t_new = np.linspace(-np.pi,6*np.pi,300)
+    rfit = f.resample(t_new)
 
-
-# def default_regularization_coefficients_test():
-#     f = Fit()
-#     assert_array_almost_equal_nulp(f.reg_coefs, [0.0, 0.0, 0.0]) 
-
-
-# @with_setup(setup, teardown)
-# def legendre_basis_test():
-#     f = Fit(t, y, 15)
-#     assert_array_almost_equal_nulp(f.x, t)
-#     assert_array_almost_equal_nulp(f.y, y)
-#     assert_equals(f.B.shape, (len(t), 15))
-#     assert_equals(f.dB.shape, (len(t), 15))
-#     assert_equals(f.d2B.shape, (len(t), 15))
+    assert_equals(rfit.x.shape, (300,))
+    assert_equals(rfit.y.shape, (300,))
+    assert_equals(rfit.dy.shape, (300,))
+    assert_equals(rfit.d2y.shape, (300,))
+    
 
 
 # @with_setup(setup, teardown)

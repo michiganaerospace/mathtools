@@ -1,6 +1,6 @@
 import numpy as np
 from mathtools.fit import *
-from vanity import *
+from mathtools.vanity import *
 
 
 if __name__ == '__main__':
@@ -16,8 +16,12 @@ if __name__ == '__main__':
 
     # Perform the fit to the data.
     fit = f.fit(y)
+
+    # Resample the fit to a new domain (including new points!)
     rfit = f.resample(t_new)
 
+
+    # Make some plots to illustrate how our fitting works.
     figure(100)
     plot(t, y, 'o', markerfacecolor=pomegranate, markeredgecolor=pomegranate,\
          alpha=0.6)

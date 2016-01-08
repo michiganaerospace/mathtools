@@ -112,32 +112,41 @@ The noisy sine data is shown in the following figure.
 ![Noisy Data](https://goo.gl/elq37W)
 
 We'd like to fit this data with a smooth curve. We can use the ```Fit``` object
-to do this in just one line:
+to do this quite easily. We first create an instance of the fit object,
+intializing it with the domain on which we'd like to fit the data, and the
+number of basis vectors we want to use, 
 
 ```python
 # Fit the noisy data.
-f = Fit(t, y, 15)
+f = Fit(t, 15)
 ```
 
 This will create an instance of a ```Fit``` object, generate a Legendre
-polynomial basis for the provided abscissa — here, the vector ```t``` — with 15
-basis vectors, and fit the data ```y``` using this basis. The results of the
-fit are always available in the ```results``` property of the ```Fit```
-instance. To see how well our fit worked, let's plot it on top of the noisy
-data.
+polynomial basis for the provided abscissa (the Legendre polynomial basis is
+the default; others may be specified) — here, the vector ```t``` — with 15
+basis vectors. To fit the data, we use the object's ```fit``` method,
 
 ```python
-r = f.results
+# Fit the noisy data.
+r = f.fit(y)
+```
+
+The fit method returns a structure, here ```r```, which contains the fit 
+coefficients, the fit itself, and its first two derivatives. For convenience,
+the original domain is also included in the structure. To see how well we did,
+let's plot the fit on top of the original, noisy data.
+
+```python
 plot(r.x, r.y, linewidth=2)
 ```
 
 ![Noisy Data](https://goo.gl/9ozbXw)
 
 Note that although the blue curve smoothly fits the red data points, we are not
-explicitly penalizing the derivatives here. We are instead effectively
-regularizing by using a small number of Legendre polynomial basis vectors — in
-this case, fifteen basis vectors. For more on this topic, check out the
-techical discussion at ...
+explicitly penalizing the derivatives here (the regularization coefficients
+are, by default, zero). We are instead effectively regularizing by using a
+small number of Legendre polynomial basis vectors — in this case, fifteen basis
+vectors. For more on this topic, check out the techical discussion at ...
 
 But what if we wanted to sample this function at a different set of points? As
 it stands, our smooth curve is sampled only at the values of ```x```
@@ -147,10 +156,10 @@ method. For example, suppose we wish to sample on a different number of points,
 on a different domain.
 
 ```python
-t_new = np.linspace(-np.pi, 16*np.pi, 500)
+t_new = np.linspace(-np.pi, 6*np.pi, 500)
 ```
 
-Note that we are now sampling at 500 points, extending from -pi to 16pi. Using
+Note that we are now sampling at 500 points, extending from -pi to 6pi. Using
 the previously computed ```Fit``` object, we compute a new results object,
 
 ```python 
