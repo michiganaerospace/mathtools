@@ -45,7 +45,7 @@ verify that all unit tests are passing.
 
 ## Tools 
 
-- [fit.Fit](#fitfit) — The ```fit``` class provides algorithms for reguarlized
+- [fit.Fit](#fitfit) — The ```fit``` class provides algorithms for reguarlize```
   least squares using different bases.
     - [methods](#methods)
     - [properties](#properties)
@@ -284,6 +284,6 @@ f.nb_bases # ==> 10
 Other parameters can be changed similarly. When ```config``` is called, the
 basis is recomputed and all fit coefficients are discarded.
 
-### legendre.legendre_basis(x, nb_bases)
+### ```legendre.legendre_basis(x, nb_bases)```
 
 Define the Legendre polynomial basis.
