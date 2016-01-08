@@ -186,7 +186,12 @@ simply returns the data.
 
 As mentioned above, the object returned from the fit method also contains the
 derivatives of the fit, which may be useful. To take a look at the  first
-derivative, for example, we can plot ```rs.dy```
+derivative, for example, we can plot ```r.dy```:
+
+
+```python
+plot(r.x, r.dy, linewidth=2)
+```
 
 ![Derivative of Fit](https://goo.gl/b75E2u)
 
