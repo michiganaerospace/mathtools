@@ -159,8 +159,8 @@ The noisy sine data is shown in the following figure.
 
 ![Noisy Data](https://goo.gl/elq37W)
 
-We'd like to fit this data with a smooth curve. We can use the ```Fit``` object
-to do this quite easily. We first create an instance of the fit object,
+We'd like to fit this data with a smooth curve. We can use the ```Fit``` class
+to do this quite easily. We first create an instance of the ```Fit``` class,
 intializing it with the domain on which we'd like to fit the data, and the
 number of basis vectors we want to use, 
 
