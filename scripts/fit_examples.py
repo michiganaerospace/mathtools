@@ -11,7 +11,8 @@ if __name__ == '__main__':
     # Create some noisy data.
     t = np.linspace(0,5*np.pi, 300)
     t_new = np.linspace(-pi, 6*np.pi, 400)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+    noise_amplitude = 0.1
+    y = np.sin(2*np.pi/5*t) + noise_amplitude * np.random.randn(len(t))
     f = Fit(t, 15, reg_coefs=[0,1e-3,0e-2])
 
     # Perform the fit to the data.

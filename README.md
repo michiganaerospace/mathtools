@@ -75,7 +75,8 @@ The type of basis to use for the fitting. May have values of ```legendre```,
 ##### reg_coefs — array_like
 
 A list or array of three regularization coefficients for penalizing the
-magnitude of the fit and its first and second derivatives, respectively.
+magnitude of the fit and its first and second derivatives, respectively. The
+default value is ```reg_coefs=[0.0, 0.0, 0.0]```
 
 
 #### Methods
