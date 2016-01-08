@@ -84,8 +84,7 @@ bases to be specified.
 The method fits the data using the current configurations of the ```Fit```
 object.
 
-> Arguments
-
+> Arguments   
 > **```y — array_like```**: Vector of data samples that we want to fit. 
 
 ##### ```Fit.resample(x)```
