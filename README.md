@@ -29,7 +29,8 @@ Now you can import the ```mathtools``` package anywhere on your machine:
 ```python
 from mathtools.fit import Fit
 
-f = Fit(x,y,nb_orders=15)
+# Create a fit object on points x:
+f = Fit(x, nb_bases=15)
 ```
 
 ## Tests
