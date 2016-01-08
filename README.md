@@ -86,6 +86,10 @@ object.
 
 > ARGUMENTS   
 > **```y — array_like```**: Vector of data samples that we want to fit. 
+>
+> OUTPUTS  
+> **```results```**: An object that contains the fit information. It has the 
+> following fields:
 
 ##### ```Fit.resample(x)```
 
