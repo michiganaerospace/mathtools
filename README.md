@@ -100,7 +100,7 @@ object.
 >   - ```y — array_like```: the fit sampled on the domain 
 >   - ```dy — array_like```: the derivative of the fit
 >   - ```d2y — array_like```: the second derivative of the fit
->   - ```coefs — array_like```: the coefficients of fit
+>   - ```coefs — array_like```: the coefficients of the fit
 
 ##### ```Fit.resample(x)```
 
