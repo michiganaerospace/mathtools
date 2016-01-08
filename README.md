@@ -53,12 +53,15 @@ squares using different bases.
 The ```fit``` module provides the ```Fit``` object — a machine that allows you
 to easily fit data using regularized least squares. 
 
+#### Methods
+
+##### Fit.__init__()
 
 ```python
 Fit(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
 ```
 
-#### x — array_like
+###### x — array_like
 
 Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 
