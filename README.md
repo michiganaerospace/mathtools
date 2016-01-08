@@ -58,9 +58,6 @@ to easily fit data using regularized least squares.
 Fit(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
 ```
 
-#### Arguments
-
-
 ##### x — array_like
 
 Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
@@ -70,13 +67,10 @@ Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 The number of basis vectors to use when fitting the data. In the case of a
 cubic spline basis, this corresponds to the number of knots used.
 
-```basis_type — string [default: 'legendre']```
-
 ##### basis_type — str
 
 The type of basis to use for the fitting. May have values of ```legendre```,
 ```fourier```, or```cubic-spline```.
-
 
 ##### reg_coefs — array_like
 
