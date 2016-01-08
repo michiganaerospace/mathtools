@@ -52,12 +52,12 @@ verify that all unit tests are passing.
     - [examples](#examples)
 - [legendre.legendre_basis](#legendre.legendre_basis)
 
-### fit.Fit 
+### ```fit.Fit```
 
 The ```fit``` class is a machine that allows you to easily fit data using
-regularized least squares. It is a class that provides a convenient API to 
-the core basis generation and fitting routines. The details of these routines
-may be found at [legendre.create_legendre_basis](#legendrecreatelegendrebasis)
+regularized least squares. It is a class that provides a convenient API to the
+core basis generation and fitting routines. The details of these routines may
+be found at [legendre.create_legendre_basis](#legendrecreatelegendrebasis).
 
 #### Methods
 
@@ -284,3 +284,6 @@ f.nb_bases # ==> 10
 Other parameters can be changed similarly. When ```config``` is called, the
 basis is recomputed and all fit coefficients are discarded.
 
+### legendre.legendre_basis(x, nb_bases)
+
+Define the Legendre polynomial basis.
