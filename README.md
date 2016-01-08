@@ -80,7 +80,7 @@ bases to be specified.
 > derivatives, respectively. The default value is 
 > ```reg_coefs=[0.0, 0.0, 0.0]```.
 >
-> OUTPUTS
+> OUTPUTS    
 > None
 
 ##### ```Fit.fit(y)```
