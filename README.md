@@ -1,6 +1,6 @@
 # Math Tools
 
-The ```mathtools```  module provides algorithms for processing and manipulating
+The ```mathtools```  package provides algorithms for processing and manipulating
 data. At the current time, it contains only the ```fit``` module, which
 provides algorithms for efficiently fitting data using regularized least
 squares.  For more details on the individual modules, please [see
@@ -54,8 +54,8 @@ verify that all unit tests are passing.
 
 ### Fit 
 
-The ```fit``` class provides the ```Fit``` object — a machine that allows you
-to easily fit data using regularized least squares. 
+The ```fit``` class is a machine that allows you to easily fit data using
+regularized least squares. 
 
 #### Methods
 
@@ -64,6 +64,7 @@ to easily fit data using regularized least squares.
 To create a fit object requires, at a minimum, the domain and the number of
 bases to be specified.
 
+> ARGUMENTS 
 > **```x — array_like```**: Vector of abscissa values — an ```nb_samples``` 
 > length vector of 'x values'.
 > 
@@ -78,6 +79,9 @@ bases to be specified.
 > coefficients for penalizing the magnitude of the fit and its first and second
 > derivatives, respectively. The default value is 
 > ```reg_coefs=[0.0, 0.0, 0.0]```.
+>
+> OUTPUTS
+> None
 
 ##### ```Fit.fit(y)```
 
