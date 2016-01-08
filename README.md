@@ -55,7 +55,9 @@ verify that all unit tests are passing.
 ### fit.Fit 
 
 The ```fit``` class is a machine that allows you to easily fit data using
-regularized least squares. 
+regularized least squares. It is a class that provides a convenient API to 
+the core basis generation and fitting routines. The details of these routines
+may be found at [legendre.create_legendre_basis](#legendrecreatelegendrebasis)
 
 #### Methods
 

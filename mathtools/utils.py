@@ -99,12 +99,11 @@ def pseudoinverse(M, return_condition_number=False):
             largest to smallest singular values).
     '''
     # Compute the singular value decomposition.
-    U, s, Vt = np.linalg.svd(M)
+    U, s, Vt = np.linalg.svd(M, full_matrices=False)
     V = Vt.T
 
     # What is the effective rank?
-    rank = len(s)
-    M_pinv = V[:,:rank].dot(np.diag(1/s)).dot(U[:,:rank].T)
+    M_pinv = V.dot(np.diag(1/s)).dot(U.T)
     condition_number = s.max()/s.min() 
 
     if return_condition_number:
