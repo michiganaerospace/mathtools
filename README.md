@@ -59,8 +59,8 @@ to easily fit data using regularized least squares.
 
 ##### ```Fit.__init__(x=None, nb_bases=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0])```
 
-To create a fit object requires the domain and the number of bases to be
-specified.
+To create a fit object requires, at a minimum, the domain and the number of
+bases to be specified.
 
 > **```x — array_like```**: Vector of abscissa values — an ```nb_samples``` 
 > length vector of 'x values'.
@@ -68,17 +68,13 @@ specified.
 > **```nb_bases — int```**: The number of basis vectors to use when fitting the
 > data.  In the case of a cubic spline basis, this corresponds to the number of
 > knots used.
-
-###### ```basis_type — str```
-
-The type of basis to use for the fitting. May have values of ```legendre```,
-```fourier```, or```cubic-spline```.
-
-###### ```reg_coefs — array_like```
-
-A list or array of three regularization coefficients for penalizing the
-magnitude of the fit and its first and second derivatives, respectively. The
-default value is ```reg_coefs=[0.0, 0.0, 0.0]```
+> 
+> **```basis_type — str```**: The type of basis to use for the fitting. May have
+> values of ```legendre```, ```fourier```, or```cubic-spline```.
+> 
+> **```reg_coefs — array_like```**: A list or array of three regularization
+> coefficients for penalizing the magnitude of the fit and its first and second
+> derivatives, respectively. The default value is ```reg_coefs=[0.0, 0.0, 0.0]```
 
 ##### ```Fit.fit(y)```
 
