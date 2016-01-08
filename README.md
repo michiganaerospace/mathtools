@@ -286,4 +286,16 @@ basis is recomputed and all fit coefficients are discarded.
 
 ### ```legendre.legendre_basis(x, nb_bases)```
 
-Define the Legendre polynomial basis.
+Define the Legendre polynomial basis on a specified basis.
+
+> ARGUMENTS    
+> 
+> **```x — array_like```**: the domain over which we are defining the basis. A
+> ```nb_samples``` length vector.
+>
+> **```nb_bases — int```**: the number of basis vectors to generate.
+>
+> OUTPUTS   
+>
+> **```B — array_like```**: An ```nb_samples x nb_bases``` array. The columns 
+> of the array are the Legendre polynomial basis vectors.
