@@ -1,5 +1,6 @@
 from mathtools.fit import *
 from mathtools.utils import *
+from mathtools.legendre import *
 from nose.tools import assert_equals, assert_almost_equals, assert_raises
 from numpy.testing import assert_array_almost_equal_nulp, assert_array_equal
 from nose import with_setup
@@ -57,6 +58,7 @@ def return_all_test():
 
 
 def pseudoinverse_test():
+    np.random.seed(200)
     M = np.random.rand(15,10)
     M_inv = pseudoinverse(M)
     assert_array_almost_equal_nulp(M_inv, np.linalg.pinv(M), 500)
@@ -76,3 +78,38 @@ def pseudoinverse_test_3():
     M_inv, condition_number = pseudoinverse(M, True)
     assert_equals(condition_number<100, True)
 
+
+def best_fit_test():
+    t = np.linspace(0,5*np.pi,200)
+    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+    basis = create_legendre_basis(t, 25)    
+    fit = best_fit(basis, y)
+    assert_equals(fit.y.shape, (200,))
+    assert_equals(fit.dy.shape, (200,))
+    assert_equals(fit.d2y.shape, (200,))
+    assert_equals(fit.x.shape, (200,))
+    assert_equals(fit.coefs.shape, (25,))
+
+    
+def best_fit_test_coefs():
+    t = np.linspace(0,5*np.pi,200)
+    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+    basis = create_legendre_basis(t, 25)    
+    fit = best_fit(basis, y)
+    new_fit = best_fit(basis, coefs=fit.coefs)
+    assert_array_almost_equal_nulp(new_fit.y, fit.y)
+
+
+def raise_error_on_bad_coefs_test():
+    t = np.linspace(0,5*np.pi,200)
+    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+    basis = create_legendre_basis(t, 25)    
+    bad_coefs = np.array([1,2,3,4,5])
+    assert_raises(ValueError, best_fit, basis, None, bad_coefs)
+
+
+def raise_error_on_no_data_or_coefs_test():
+    t = np.linspace(0,5*np.pi,200)
+    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+    basis = create_legendre_basis(t, 25)    
+    assert_raises(ValueError, best_fit, basis, None, None)

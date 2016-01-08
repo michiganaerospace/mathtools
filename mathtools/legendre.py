@@ -2,6 +2,7 @@
 polynomials, and cubic splines.'''
 import numpy as np
 from mathtools.utils import map_to_interval, pseudoinverse, Struct
+import pdb
 
 
 # LEGENDRE Polynomials ----------------------------------------------------
@@ -193,7 +194,10 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
     basis.x         = x
     
     # Define the invalid indices (empty set to start).
-    basis.invalid_idx = np.array([], dtype='int')
+    basis.valid_idx = np.arange(len(x)) 
+
+    # This is default shift and scaling.
+    x_ = x
 
     # Is there a reference domain? 
     if (x_ref is not None):
@@ -202,19 +206,26 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
 
         # Map current domain using reference domain scale and shift.
         x_ = scale * (x - shift)
-        basis.invalid_idx = np.r_[np.nonzero(x_ < -1)[0], \
-                                  np.nonzero(x_ > 1)[0]]
-    
+        basis.valid_idx = np.nonzero((x_ >= -1) * (x_ <= 1))[0]
+        x_ = x_[basis.valid_idx]
+
     # Build bases and the 'brick'.
-    basis.B      = legendre_basis(x, nb_bases)
+    basis.B      = legendre_basis(x_, nb_bases)
     basis.I      = reg_coefs[0] * np.eye(nb_bases)
-    basis.dB     = reg_coefs[1] * d_legendre_basis(x, nb_bases)
-    basis.d2B    = reg_coefs[2] * d2_legendre_basis(x, nb_bases)
+    basis.dB     = reg_coefs[1] * d_legendre_basis(x_, nb_bases)
+    basis.d2B    = reg_coefs[2] * d2_legendre_basis(x_, nb_bases)
 
     # Create the 'brick' by stacking these bases on top of one another.
     basis.B_     = np.r_[basis.B, basis.I, basis.dB, basis.d2B] 
 
     # Find the inverse of the brick. Keep the condition number around, too.
     basis.inverse, basis.condition_number = pseudoinverse(basis.B_, True)
+
+    # Define the data augmention function.
+    def augment(y):
+        return np.r_[y, np.zeros(nb_bases), np.zeros(2*len(x))]
+
+    # Attach augment function to the basis object.
+    basis.augment = augment
 
     return basis

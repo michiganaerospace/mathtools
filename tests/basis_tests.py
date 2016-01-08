@@ -101,5 +101,17 @@ def x_ref_test():
     x_ref = np.linspace(1,4,100)
     nb_bases = 25
     basis = create_legendre_basis(x, nb_bases, x_ref=x_ref)
-    assert_equals(len(basis.invalid_idx), 40)
-    assert_equals(basis.B_.shape, (325, 25))
+    assert_equals(len(basis.valid_idx), 60)
+    assert_equals(basis.B_.shape, (205, 25))
+
+
+def augment_test():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases)
+
+    y = np.random.rand(100)
+    y_aug = basis.augment(y)
+
+    assert_equals(y_aug.shape, (325,))
+    assert_array_almost_equal_nulp(y_aug, np.r_[y, np.zeros(225)])

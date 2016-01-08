@@ -1,5 +1,6 @@
 '''Utility functions for mathtools... tools.'''
 import numpy as np
+import pdb
 
 
 class Struct(object):
@@ -110,3 +111,50 @@ def pseudoinverse(M, return_condition_number=False):
         return M_pinv, condition_number
     else:
         return M_pinv
+
+
+def best_fit(basis, data=None, coefs=None):
+    '''Find the least square fit to one-dimensional data using the specified 
+       basis. If coefficients are specified rather than data, the coefficients
+       are used to generate the fit. The number of coefficients must match
+       the basis.nb_bases.
+    INPUT
+        basis - basis object
+            A mathtools basis object (see mathtools.legendre, e.g.)
+        coefs - array_like
+            Coefficients used to project basis generate fit.
+        data - array_like
+            One dimensional array of data to fit.
+    OUTPUT
+       fit - Struct
+            A Struct containing the following fields:
+                - y:    the best fit to the data
+                - dy:   the derivative of the best fit
+                - d2y:  the second derivative of the best fit
+                - coefs the coefficients used for the fit
+    '''
+
+    # Do we have data, or must we do the fit?
+    if (data is not None):
+        # Augment the data (for regularization).
+        augmented_data = basis.augment(data)
+
+        # Least squares!
+        coefs = basis.inverse.dot(augmented_data)
+
+    if (coefs is None):
+        raise ValueError('Cannot project onto basis! No data or coefficients!')
+
+    # Generate a fit Struct object to hold the results.
+    fit                         = Struct()
+    fit.coefs                   = coefs
+    fit.x                       = basis.x
+    fit.y                       = np.zeros_like(basis.x)
+    fit.dy                      = np.zeros_like(basis.x)
+    fit.d2y                     = np.zeros_like(basis.x)
+    fit.y[basis.valid_idx]      = basis.B.dot(coefs)
+    fit.dy[basis.valid_idx]     = basis.dB.dot(coefs)
+    fit.d2y[basis.valid_idx]    = basis.d2B.dot(coefs)
+
+    return fit
+

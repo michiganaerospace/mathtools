@@ -34,6 +34,68 @@ def init_test():
     assert_equals(str(type(f)), "<class 'mathtools.fit.Fit'>") 
 
 
+@with_setup(setup, teardown)
+def fail_with_bad_nb_bases_test():
+    assert_raises(ValueError, Fit, t, 0)
+    assert_raises(ValueError, Fit, t, -1)
+
+
+@with_setup(setup, teardown)
+def fail_with_bad_basis_type_test():
+    assert_raises(ValueError, Fit, t, 25, 'matthew')
+
+
+@with_setup(setup, teardown)
+def successful_basis_test():
+    f = Fit(t,25)
+    assert_equals(f.basis.nb_bases, 25)
+    assert_equals(f.basis.B.shape, (200, 25))
+
+
+@with_setup(setup, teardown)
+def config_test():
+    f = Fit(t,25)
+    assert_equals(f.basis.nb_bases, 25)
+    f.config(nb_bases=55)
+    assert_equals(f.basis.B.shape, (200, 55))
+
+
+@with_setup(setup, teardown)
+def config_test():
+    f = Fit(t,25)
+    assert_equals(f.basis.nb_bases, 25)
+    f.config(nb_bases=55)
+    assert_equals(f.basis.B.shape, (200, 55))
+
+
+@with_setup(setup, teardown)
+def default_basis_test():
+    f = Fit(t,25)
+    assert_equals(f.basis_type, 'legendre')
+
+
+@with_setup(setup, teardown)
+def default_reg_coefs_test():
+    f = Fit(t,25)
+    assert_array_almost_equal_nulp(f.reg_coefs, np.array([0,0,0]))
+
+
+@with_setup(setup, teardown)
+def fit_contains_domain_test():
+    f = Fit(t,25)
+    fit = f.fit(y)
+    assert_array_almost_equal_nulp(fit.x, t)
+    
+
+@with_setup(setup, teardown)
+def fit_contains_fit_stuff_test():
+    f = Fit(t,25)
+    fit = f.fit(y)
+    assert_equals(fit.y.shape, (len(t),))
+    assert_equals(fit.dy.shape, (len(t),))
+    assert_equals(fit.d2y.shape, (len(t),))
+    assert_equals(fit.coefs.shape, (25,))
+
 # def raise_error_test():
 #     f = Fit()
 
