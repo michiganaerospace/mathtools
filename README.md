@@ -117,7 +117,7 @@ intializing it with the domain on which we'd like to fit the data, and the
 number of basis vectors we want to use, 
 
 ```python
-# Fit the noisy data.
+# Create a fit object with 15 basis vectors. 
 f = Fit(t, 15)
 ```
 
@@ -174,4 +174,19 @@ does not extrapolate). The convention here is to set the data to zero in the
 regions that do not intersect the original domain. We illustrate this by
 plotting the resampled data:
 
+```python
+plot(rs.x, rs.y, linewidth=2)
+```
+
 ![Noisy Data](https://goo.gl/uxq5ju)
+
+Where the resampled domain intersects the support of the original data, we
+reproduce the fit. However, once we leave the support of that data, the fit 
+simply returns the data.
+
+As mentioned above, the object returned from the fit method also contains the
+derivatives of the fit, which may be useful. To take a look at the  first
+derivative, for example, we can plot ```rs.dy```
+
+
+

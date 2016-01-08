@@ -53,3 +53,12 @@ if __name__ == '__main__':
     savefig('docs/images/noisy_sine_new_domain.png')
 
 
+    figure(400)
+    hold(True)
+    plot(fit.x, fit.dy, '.-', color=belize_hole, linewidth=2)
+    grid(True)
+    xlabel('Time (seconds)')
+    ylabel('Derivative of Amplitude (volts/sec)')
+    savefig('docs/images/noisy_sine_fit_deriv.png')
+
+
