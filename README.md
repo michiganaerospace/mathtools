@@ -45,14 +45,14 @@ verify that all unit tests are passing.
 
 ## Tools 
 
-- [fit.Fit](#fit) — The ```fit``` class provides algorithms for reguarlized
+- [fit.Fit](#fitfit) — The ```fit``` class provides algorithms for reguarlized
   least squares using different bases.
     - [methods](#methods)
     - [properties](#properties)
     - [examples](#examples)
+- [legendre.legendre_basis](#legendre.legendre_basis)
 
-
-### Fit 
+### fit.Fit 
 
 The ```fit``` class is a machine that allows you to easily fit data using
 regularized least squares. 
