@@ -42,9 +42,9 @@ good introduction to nose, check out this
 As a general rule, before any code is checked in to the repository, one should
 verify that all unit tests are passing.
 
-## Available modules
+## Tools 
 
-- [fit.Fit](#fit) — The ```fit``` module provides algorithms for reguarlized
+- [fit.Fit](#fit) — The ```fit``` class provides algorithms for reguarlized
   least squares using different bases.
     - [Methods](#methods)
     - [Properties](#properties)
