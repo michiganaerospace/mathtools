@@ -6,9 +6,8 @@ from mathtools.utils import Struct, validate_type, best_fit
 import pdb
 
 
-# Fit class. A general purpose interpolation machine.
+# Fit class. A general purpose regularized interpolation machine.
 class Fit(object):
-
 
     def __init__(self, x, nb_bases=0, basis_type='legendre', reg_coefs=[0,0,0]):
         '''Initialize the fit object. 
