@@ -61,7 +61,7 @@ Fit(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0])
 #### Arguments
 
 
-##### x
+##### x -- array_like
     An array defining the domain of the data — the abscissa.
 
 ```x — array_like [default: None]```
