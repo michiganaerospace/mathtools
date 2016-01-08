@@ -55,10 +55,14 @@ to easily fit data using regularized least squares.
 
 
 ```python
-Fit(x=None, y=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
+Fit(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
 ```
 
 #### Arguments
+
+
+##### x
+    An array defining the domain of the data — the abscissa.
 
 ```x — array_like [default: None]```
     
