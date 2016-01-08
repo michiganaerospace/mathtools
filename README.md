@@ -46,7 +46,7 @@ verify that all unit tests are passing.
 
 - [Fit](#fit) — The ```fit``` module provides algorithms for reguarlized least
 squares using different bases.
-    -[fit](#fity)
+    - [fit](#fity)
 
 
 ### Fit 
