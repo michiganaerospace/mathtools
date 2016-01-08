@@ -81,20 +81,32 @@ default value is ```reg_coefs=[0.0, 0.0, 0.0]```
 
 #### Methods
 
+##### Fit.fit(y)
+
 ```python
-Fit.fit(x=None, y=None)
+Fit.fit(y)
 ```
 
 The method fits the data using the current configurations of the ```Fit```
 object.
 
+##### Fit.resample(x)
 ```python
-Fit.resample(x=None)
+Fit.resample(x)
 ```
 
 Resamples the current fit to the specified domain ```x``` using the existing
 coefficients. If any part of ```x``` lies outside the original domain of the
 fit, the values for the fit in that region are set to zero.
+
+##### Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
+
+```python
+Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
+```
+
+Reconfigure the basis. Change the number of basis vectors, the type, or how
+much regularization is used.
 
 #### Examples
 
