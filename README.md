@@ -90,8 +90,11 @@ object.
 > OUTPUTS  
 > **```results```**: An object containing fit results. It has the following
 > properties:
->   - x
->   - y
+>   - ```x```: the domain associated with the fit
+>   - ```y```: the fit sampled on the domain 
+>   - ```dy```: the derivative of the fit
+>   - ```d2y```: the second derivative of the fit
+>   - ```coefs```: the coefficients of fit
 
 ##### ```Fit.resample(x)```
 
