@@ -89,7 +89,9 @@ The method fits the data using the current configurations of the ```Fit```
 object.
 
 > ARGUMENTS   
-> **```y — array_like```**: Vector of data samples that we want to fit. 
+> **```y — array_like```**: Vector of data samples that we want to fit. The in
+> data in the vector ```y``` must correspond to the domain ```x``` for which 
+> the basis was constructed.
 >
 > OUTPUTS  
 > **```results```**: An object containing fit results. It has the following
