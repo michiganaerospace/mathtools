@@ -51,13 +51,15 @@ verify that all unit tests are passing.
     - [properties](#properties)
     - [examples](#examples)
 - [legendre.legendre_basis](#legendrelegendre_basisx-nb_bases)
+- [legendre.d_legendre_basis](#abcd)
 
 ### ```fit.Fit```
 
 The ```fit``` class is a machine that allows you to easily fit data using
-regularized least squares. It is a class that provides a convenient API to the
-core basis generation and fitting routines. The details of these routines may
-be found at [legendre.create_legendre_basis](#legendrecreatelegendrebasis).
+regularized least squares. It is a class that provides a convenient interface
+to the core basis generation and fitting routines. The details of these
+routines may be found at
+[legendre.create_legendre_basis](#legendrecreatelegendrebasis).
 
 #### Methods
 
@@ -299,7 +301,7 @@ Define the Legendre polynomial basis on a specified domain.
 > of the array are the Legendre polynomial basis vectors.
 
 
-### ```legendre.d_legendre_basis(x, nb_bases)```
+### ```legendre.d_legendre_basis(x, nb_bases)```<a name="abcd"></a>
 
 Define the derivative of the Legendre polynomial basis on a specified domain.
 
