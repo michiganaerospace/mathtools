@@ -250,6 +250,7 @@ than fifteen, as above. We simply:
 
 ```python
 f.config(nb_bases=10)
+f.nb_bases # ==> 10
 ```
 
 Other parameters can be changed similarly. When ```config``` is called, the
