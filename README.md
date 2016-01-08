@@ -240,7 +240,7 @@ first derivative, for example, we can plot ```r.dy```:
 plot(r.x, r.dy, linewidth=2)
 ```
 
-![Derivative of Fit](https://goo.gl/b75E2u)
+![Derivative of Fit](https://goo.gl/aYkoy9)
 
 
 
