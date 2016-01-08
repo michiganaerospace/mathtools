@@ -58,30 +58,30 @@ to easily fit data using regularized least squares.
 Fit(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
 ```
 
-##### x — array_like
+#### x — array_like
 
 Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 
-##### nb_bases — int
+#### nb_bases — int
 
 The number of basis vectors to use when fitting the data. In the case of a
 cubic spline basis, this corresponds to the number of knots used.
 
-##### basis_type — str
+#### basis_type — str
 
 The type of basis to use for the fitting. May have values of ```legendre```,
 ```fourier```, or```cubic-spline```.
 
-##### reg_coefs — array_like
+#### reg_coefs — array_like
 
 A list or array of three regularization coefficients for penalizing the
 magnitude of the fit and its first and second derivatives, respectively. The
 default value is ```reg_coefs=[0.0, 0.0, 0.0]```
 
 
-#### Methods
+### Methods
 
-##### Fit.fit(y)
+#### Fit.fit(y)
 
 ```python
 Fit.fit(y)
@@ -90,7 +90,7 @@ Fit.fit(y)
 The method fits the data using the current configurations of the ```Fit```
 object.
 
-##### Fit.resample(x)
+#### Fit.resample(x)
 ```python
 Fit.resample(x)
 ```
@@ -99,7 +99,7 @@ Resamples the current fit to the specified domain ```x``` using the existing
 coefficients. If any part of ```x``` lies outside the original domain of the
 fit, the values for the fit in that region are set to zero.
 
-##### Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
+#### Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
 
 ```python
 Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
@@ -108,7 +108,7 @@ Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)
 Reconfigure the basis. Change the number of basis vectors, the type, or how
 much regularization is used.
 
-#### Examples
+### Examples
 
 To get a sense of what ```Fit``` can do, let's try to fit some noisy data. We 
 generate a sine wave, and add a little noise to it, as illustrated in the 
