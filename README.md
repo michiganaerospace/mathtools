@@ -46,7 +46,8 @@ verify that all unit tests are passing.
 
 - [Fit](#fit) — The ```fit``` module provides algorithms for reguarlized least
 squares using different bases.
-    - [fit](#fity)
+    - [Methods](#methods)
+    - [Properties](#properties)
 
 
 ### Fit 
@@ -58,8 +59,8 @@ to easily fit data using regularized least squares.
 
 ##### ```Fit.__init__(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0])```
 
-
-###### ```x — array_like```
+##### Arguments
+```x — array_like```
 
 Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
 
