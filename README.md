@@ -83,6 +83,10 @@ default value is ```reg_coefs=[0.0, 0.0, 0.0]```
 The method fits the data using the current configurations of the ```Fit```
 object.
 
+###### x — array_like
+
+Vector of abscissa values — an ```nb_samples``` length vector of 'x values'.
+
 ##### ```Fit.resample(x)```
 
 Resamples the current fit to the specified domain ```x``` using the existing
