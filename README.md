@@ -44,8 +44,8 @@ verify that all unit tests are passing.
 
 ## Available modules
 
-- [Fit](#fit) — The ```fit``` module provides algorithms for reguarlized least
-squares using different bases.
+- [fit.Fit](#fit) — The ```fit``` module provides algorithms for reguarlized
+  least squares using different bases.
     - [Methods](#methods)
     - [Properties](#properties)
 
