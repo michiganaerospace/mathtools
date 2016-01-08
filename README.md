@@ -134,8 +134,8 @@ much regularization is used.
 > data.  In the case of a cubic spline basis, this corresponds to the number of
 > knots used.
 > 
-> **```basis_type — str```**: The type of basis to use for the fitting. May have
-> values of ```legendre```, ```fourier```, or```cubic-spline```.
+> **```basis_type — str```**: The type of basis to use for the fitting. May
+> have values of ```legendre```, ```fourier```, or```cubic-spline```.
 > 
 > **```reg_coefs — array_like```**: A list or array of three regularization
 > coefficients for penalizing the magnitude of the fit and its first and second
@@ -148,14 +148,17 @@ much regularization is used.
 When the ```Fit``` class is instantiated, it makes several properties available
 to the user.
 
-> **```x — array_like```**: The domain on which the basis was built.
+> **```basis_type — str```**: The type of basis to use for the fitting. May
+> have values of ```legendre```, ```fourier```, or```cubic-spline```.
 >
 > **```nb_bases — int```**: The number of basis vectors currently used in the
 > basis.
 >
 > **```reg_coefs — array_like```**: A list or array of three regularization
 > coefficients for penalizing the magnitude of the fit and its first and second
-> derivatives, respectively. The default value is 
+> derivatives, respectively. 
+> 
+> **```x — array_like```**: The domain on which the basis was built.
 
 
 
