@@ -74,7 +74,8 @@ bases to be specified.
 > 
 > **```reg_coefs — array_like```**: A list or array of three regularization
 > coefficients for penalizing the magnitude of the fit and its first and second
-> derivatives, respectively. The default value is ```reg_coefs=[0.0, 0.0, 0.0]```
+> derivatives, respectively. The default value is 
+> ```reg_coefs=[0.0, 0.0, 0.0]```.
 
 ##### ```Fit.fit(y)```
 
