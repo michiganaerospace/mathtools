@@ -55,7 +55,7 @@ to easily fit data using regularized least squares.
 
 #### Methods
 
-##### Fit.__init__()
+##### ```Fit.__init__()```
 
 ```python
 Fit(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0]) 
