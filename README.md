@@ -118,9 +118,9 @@ much regularization is used.
 
 #### Examples
 
-To get a sense of what ```Fit``` can do, let's try to fit some noisy data. We 
-generate a sine wave, and add a little noise to it, as illustrated in the 
-following code.
+To get a sense of what the ```Fit``` class can do, let's try to fit some noisy
+data. We generate a sine wave, and add a little noise to it, as illustrated in
+the following code.
 
 ```python
 # Create some noisy data.
