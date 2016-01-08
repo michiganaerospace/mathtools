@@ -48,11 +48,12 @@ verify that all unit tests are passing.
   least squares using different bases.
     - [Methods](#methods)
     - [Properties](#properties)
+    - [Examples](#examples)
 
 
 ### Fit 
 
-The ```fit``` module provides the ```Fit``` object — a machine that allows you
+The ```fit``` class provides the ```Fit``` object — a machine that allows you
 to easily fit data using regularized least squares. 
 
 #### Methods
@@ -114,7 +115,7 @@ much regularization is used.
 > ```reg_coefs=[0.0, 0.0, 0.0]```.
 
 
-### Examples
+#### Examples
 
 To get a sense of what ```Fit``` can do, let's try to fit some noisy data. We 
 generate a sine wave, and add a little noise to it, as illustrated in the 
