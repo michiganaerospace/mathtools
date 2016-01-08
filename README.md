@@ -106,9 +106,11 @@ object.
 
 Resamples the current fit to the specified domain ```x``` using the existing
 coefficients. If any part of ```x``` lies outside the original domain of the
-fit, the values for the fit in that region are set to zero.
+fit, the values for the fit in that region are set to zero. The ```fit()``` 
+must have been run before the fit can be resampled.
 
-> **```x```**: Vector of abscissa values — an ```nb_samples``` length vector
+> ARGUMENTS    
+> **```x```**: A vector of abscissa values — an ```nb_samples``` length vector
 > of x-values.
 
 ##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
