@@ -57,7 +57,10 @@ to easily fit data using regularized least squares.
 
 #### Methods
 
-##### ```Fit.__init__(x=None, nb_orders=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0])```
+##### ```Fit.__init__(x=None, nb_bases=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0])```
+
+To create a fit object requires the domain and the number of bases to be
+specified.
 
 **```x — array_like```**: Vector of abscissa values — an ```nb_samples``` 
 length vector of 'x values'.
