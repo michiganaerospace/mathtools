@@ -151,7 +151,7 @@ def d2_legendre_basis(x, nb_bases):
     return d2B
 
 
-def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0]):
+def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
     '''Build legendre polynomial bases.
     INPUTS
         x - array_like
@@ -162,27 +162,48 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0]):
             An array or list of three numerical coefficients that specify 
             the regularization penalty for the magnitude of coefficients, as
             well as the the magnitude of the first and second derivatives.
+        x_ref - array_like
+            A reference domain. This is useful for resampling data.  It ensures
+            that data is mapped to the interval [-1, 1] in the same way, and
+            allows us to avoid attempting to fit data outside of the original
+            domain.
     OUTPUTS
         basis - Struct object
             A struct object containing the following fields:
-                - nb_bases: the number of basis vectors
-                - reg_coefs: a list of regularization coefficients
-                - x: the domain over which the basis is defined
-                - B: Legendre basis vectors (as columns)
-                - dB: derivative of basis vectors in B (times reg_coefs[1])
-                - d2B: second derivative of basis vectors in B (times 
-                       reg_coefs[2])
-                - I: identity matrix (times reg_coefs[0])
-                - B_: the 'brick', a concatenation of B, I, dB, and d2B
-                - inverse: the pseudo-inverse of the brick, B_
-                - condition_number: the condition number of the inverse of the
-                  brick.
+                - nb_bases: The number of basis vectors.
+                - reg_coefs: A list of regularization coefficients.
+                - x: The domain over which the basis will be defined.
+                - invalid_idx: indices of the domain that are not valid -- that
+                               is, those values outside the reference domain,
+                               if specified.
+                - B: Legendre basis vectors (as columns).
+                - I: Identity matrix (times reg_coefs[0]).
+                - dB: Derivative of basis vectors in B (times reg_coefs[1]).
+                - d2B: Second derivative of basis vectors in B (times 
+                       reg_coefs[2]).
+                - B_: The 'brick', a concatenation of B, I, dB, and d2B.
+                - inverse: The pseudo-inverse of the brick, B_.
+                - condition_number: The condition number associated with the 
+                                    brick inverse.
     '''
     # Build a structure to hold the data.
     basis           = Struct()
     basis.nb_bases  = nb_bases 
     basis.reg_coefs = reg_coefs
     basis.x         = x
+    
+    # Define the invalid indices (empty set to start).
+    basis.invalid_idx = np.array([], dtype='int')
+
+    # Is there a reference domain? 
+    if (x_ref is not None):
+        x_ref_map, shift, scale = map_to_interval(x_ref, [-1,1], \
+                                                  return_all=True)
+
+        # Map current domain using reference domain scale and shift.
+        x_ = scale * (x - shift)
+        basis.invalid_idx = np.r_[np.nonzero(x_ < -1)[0], \
+                                  np.nonzero(x_ > 1)[0]]
     
     # Build bases and the 'brick'.
     basis.B      = legendre_basis(x, nb_bases)

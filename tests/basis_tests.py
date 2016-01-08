@@ -94,3 +94,12 @@ def create_legendre_condition_number_test():
     nb_bases = 25
     basis = create_legendre_basis(x, nb_bases)
     assert_equals(basis.condition_number < 50, True)
+
+
+def x_ref_test():
+    x = np.linspace(0,5,100)
+    x_ref = np.linspace(1,4,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases, x_ref=x_ref)
+    assert_equals(len(basis.invalid_idx), 40)
+    assert_equals(basis.B_.shape, (325, 25))
