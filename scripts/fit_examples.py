@@ -61,5 +61,6 @@ if __name__ == '__main__':
     xlabel('Time (seconds)')
     ylabel('Derivative of Amplitude (volts/sec)')
     savefig('docs/images/noisy_sine_fit_deriv.png')
+    ylim([-15, 15])
 
 
