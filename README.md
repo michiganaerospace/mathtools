@@ -64,7 +64,7 @@ regularized least squares.
 To create a fit object requires, at a minimum, the domain and the number of
 bases to be specified.
 
-> ARGUMENTS 
+> ARGUMENTS    
 > **```x — array_like```**: Vector of abscissa values — an ```nb_samples``` 
 > length vector of 'x values'.
 > 
