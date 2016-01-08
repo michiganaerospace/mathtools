@@ -146,10 +146,13 @@ much regularization is used.
 #### Properties
 
 When the ```Fit``` class is instantiated, it makes several properties available
-to the us
+to the user.
 
+> **```x```**: The domain on which the basis was built.
+>
 > **```nb_bases — int```**: The number of basis vectors currently used in the
 > basis.
+>
 
 
 
