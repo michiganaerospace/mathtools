@@ -81,7 +81,7 @@ bases to be specified.
 The method fits the data using the current configurations of the ```Fit```
 object.
 
-> **```y — array_like```**: Vector of data samples that should be fit. 
+> **```y — array_like```**: Vector of data samples that we want to fit. 
 
 ##### ```Fit.resample(x)```
 
@@ -109,7 +109,8 @@ much regularization is used.
 > 
 > **```reg_coefs — array_like```**: A list or array of three regularization
 > coefficients for penalizing the magnitude of the fit and its first and second
-> derivatives, respectively. The default value is ```reg_coefs=[0.0, 0.0, 0.0]```
+> derivatives, respectively. The default value is 
+> ```reg_coefs=[0.0, 0.0, 0.0]```.
 
 
 ### Examples
