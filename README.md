@@ -154,8 +154,8 @@ to the user.
 > **```basis_type — str```**: The type of basis to use for the fitting. May
 > have values of ```legendre```, ```fourier```, or```cubic-spline```.
 >
-> **```coefs```**: The current fit coefficients. If there is no active fit, 
-> the coefficients are set to  ``None``.
+> **```coefs — array_like```**: The current fit coefficients. If there is no
+> active fit, the coefficients are set to  ``None``.
 >
 > **```nb_bases — int```**: The number of basis vectors currently used in the
 > basis.
