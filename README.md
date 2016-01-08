@@ -47,9 +47,9 @@ verify that all unit tests are passing.
 
 - [fit.Fit](#fit) — The ```fit``` class provides algorithms for reguarlized
   least squares using different bases.
-    - [Methods](#methods)
-    - [Properties](#properties)
-    - [Examples](#examples)
+    - [methods](#methods)
+    - [properties](#properties)
+    - [examples](#examples)
 
 
 ### Fit 
