@@ -249,6 +249,7 @@ basis. For example, suppose we wished to use only ten basis vectors, rather
 than fifteen, as above. We simply:
 
 ```python
+f.nb_bases # ==> 15
 f.config(nb_bases=10)
 f.nb_bases # ==> 10
 ```
