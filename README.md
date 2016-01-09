@@ -354,10 +354,10 @@ data on the specified domain.
 >   - **```basis — object```**: A basis object. Basis objects consolidate all
 >     the information required to fit data with the basis. The basis object
 >     contains the following properties and methods:
->       - **```augment(y)```**: A method that takes in an nb_samples length
->         data vector, y, and returns a properly augmented data vector.  The
->         vector is concatenated with the proper number of zeros so that
->         regularized least squares just works.
+>       - **```augment(y)```**: A method that takes in an ```nb_samples```
+>         length data vector, ```y```, and returns a properly augmented data
+>         vector.  The vector is concatenated with the proper number of zeros
+>         so that regularized least squares just works.
 >       - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >         Legendre polynomial basis (column) vectors.
 >       - **```B_ — array_like```** The so-called 'brick'. The brick is a
