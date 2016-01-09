@@ -379,7 +379,7 @@ data on the specified domain.
 >   - **```dB — array_like```**: Derivative of basis vectors in B.
 >     ```nb_samples x nb_bases``` in size.
 >
->   - **```augment(y) — function```**: This function takes as input a data
+>   - **```augment(y) — method```**: This function takes as input a data
 >     vector, ```y```, and returns an augmented vector ```y_```. The vector is
 >     padded with an appropriate number of zeros so that the regularization is
 >     properly implemented as a least squares problem. Only those
