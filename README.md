@@ -71,7 +71,7 @@ generation and fitting routines. The details of these routines may be found at
 > METHODS
 > 
 >   - **```Fit(x=None, nb_bases=0, basis_type='legendre',
->     reg_coefs=[0,0,0])```** — Creates a new ```Fit``` object.
+>     reg_coefs=[0,0,0])```** — Creates a new ```Fit``` object.   
 >       ARGUMENTS
 >       - **```x — array_like```**: An array of abscissa values — an
 >         ```nb_samples``` length vector of 'x values'.
