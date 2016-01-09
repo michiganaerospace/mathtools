@@ -364,7 +364,6 @@ data on the specified domain.
 >         regularization coefficients are included in the brick, in order to
 >         minimize
 >         computational overhead during computation of the SVD.
->       - **```B_ — array_like```**: The so-called brick.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```d2B — array_like```** : Second derivative of basis vectors in
