@@ -91,7 +91,7 @@ bases to be specified.
 
 ##### ```Fit.fit(y)```
 
-The method fits the data using the current configurations of the ```Fit```
+The method fits the data, ```y```, using the current configurations of the ```Fit```
 object.
 
 > ARGUMENTS   
