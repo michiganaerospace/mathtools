@@ -45,7 +45,7 @@ verify that all unit tests are passing.
 
 ## Tools 
 
-- [```fit.Fit```](#fitfit) — The ```Fit``` class provides algorithms for
+- [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
   regularised least squares using different bases.
 - [```legendre.legendre_basis```](#legendre) — Function for generating a
   Legendre polynomial basis.
@@ -60,6 +60,7 @@ verify that all unit tests are passing.
 - [```utils.map_to_interval```](#map_to_interval) — Map an array into specified
   interval.
 
+<a name='fit'></a>
 ### ```fit.Fit```
 
 The ```Fit``` class is a machine that allows you to easily fit data using
@@ -71,6 +72,7 @@ generation and fitting routines. The details of these routines may be found at
 > 
 >   - **```Fit(x=None, nb_bases=0, basis_type='legendre',
 >     reg_coefs=[0,0,0])```** — Creates a new ```Fit``` object.
+>       ARGUMENTS
 >       - **```x — array_like```**: An array of abscissa values — an
 >         ```nb_samples``` length vector of 'x values'.
 >       - **```nb_bases — int```**: The number of basis vectors to use when
