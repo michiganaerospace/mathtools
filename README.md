@@ -373,9 +373,9 @@ data on the specified domain.
 >         pseudoinversion of the matrix ```B_```.
 >       - **```inverse```**: The pseudoinverse of the ```B_``` matrix. May be
 >         used to compute the fit coefficients to a data vector. For example,
->         to find the fit coefficients to a vector ```y```, we compute,
->         ```basis.inverse.dot(basis.augment(y))```, where we have also
->         used the ```basis.augment()``` method to ensure the data vector has
+>         to find the fit coefficients to a vector ```y```, we compute
+>         ```basis.inverse.dot(basis.augment(y))```, where we have also used
+>         the ```basis.augment()``` method to ensure the data vector has
 >         the appropriate dimensions.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         ```nb_samples x nb_bases``` in size.
