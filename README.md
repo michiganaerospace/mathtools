@@ -378,5 +378,7 @@ data on the specified domain.
 >
 >   - **```augment(y) — function```**: This function takes as input a data
 >     vector, ```y```, and returns an augmented vector ```y_```. The vector is
->     padded with zeros of an appropriate number so that the regularization 
->     is properly implemented as a least squares problem.
+>     padded with an appropriate number of zeros so that the regularization is
+>     properly implemented as a least squares problem. Only those
+>     regularization bases with nonzero regularization coefficients are
+>     implemented.
