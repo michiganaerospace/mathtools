@@ -124,11 +124,11 @@ must have been run before the fit can be resampled.
 > OUTPUTS  
 > **```results — object```**: An object containing fit results. It has the
 > following properties:
->   - ```x — array_like```: the domain associated with the fit
->   - ```y — array_like```: the fit sampled on the domain 
->   - ```dy — array_like```: the derivative of the fit
->   - ```d2y — array_like```: the second derivative of the fit
->   - ```coefs — array_like```: the coefficients of the fit
+>   - ```x — array_like```: The domain associated with the fit.
+>   - ```y — array_like```: The fit sampled on the domain.
+>   - ```dy — array_like```: The derivative of the fit.
+>   - ```d2y — array_like```: The second derivative of the fit.
+>   - ```coefs — array_like```: The coefficients of the fit.
 
 ##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 
@@ -301,7 +301,7 @@ basis is recomputed and all fit coefficients are discarded.
 Define the Legendre polynomial basis on a specified domain.
 
 > ARGUMENTS    
-> **```x — array_like```**: the domain over which we are defining the basis. An
+> **```x — array_like```**: The domain over which we are defining the basis. An
 > ```nb_samples``` length vector.
 >
 > **```nb_bases — int```**: the number of basis vectors to generate.
@@ -316,7 +316,7 @@ Define the Legendre polynomial basis on a specified domain.
 Define the derivative of the Legendre polynomial basis on a specified domain.
 
 > ARGUMENTS    
-> **```x — array_like```**: the domain over which we are defining the basis. An
+> **```x — array_like```**: The domain over which we are defining the basis. An
 > ```nb_samples``` length vector.
 >
 > **```nb_bases — int```**: the number of basis vectors to generate.
@@ -334,7 +334,7 @@ Define the second derivative of the Legendre polynomial basis on a specified
 domain.
 
 > ARGUMENTS    
-> **```x — array_like```**: the domain over which we are defining the basis. An
+> **```x — array_like```**: The domain over which we are defining the basis. An
 > ```nb_samples``` length vector.
 >
 > **```nb_bases — int```**: the number of basis vectors to generate.
