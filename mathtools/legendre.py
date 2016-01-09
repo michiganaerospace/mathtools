@@ -170,7 +170,7 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
             domain.
     OUTPUTS
         basis - Struct object
-            A struct object containing the following fields:
+            A struct object containing the following methods and properties:
                 - nb_bases: The number of basis vectors.
                 - reg_coefs: A list of regularization coefficients.
                 - x: The domain over which the basis will be defined.
@@ -178,13 +178,16 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
                   those values inside the reference domain, if specified. If
                   not specified, the entire vector is valid.
                 - B: Legendre basis vectors (as columns).
-                - I: Identity matrix (times reg_coefs[0]).
                 - dB: Derivative of basis vectors in B 
                 - d2B: Second derivative of basis vectors in B 
                 - B_: The 'brick', a concatenation of B, I, dB, and d2B.
                 - inverse: The pseudo-inverse of the brick, B_.
                 - condition_number: The condition number associated with the
                   brick inverse.
+                - augment(y): A method that takes in an nb_samples length 
+                  data vector, y, and returns a properly augmented data vector.
+                  The vector is concatenated with the proper number of zeros
+                  so that regularized least squares just works.
     '''
     # Build a structure to hold the data.
     basis           = Struct()

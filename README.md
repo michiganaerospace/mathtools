@@ -347,13 +347,17 @@ data on the specified domain.
 >     second derivatives, respectively. 
 >   - **```x_ref — array_like```**: An optional reference domain. This is
 >     useful for resampling data.  It ensures that data is mapped to the
->     interval [-1, 1] in a consistent same way, and allows us to avoid
+>     interval [-1, 1] in a consistent manner, and allows us to avoid
 >     attempting to fit data outside of the original domain.
 >
 > OUTPUTS <a name='basis_object'></a>   
 >   - **```basis — object```**: A basis object. Basis objects consolidate all
 >     the information required to fit data with the basis. The basis object
 >     contains the following properties and methods:
+>       - **```augment(y)```: A method that takes in an nb_samples length data
+>         vector, y, and returns a properly augmented data vector.  The vector
+>         is concatenated with the proper number of zeros so that regularized
+>         least squares just works.
 >       - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >         Legendre polynomial basis (column) vectors.
 >       - **```B_ — array_like```** The so-called 'brick'. The brick is a
@@ -365,6 +369,8 @@ data on the specified domain.
 >         minimize computational overhead during computation of the SVD. The
 >         matrix ```I``` is an ```nb_bases x nb_bases``` sized identity
 >         matrix. It serves to penalize the L2 norm of the fit coefficients.  
+>       - **```condition_number```: The condition number associated with the
+>         pseudoinversion of the matrix ```B_```.
 >       - **```inverse```**: The pseudoinverse of the ```B_``` matrix. May be
 >         used to compute the fit coefficients to a data vector. For example,
 >         to find the fit coefficients to a vector ```y```, we compute,
