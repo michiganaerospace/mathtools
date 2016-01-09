@@ -61,7 +61,7 @@ of a Legendre polynomial basis.
 
 ### ```fit.Fit```
 
-The ```fit``` class is a machine that allows you to easily fit data using
+The ```Fit``` class is a machine that allows you to easily fit data using
 regularized least squares. It is a class that provides a convenient interface
 to the core basis generation and fitting routines. The details of these
 routines may be found at
