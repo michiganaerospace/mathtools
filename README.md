@@ -110,6 +110,7 @@ generation and fitting routines. The details of these routines may be found at
 >       - ```coefs — array_like```: The coefficients of the fit.
 >
 > **```Fit.resample(x)```**   
+>
 > Resamples the current fit to the specified domain ```x``` using the existing
 > coefficients. If any part of ```x``` lies outside the original domain of the
 > fit, the values for the fit in that region are set to zero. The ```fit()``` 
