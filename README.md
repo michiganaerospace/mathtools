@@ -75,7 +75,6 @@ bases to be specified.
 > ARGUMENTS    
 >   - **```x — array_like```**: Vector of abscissa values — an ```nb_samples```
 >     length vector of 'x values'.
-> 
 >   - **```nb_bases — int```**: The number of basis vectors to use when fitting
 >     the data.  In the case of a cubic spline basis, this corresponds to the
 >     number of knots used.
