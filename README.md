@@ -368,3 +368,11 @@ data on the specified domain.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```d2B — array_like```** : Second derivative of basis vectors in
 >         ```B```.   
+>       - **```augment(y) — method```**: This function takes as input a data
+>         vector, ```y```, and returns an augmented vector ```y_```. The vector
+>         is padded with an appropriate number of zeros so that the
+>         regularization is properly implemented as a least squares problem.
+>         Only those regularization bases with nonzero regularization
+>         coefficients are included. For example, if all three regularization
+>         coefficients are nonzero, then ```y_aug = basis.augment(y)``` will
+>         have a shape of ```(3*nb_samples + nb_bases,)```.
