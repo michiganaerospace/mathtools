@@ -65,14 +65,14 @@ verify that all unit tests are passing.
 The ```Fit``` class is a machine that allows you to easily fit data using
 regularized least squares. It provides a convenient interface to the core basis
 generation and fitting routines. The details of these routines may be found at
-[legendre.create_legendre_basis](#legendrecreatelegendrebasis).
+[legendre.create_legendre_basis](#create_legendre).
 
-#### Methods
+> METHODS
+> 
+> ```Fit(x=None, nb_bases=0, basis_type='legendre', reg_coefs=[0,0,0])```
+>
+>
 
-##### ```Fit.__init__(x=None, nb_bases=0, basis_type='legendre', reg_coefs=[0.0, 0.0, 0.0])```
-
-To create a fit object requires, at a minimum, the domain and the number of
-bases to be specified.
 
 > ARGUMENTS    
 >   - **```x — array_like```**: Vector of abscissa values — an ```nb_samples```
@@ -328,7 +328,7 @@ domain.
 >
 > OUTPUTS   
 > - **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The
->   columns of the array are the second derivative of the Legendre polynomial
+>   columns of the array are the second derivativeis of the Legendre polynomial
 >   basis vectors.
 
 
