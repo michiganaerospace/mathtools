@@ -301,14 +301,14 @@ basis is recomputed and all fit coefficients are discarded.
 Define the Legendre polynomial basis on a specified domain.
 
 > ARGUMENTS    
-> **```x — array_like```**: The domain over which we are defining the basis. An
-> ```nb_samples``` length vector.
+>   - **```x — array_like```**: The domain over which we are defining the
+>     basis. An ```nb_samples``` length vector.
 >
-> **```nb_bases — int```**: The number of basis vectors to generate.
+>   - **```nb_bases — int```**: The number of basis vectors to generate.
 >
 > OUTPUTS   
-> **```B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
-> of the array are the Legendre polynomial basis vectors.
+>   - **```B — array_like```**: An ```nb_samples x nb_bases``` array. The
+>     columns of the array are the Legendre polynomial basis vectors.
 
 <a name="d_legendre"></a>
 ### ```legendre.d_legendre_basis(x, nb_bases)```
@@ -318,7 +318,6 @@ Define the derivative of the Legendre polynomial basis on a specified domain.
 > ARGUMENTS    
 >   - **```x — array_like```**: The domain over which we are defining the
 >     basis. An ```nb_samples``` length vector.
->
 >   - **```nb_bases — int```**: The number of basis vectors to generate.
 >
 > OUTPUTS   
