@@ -356,6 +356,10 @@ data on the specified domain.
 >     contains the following properties and methods:
 >       - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >         Legendre polynomial basis (column) vectors.
+>       - **```B_ — array_like```** The so-called 'brick'. The brick is a
+>         concatenation of the ```B```, ```I```, ```dB```, ```d2B``` matrices.
+>         The matrix allows us to force the solution and its derivative to be
+>         close to zero, if necessary. 
 >       - **```dB — array_like```**: Derivative of basis vectors in B.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```augment(y) — method```**: This function takes as input a data
