@@ -96,18 +96,18 @@ generation and fitting routines.
 
 > > ARGUMENTS   
 > > - **```y — array_like```**: Vector of data samples that we want to fit. The
-> >   in data in the vector ```y``` must correspond to the domain ```x``` for
->     which the basis was constructed.
->
+> >   data in the vector ```y``` must correspond to the domain ```x``` for
+> >   which the basis was constructed.
+> >
 > > OUTPUTS  
->   - **```results — object```**: An object containing fit results. It has the
->     following properties:
->       - ```x — array_like```: The domain associated with the fit.
->       - ```y — array_like```: The fit sampled on the domain. 
->       - ```dy — array_like```: The derivative of the fit.
->       - ```d2y — array_like```: The second derivative of the fit.
->       - ```coefs — array_like```: The coefficients of the fit.
->
+> >   - **```results — object```**: An object containing fit results. It has the
+> >     following properties:
+> >       - ```x — array_like```: The domain associated with the fit.
+> >       - ```y — array_like```: The fit sampled on the domain. 
+> >       - ```dy — array_like```: The derivative of the fit.
+> >       - ```d2y — array_like```: The second derivative of the fit.
+> >       - ```coefs — array_like```: The coefficients of the fit.
+> 
 > **```Fit.resample(x)```**   
 >
 > Resamples the current fit to the specified domain ```x``` using the existing
@@ -184,10 +184,10 @@ generation and fitting routines.
 > 
 > <img src='https://goo.gl/RcHxfz' width='500'/>
 > 
-> We'd like to fit this data with a smooth curve. We can use the ```Fit``` class
-> to do this quite easily. We first create an instance of the ```Fit``` class,
-> intializing it with the domain on which we'd like to fit the data, and the
-> number of basis vectors we want to use, 
+> We'd like to fit this data with a smooth curve. We can use the ```Fit```
+> class to do this quite easily. We first create an instance of the ```Fit```
+> class, intializing it with the domain on which we'd like to fit the data, and
+> the number of basis vectors we want to use, 
 > 
 > ```python
 > # Create a fit object with 15 basis vectors. 
