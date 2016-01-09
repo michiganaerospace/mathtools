@@ -257,9 +257,9 @@ Where the resampled domain intersects the support of the original data, we
 reproduce the fit. However, once we venture beyond the support of that data,
 the fit returns zero.
 
-As mentioned above, the results object returned from the ```fit``` method also
-contains the derivatives of the fit, which may be useful. To take a look at the
-first derivative, for example, we can plot ```r.dy```:
+As mentioned above, the ```results``` object returned from the ```fit``` method
+also contains the derivatives of the fit, which may be useful. To take a look
+at the first derivative, for example, we can plot ```r.dy```:
 
 ```python
 plot(r.x, r.dy, linewidth=2)
