@@ -1,10 +1,8 @@
 # Math Tools
 
-The ```mathtools```  package provides algorithms for processing and manipulating
-data. At the current time, it contains only the ```fit``` module, which
-provides algorithms for efficiently fitting data using regularized least
-squares.  For more details on the individual modules, please [see
-below](#available-modules).
+The ```mathtools```  package provides algorithms for processing and
+manipulating data. For more details on the available tools, please [see
+below](#tools).
 
 ## Installation
 
