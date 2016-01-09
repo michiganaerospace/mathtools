@@ -100,8 +100,8 @@ generation and fitting routines.
 > >   which the basis was constructed.
 > >
 > > OUTPUTS  
-> >   - **```results — object```**: An object containing fit results. It has the
-> >     following properties:
+> >   - **```results — object```**: An object containing fit results. It has
+> >     the following properties:
 > >       - ```x — array_like```: The domain associated with the fit.
 > >       - ```y — array_like```: The fit sampled on the domain. 
 > >       - ```dy — array_like```: The derivative of the fit.
