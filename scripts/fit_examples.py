@@ -7,6 +7,7 @@ if __name__ == '__main__':
 
     # Get our plots on!
     setup_plotting()
+    save_plots = False
 
     # Create some noisy data.
     t = np.linspace(0,5*np.pi, 300)
@@ -30,7 +31,8 @@ if __name__ == '__main__':
     grid(True)
     xlabel('Time (seconds)')
     ylabel('Amplitude (volts)')
-    savefig('docs/images/noisy_sine.png')
+    if save_plots:
+        savefig('docs/images/noisy_sine.png')
 
     
     figure(200)
@@ -41,7 +43,9 @@ if __name__ == '__main__':
     grid(True)
     xlabel('Time (seconds)')
     ylabel('Amplitude (volts)')
-    savefig('docs/images/noisy_sine_fit.png')
+
+    if save_plots:
+        savefig('docs/images/noisy_sine_fit.png')
 
 
     figure(300)
@@ -52,7 +56,8 @@ if __name__ == '__main__':
     grid(True)
     xlabel('Time (seconds)')
     ylabel('Amplitude (volts)')
-    savefig('docs/images/noisy_sine_new_domain.png')
+    if save_plots:
+        savefig('docs/images/noisy_sine_new_domain.png')
 
 
     figure(400)
@@ -62,6 +67,7 @@ if __name__ == '__main__':
     xlabel('Time (seconds)')
     ylabel('Derivative of Amplitude (volts/sec)')
     ylim([-15, 15])
-    savefig('docs/images/noisy_sine_fit_deriv.png')
+    if save_plots:
+        savefig('docs/images/noisy_sine_fit_deriv.png')
 
 

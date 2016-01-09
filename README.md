@@ -278,7 +278,7 @@ first derivative, for example, we can plot ```r.dy```:
 plot(r.x, r.dy, linewidth=2)
 ```
 
-![Derivative of Fit](https://goo.gl/aYkoy9)
+![Derivative of Fit](https://goo.gl/t5Wjms)
 
 We may want to alter our fit in some way — perhaps by choosing a different 
 basis, or selecting a different number of basis vectors. The ```Fit``` class's
