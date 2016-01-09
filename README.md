@@ -346,3 +346,24 @@ domain.
 
 <a name='create_legendre'></a>
 ### ```legendre.create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None)```
+
+
+> ARGUMENTS    
+> **```x — array_like```**: the domain over which we are defining the basis. An
+> ```nb_samples``` length vector.
+>
+> **```nb_bases — int```**: the number of basis vectors to generate.
+>
+> **```reg_coefs — array_like```**: A list or array of three regularization
+> coefficients for penalizing the magnitude of the fit and its first and second
+> derivatives, respectively. 
+>
+> **```x_ref — array_like```**: A reference domain. This is useful for
+> resampling data.  It ensures that data is mapped to the interval [-1, 1] in
+> the same way, and allows us to avoid attempting to fit data outside of the
+> original domain.
+>
+> OUTPUTS   
+> **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
+> of the array are the second derivative of the Legendre polynomial basis
+> vectors.
