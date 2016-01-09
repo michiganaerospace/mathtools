@@ -180,7 +180,7 @@ to the user.
 
 
 
-#### Examples
+#### Usage
 
 To get a sense of what the ```Fit``` class can do, let's try to fit some noisy
 data. We'll generate a sine wave and add a little noise to it, as illustrated
