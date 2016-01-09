@@ -270,7 +270,7 @@ plot(r.x, r.dy, linewidth=2)
 
 We may want to alter our fit in some way — perhaps by choosing a different 
 basis, or selecting a different number of basis vectors. The ```Fit``` class's
- ```config``` method allow us to easily change parameters and recompute the 
+ ```config``` method allows us to easily change parameters and recompute the 
 basis. For example, suppose we wished to use only ten basis vectors, rather
 than fifteen, as above. We simply:
 
