@@ -369,7 +369,7 @@ data on the specified domain.
 >         minimize computational overhead during computation of the SVD. The
 >         matrix ```I``` is an ```nb_bases x nb_bases``` sized identity
 >         matrix. It serves to penalize the L2 norm of the fit coefficients.  
->       - **```condition_number```: The condition number associated with the
+>       - **```condition_number```**: The condition number associated with the
 >         pseudoinversion of the matrix ```B_```.
 >       - **```inverse```**: The pseudoinverse of the ```B_``` matrix. May be
 >         used to compute the fit coefficients to a data vector. For example,
