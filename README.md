@@ -383,6 +383,6 @@ data on the specified domain.
 >     padded with an appropriate number of zeros so that the regularization is
 >     properly implemented as a least squares problem. Only those
 >     regularization bases with nonzero regularization coefficients are
->     implemented. For example if all three regularization coefficients are 
+>     implemented. For example, if all three regularization coefficients are 
 >     nonzero, then ```y_aug = basis.augment(y)``` will have a shape of 
 >     ```(3*nb_samples + nb_bases,)```.
