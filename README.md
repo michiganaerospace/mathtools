@@ -69,12 +69,11 @@ generation and fitting routines. The details of these routines may be found at
 [legendre.create_legendre_basis](#create_legendre).
 
 > METHODS
-> 
->   - **```Fit(x=None, nb_bases=0, basis_type='legendre',
->     reg_coefs=[0,0,0])```** — Creates a new ```Fit``` object.   
->       ARGUMENTS
->       - **```x — array_like```**: An array of abscissa values — an
->         ```nb_samples``` length vector of 'x values'.
+> **```Fit(x=None, nb_bases=0, basis_type='legendre', reg_coefs=[0,0,0])```**
+> — Creates a new ```Fit``` object.   
+> ARGUMENTS
+> - **```x — array_like```**: An array of abscissa values — an ```nb_samples```
+>   length vector of 'x values'.
 >       - **```nb_bases — int```**: The number of basis vectors to use when
 >         fitting the data.  In the case of a cubic spline basis, this
 >         corresponds to the number of knots used.
@@ -85,7 +84,7 @@ generation and fitting routines. The details of these routines may be found at
 >         regularization coefficients for penalizing the magnitude of the fit
 >         and its first and second derivatives, respectively. The default value
 >         is ```reg_coefs=[0.0, 0.0, 0.0]```.   
->       OUTPUTS    
+>     OUTPUTS    
 >       - None
 
 ##### ```Fit.fit(y)```
