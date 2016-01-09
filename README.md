@@ -367,16 +367,15 @@ data on the specified domain.
 >   - **```basis — object```**: A basis object. Basis objects consolidate all
 >     the information required to fit data with the basis. The basis object
 >     contains the following properties and methods:
->
 >       - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >         Legendre polynomial basis (column) vectors.
->   - **```dB — array_like```**: Derivative of basis vectors in B.
->     ```nb_samples x nb_bases``` in size.
->   - **```augment(y) — method```**: This function takes as input a data
->     vector, ```y```, and returns an augmented vector ```y_```. The vector is
->     padded with an appropriate number of zeros so that the regularization is
->     properly implemented as a least squares problem. Only those
->     regularization bases with nonzero regularization coefficients are
->     included. For example, if all three regularization coefficients are
->     nonzero, then ```y_aug = basis.augment(y)``` will have a shape of
->     ```(3*nb_samples + nb_bases,)```.
+>       - **```dB — array_like```**: Derivative of basis vectors in B.
+>         ```nb_samples x nb_bases``` in size.
+>       - **```augment(y) — method```**: This function takes as input a data
+>         vector, ```y```, and returns an augmented vector ```y_```. The vector
+>         is padded with an appropriate number of zeros so that the
+>         regularization is properly implemented as a least squares problem.
+>         Only those regularization bases with nonzero regularization
+>         coefficients are included. For example, if all three regularization
+>         coefficients are nonzero, then ```y_aug = basis.augment(y)``` will
+>         have a shape of ```(3*nb_samples + nb_bases,)```.
