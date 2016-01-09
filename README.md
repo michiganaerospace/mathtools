@@ -352,7 +352,9 @@ This function creates a Legendre polynomial basis object. The basis object
 contains everything one needs to perform a regularized least squares fit of
 data on the specified domain.
 
-> ARGUMENTS    **```x — array_like```**: The domain over which we are defining
+> ARGUMENTS    
+> 
+> **```x — array_like```**: The domain over which we are defining
 > the basis. An ```nb_samples``` length vector.
 >
 > **```nb_bases — int```**: The number of basis vectors to generate.
