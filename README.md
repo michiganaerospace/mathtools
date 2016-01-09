@@ -355,13 +355,10 @@ data on the specified domain.
 > ARGUMENTS    
 > **```x — array_like```**: The domain over which we are defining
 > the basis. An ```nb_samples``` length vector.
->
 > **```nb_bases — int```**: The number of basis vectors to generate.
->
 > **```reg_coefs — array_like```**: A list or array of three regularization
 > coefficients for penalizing the magnitude of the fit and its first and second
 > derivatives, respectively. 
->
 > **```x_ref — array_like```**: An optional reference domain. This is useful
 > for resampling data.  It ensures that data is mapped to the interval [-1, 1]
 > in a consistent same way, and allows us to avoid attempting to fit data
@@ -375,10 +372,8 @@ data on the specified domain.
 >
 >   - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >     Legendre polynomial basis (column) vectors.
->
 >   - **```dB — array_like```**: Derivative of basis vectors in B.
 >     ```nb_samples x nb_bases``` in size.
->
 >   - **```augment(y) — method```**: This function takes as input a data
 >     vector, ```y```, and returns an augmented vector ```y_```. The vector is
 >     padded with an appropriate number of zeros so that the regularization is
