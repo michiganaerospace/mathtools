@@ -68,7 +68,8 @@ regularized least squares. It provides a convenient interface to the core basis
 generation and fitting routines. The details of these routines may be found at
 [legendre.create_legendre_basis](#create_legendre).
 
-> METHODS   
+> **METHODS**
+>   
 > **```Fit(x=None, nb_bases=0, basis_type='legendre', reg_coefs=[0,0,0])```**
 > — Creates a new ```Fit``` object.   
 > ARGUMENTS
