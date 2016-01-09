@@ -412,8 +412,14 @@ This function is used by the ```Fit``` class.
 >   - **```y — array_like```**: A ```nb_samples``` length data array that we
 >     wish to fit. Providing ```y``` is optional; if it is not provided, then
 >     fit coefficients must be provided.
->   - **```coefs — array_like```**: Coefficients defining the fit. 
+>   - **```coefs — array_like```**: Coefficients defining the fit. This is
+>     useful for resampling a curve using a different basis. The number of
+>     coefficients must be compatible with the basis object. ```coefs``` is
+>     optional; if it is not provided, data must be provided.
 > 
+> OUTPUTS
+>   - **```fit```**: A fit object with the following properties: 
+>
 > USAGE
 > ```python
 > import numpy as np
