@@ -200,7 +200,7 @@ generation and fitting routines.
 > 
 > ```python plot(r.x, r.y, linewidth=2) ```
 > 
-> <img src='https://goo.gl/9ozbXw' width='500'/>
+> <img src='https://goo.gl/dh3EWo' width='500'/>
 > 
 > Note that although the blue curve smoothly fits the red data points, we are
 > not explicitly penalizing the derivatives here (the regularization
