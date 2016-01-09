@@ -60,7 +60,7 @@ verify that all unit tests are passing.
   Legendre basis object.
 - [```utils.best_fit```](#best_fit) — Find the least square fit to
   one-dimensional data using the specified basis.
-- [```utils.map_to_interval```](#map_to_interval) — Map a vector to specified
+- [```utils.map_to_interval```](#map_to_interval) — Map an array into specified
   interval.
 
 ### ```fit.Fit```
