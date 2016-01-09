@@ -409,8 +409,10 @@ This function is used by the ```Fit``` class.
 > ARGUMENTS
 >   - **```basis```**: A basis object. See the detailed discussion
 >     [here](#basis_object).
-> 
-> 
+>   - **```y — array_like```**: A ```nb_samples``` length data array that we
+>     wish to fit. Providing ```y``` is optional; if it is not provided, then
+>     fit coefficients must be provided.
+>   - **```coefs — array_like```**: Coefficients defining the fit. 
 > 
 > USAGE
 > ```python
