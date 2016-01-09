@@ -166,20 +166,19 @@ generation and fitting routines.
 >   coefficients for penalizing the magnitude of the fit and its first and
 >   second derivatives, respectively. 
 >   - **```x — array_like```**: The domain on which the basis was built.
-
-
-
-#### Usage
-
-To get a sense of what the ```Fit``` class can do, let's try to fit some noisy
-data. We'll generate a sine wave and add a little noise to it, as illustrated
-in the following code snippet.
-
-```python
-# Create some noisy data.
-t = np.linspace(0,15*np.pi, 300)
-y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-```
+>
+> **USAGE**
+>
+> 
+> To get a sense of what the ```Fit``` class can do, let's try to fit some noisy
+> data. We'll generate a sine wave and add a little noise to it, as illustrated
+> in the following code snippet.
+>
+> ```python
+> # Create some noisy data.
+> t = np.linspace(0,15*np.pi, 300)
+> y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
+> ```
 
 The noisy sine data is shown in the following figure.
 
