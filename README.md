@@ -253,7 +253,7 @@ plotting the resampled data:
 plot(rs.x, rs.y, linewidth=2)
 ```
 
-![Resampled Data](https://goo.gl/uxq5ju)
+<img src='https://goo.gl/9ozbXw' width='500'/>
 
 Where the resampled domain intersects the support of the original data, we
 reproduce the fit. However, once we venture beyond the support of that data,
