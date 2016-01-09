@@ -365,13 +365,10 @@ data on the specified domain.
 >         minimize computational overhead during computation of the SVD. The
 >         matrix ```I``` is an ```nb_bases x nb_bases``` sized identity
 >         matrix. It serves to penalize the L2 norm of the fit coefficients.  
->       - **```inverse```**:
+>       - **```inverse```**: The pseudoinverse of the ```B_``` matrix. May be
+>         used to compute the fit coefficients to a data vector.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
 >         ```B```.  
  
->       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
->         ```nb_samples x nb_bases``` in size.
->       - **```d2B — array_like```**: Second derivative of basis vectors in
->         ```B```.   
