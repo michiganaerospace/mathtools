@@ -65,8 +65,7 @@ verify that all unit tests are passing.
 
 The ```Fit``` class is a machine that allows you to easily fit data using
 regularized least squares. It provides a convenient interface to the core basis
-generation and fitting routines. The details of these routines may be found at
-[legendre.create_legendre_basis](#create_legendre).
+generation and fitting routines. 
 
 > **METHODS**
    
@@ -78,14 +77,14 @@ generation and fitting routines. The details of these routines may be found at
 > > - **```x — array_like```**: An array of abscissa values — an ```nb_samples```
 > >  length vector of 'x values'.
 > > - **```nb_bases — int```**: The number of basis vectors to use when fitting
->   the data.  In the case of a cubic spline basis, this corresponds to the
->   number of knots used.
-> - **```basis_type — str```**: The type of basis to use for the fitting.  May
->   have values of ```legendre```, ```fourier```, or```cubic-spline```.
-> - **```reg_coefs — array_like```**: A list or array of three regularization
->   coefficients for penalizing the magnitude of the fit and its first and
->   second derivatives, respectively. The default value is ```reg_coefs=[0.0,
->   0.0, 0.0]```.   
+> >  the data.  In the case of a cubic spline basis, this corresponds to the
+> >  number of knots used.
+> > - **```basis_type — str```**: The type of basis to use for the fitting.  May
+> >  have values of ```legendre```, ```fourier```, or```cubic-spline```.
+> > - **```reg_coefs — array_like```**: A list or array of three regularization
+> >  coefficients for penalizing the magnitude of the fit and its first and
+> >  second derivatives, respectively. The default value is ```reg_coefs=[0.0,
+> >  0.0, 0.0]```.   
 >
 > > OUTPUTS    
 > > - None 
