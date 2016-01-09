@@ -219,7 +219,7 @@ plot(r.x, r.y, linewidth=2)
 
 Note that although the blue curve smoothly fits the red data points, we are not
 explicitly penalizing the derivatives here (the regularization coefficients
-are, by default, zero). We are instead effectively regularizing by using a
+are, by default, zero). We are instead *effectively* regularizing by using a
 small number of Legendre polynomial basis vectors — in this case, fifteen basis
 vectors. For more on this topic, check out the techical discussion at ...
 
