@@ -96,8 +96,8 @@ generation and fitting routines. The details of these routines may be found at
 > ```Fit``` object.
 
 > > ARGUMENTS   
->   - **```y — array_like```**: Vector of data samples that we want to fit. The
->     in data in the vector ```y``` must correspond to the domain ```x``` for
+> > - **```y — array_like```**: Vector of data samples that we want to fit. The
+> >   in data in the vector ```y``` must correspond to the domain ```x``` for
 >     which the basis was constructed.
 >
 > > OUTPUTS  
