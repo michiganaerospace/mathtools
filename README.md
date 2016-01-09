@@ -100,7 +100,7 @@ generation and fitting routines. The details of these routines may be found at
 >     in data in the vector ```y``` must correspond to the domain ```x``` for
 >     which the basis was constructed.
 >
-> OUTPUTS  
+> > OUTPUTS  
 >   - **```results — object```**: An object containing fit results. It has the
 >     following properties:
 >       - ```x — array_like```: The domain associated with the fit.
