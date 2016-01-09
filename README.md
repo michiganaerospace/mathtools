@@ -45,7 +45,7 @@ verify that all unit tests are passing.
 
 ## Tools 
 
-- [fit.Fit](#fitfit) — The ```fit``` class provides algorithms for regularised
+- [fit.Fit](#fitfit) — The ```Fit``` class provides algorithms for regularised
   least squares using different bases.
     - [methods](#methods)
     - [properties](#properties)
