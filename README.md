@@ -59,7 +59,7 @@ verify that all unit tests are passing.
 - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
   Legendre basis object.
 - [```utils.best_fit```](#best_fit) — Find the least square fit to
-  one-dimensional data using the specified basis.
+  one-dimensional data using a specified basis.
 - [```utils.map_to_interval```](#map_to_interval) — Map an array into specified
   interval.
 
