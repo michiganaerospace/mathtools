@@ -108,7 +108,26 @@ generation and fitting routines. The details of these routines may be found at
 >       - ```dy — array_like```: The derivative of the fit.
 >       - ```d2y — array_like```: The second derivative of the fit.
 >       - ```coefs — array_like```: The coefficients of the fit.
+ 
+> ```Fit.resample(x)```
 > 
+> Resamples the current fit to the specified domain ```x``` using the existing
+> coefficients. If any part of ```x``` lies outside the original domain of the
+> fit, the values for the fit in that region are set to zero. The ```fit()``` 
+> must have been run before the fit can be resampled.
+>
+> > ARGUMENTS    
+>   - **```x — array_like```**: A vector of abscissa values — an
+>     ```nb_samples``` length vector of x-values.
+>
+> > OUTPUTS  
+>   - **```results — object```**: An object containing fit results. It has the
+>     following properties:
+>       - ```x — array_like```: The domain associated with the fit.
+>       - ```y — array_like```: The fit sampled on the domain.
+>       - ```dy — array_like```: The derivative of the fit.
+>       - ```d2y — array_like```: The second derivative of the fit.
+>       - ```coefs — array_like```: The coefficients of the fit.
 
 ##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 
