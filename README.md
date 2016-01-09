@@ -396,11 +396,33 @@ of the [```Fit```](#fit) class.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
 >         ```B```. An ```nb_samples x nb_bases``` sized array.
  
-
 <a name='best_fit'></a>
 ### ```utils.best_fit(basis, data=None, coefs=None)```
 
 Find the least square fit to one-dimensional data using the specified basis. If
 coefficients are specified rather than data, the coefficients are used to
-generate the fit. The number of coefficients must match the basis.nb_bases.
+generate the fit. The function returns a structure, described in detail below,
+which provides the fit, its derivatives, and the fit coefficients.
+
+This function is used by the ```Fit``` class to perform fits.
+
+```python
+import numpy as np
+from mathtools.legendre import create_legendre_basis
+from mathtools.utils import best_fit
+
+# Generate some noisy data to fit.
+x = np.linspace(0, 3*np.pi, 200)
+y = np.cos(x/4) + np.random.randn(len(x))
+
+# Create a basis for fiting this noisy data.
+basis = create_legendre_basis(x, 15)
+
+# Fit the noisy data!
+fit = best_fit(basis, y)
+
+# Check out the coefficients.
+fit.coefs # ==>  
+
+```
 
