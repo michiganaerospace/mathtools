@@ -352,9 +352,8 @@ This function creates a Legendre polynomial basis object. The basis object
 contains everything one needs to perform a regularized least squares fit of
 data on the specified domain.
 
-> ARGUMENTS    
-> **```x — array_like```**: The domain over which we are defining the basis. An
-> ```nb_samples``` length vector.
+> ARGUMENTS    **```x — array_like```**: The domain over which we are defining
+> the basis. An ```nb_samples``` length vector.
 >
 > **```nb_bases — int```**: The number of basis vectors to generate.
 >
@@ -362,14 +361,17 @@ data on the specified domain.
 > coefficients for penalizing the magnitude of the fit and its first and second
 > derivatives, respectively. 
 >
-> **```x_ref — array_like```**: A reference domain. This is useful for
-> resampling data.  It ensures that data is mapped to the interval [-1, 1] in a
-> consistent same way, and allows us to avoid attempting to fit data outside of
-> the original domain.
+> **```x_ref — array_like```**: An optional reference domain. This is useful
+> for resampling data.  It ensures that data is mapped to the interval [-1, 1]
+> in a consistent same way, and allows us to avoid attempting to fit data
+> outside of the original domain.
 >
-> OUTPUTS <a name='basis_object'></a>    
-> **```basis — object```**: A basis object. Basis objects consolidate all the 
-> information required to fit data with the basis. The basis object contains
-> the following properties:
+> OUTPUTS <a name='basis_object'></a>    **```basis — object```**: A basis
+> object. Basis objects consolidate all the information required to fit data
+> with the basis. The basis object contains the following properties:
 >
-> **```B```** 
+>   - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
+> Legendre polynomial basis (column) vectors.
+>
+>   - **```dB — array_like```**: Derivative of basis vectors in B.
+>     ```nb_samples x nb_bases``` in size.

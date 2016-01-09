@@ -110,7 +110,6 @@ def fit_is_done_test():
 def resample_test():
     f = Fit(t,25)
     fit = f.fit(y)
-    
     t_new = np.linspace(-np.pi,6*np.pi,300)
     rfit = f.resample(t_new)
 
