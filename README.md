@@ -45,19 +45,19 @@ verify that all unit tests are passing.
 
 ## Tools 
 
-- [fit.Fit](#fitfit) — The ```Fit``` class provides algorithms for regularised
-  least squares using different bases.
+- [```fit.Fit```](#fitfit) — The ```Fit``` class provides algorithms for
+  regularised least squares using different bases.
     - [methods](#methods)
     - [properties](#properties)
     - [usage](#usage)
-- [legendre.legendre_basis](#legendre) — Function for generating a Legendre
-polynomial basis.
-- [legendre.d_legendre_basis](#d_legendre) — Generates the first derivative of 
-a Legendre polynomial basis.
-- [legendre.d2_legendre_basis](#d2_legendre) — Generates the second derivative
-of a Legendre polynomial basis.
-- [legendre.create_legendre_basis](#create_legendre) — Generate a Legendre
-  basis object.
+- [```legendre.legendre_basis```](#legendre) — Function for generating a
+  Legendre polynomial basis.
+- [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
+  derivative of a Legendre polynomial basis.
+- [```legendre.d2_legendre_basis```](#d2_legendre) — Generates the second
+  derivative of a Legendre polynomial basis.
+- [```legendre.create_legendre_basis```](#create_legendre) — Generate a
+  Legendre basis object.
 - [```utils.best_fit```](#best_fit) — Map a vector to specified interval.
 - [utils.map_to_interval](#map_to_interval) — Map a vector to specified
   interval.
