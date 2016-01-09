@@ -368,7 +368,6 @@ data on the specified domain.
 > outside of the original domain.
 >
 > OUTPUTS <a name='basis_object'></a>    
->
 > **```basis — object```**: A basis
 > object. Basis objects consolidate all the information required to fit data
 > with the basis. The basis object contains the following properties:
