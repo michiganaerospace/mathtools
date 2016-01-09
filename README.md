@@ -114,6 +114,12 @@ generation and fitting routines.
 > coefficients. If any part of ```x``` lies outside the original domain of the
 > fit, the values for the fit in that region are set to zero. The ```fit()``` 
 > must have been run before the fit can be resampled.
+>
+> > ARGUMENTS
+> >   - **```x — array_like```**: A vector of abscissa values — an
+> >     ```nb_samples``` length vector of x-values.
+> > 
+> > OUTPUTS
 
 
 
