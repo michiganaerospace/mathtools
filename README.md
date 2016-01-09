@@ -91,7 +91,6 @@ generation and fitting routines. The details of these routines may be found at
 >
 > ```Fit.fit(y)```
 >
-
 > The method fits the data, ```y```, using the current configurations of the
 > ```Fit``` object.
 
