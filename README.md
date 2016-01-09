@@ -125,8 +125,8 @@ generation and fitting routines.
 > >      - ```x — array_like```: The domain associated with the fit.
 > >      - ```y — array_like```: The fit sampled on the domain.
 > >      - ```dy — array_like```: The derivative of the fit.
->       - ```d2y — array_like```: The second derivative of the fit.
->       - ```coefs — array_like```: The coefficients of the fit.
+> >      - ```d2y — array_like```: The second derivative of the fit.
+> >      - ```coefs — array_like```: The coefficients of the fit.
 
 
 
