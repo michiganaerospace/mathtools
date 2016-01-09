@@ -301,7 +301,9 @@ Define the Legendre polynomial basis on a specified domain.
 > **```B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
 > of the array are the Legendre polynomial basis vectors.
 
-### ```legendre.d_legendre_basis(x, nb_bases)```<a name="d_legendre"></a>
+
+<a name="d_legendre"></a>
+### ```legendre.d_legendre_basis(x, nb_bases)```
 
 Define the derivative of the Legendre polynomial basis on a specified domain.
 
