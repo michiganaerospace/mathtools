@@ -363,7 +363,7 @@ data on the specified domain.
 >         In fact, only those components with nonzero regularization
 >         coefficients
 >         are included in the brick, in order to minimize computational
->         overhead.
+>         overhead during computation of the SVD.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```d2B — array_like```** : Second derivative of basis vectors in
