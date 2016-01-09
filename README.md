@@ -128,14 +128,13 @@ generation and fitting routines.
 > >      - ```d2y — array_like```: The second derivative of the fit.
 > >      - ```coefs — array_like```: The coefficients of the fit.
 >
-> **```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```**
+> ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 > 
 > Recomputes the basis given a change in the underlying parameters. When the 
 > basis is updated, all existing fit coefficients are discarded. 
 > 
 > > ARGUMENTS    
-> >   - **```x — array_like```**: Vector of abscissa values — an
-> >     ```nb_samples```
+> >   - **```x — array_like```**: Vector of abscissa values.
 > >   - **```nb_bases — int```**: The number of basis vectors to use when
 > >     fitting the data.  In the case of a cubic spline basis, this
 > >     corresponds to the number of knots used.
