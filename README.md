@@ -132,9 +132,10 @@ must have been run before the fit can be resampled.
 
 ##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 
-Reconfigure the basis. Change the number of basis vectors, the type, or how
-much regularization is used.
+Recomputes the basis given a change in the underlying parameters. When the 
+basis is update, all existing fit results are discarded. 
 
+> ARGUMENTS    
 > **```x — array_like```**: Vector of abscissa values — an ```nb_samples``` 
 > length vector of 'x values'.
 > 
@@ -149,6 +150,9 @@ much regularization is used.
 > coefficients for penalizing the magnitude of the fit and its first and second
 > derivatives, respectively. The default value is 
 > ```reg_coefs=[0.0, 0.0, 0.0]```.
+>
+> OUTPUTS   
+> None.
 
 
 #### Properties
