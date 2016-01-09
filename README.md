@@ -97,18 +97,18 @@ The method fits the data using the current configurations of the ```Fit```
 object.
 
 > ARGUMENTS   
-> **```y — array_like```**: Vector of data samples that we want to fit. The in
-> data in the vector ```y``` must correspond to the domain ```x``` for which 
-> the basis was constructed.
+>   - **```y — array_like```**: Vector of data samples that we want to fit. The
+>     in data in the vector ```y``` must correspond to the domain ```x``` for
+>     which the basis was constructed.
 >
 > OUTPUTS  
-> **```results — object```**: An object containing fit results. It has the
-> following properties:
->   - ```x — array_like```: the domain associated with the fit
->   - ```y — array_like```: the fit sampled on the domain 
->   - ```dy — array_like```: the derivative of the fit
->   - ```d2y — array_like```: the second derivative of the fit
->   - ```coefs — array_like```: the coefficients of the fit
+>   - **```results — object```**: An object containing fit results. It has the
+>     following properties:
+>       - ```x — array_like```: the domain associated with the fit
+>       - ```y — array_like```: the fit sampled on the domain 
+>       - ```dy — array_like```: the derivative of the fit
+>       - ```d2y — array_like```: the second derivative of the fit
+>       - ```coefs — array_like```: the coefficients of the fit
 
 ##### ```Fit.resample(x)```
 
