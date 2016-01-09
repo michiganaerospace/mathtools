@@ -364,8 +364,10 @@ data on the specified domain.
 >         coefficients
 >         are included in the brick, in order to minimize computational
 >         overhead.
->       - **```dB — array_like```**: Derivative of basis vectors in B.
+>       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         ```nb_samples x nb_bases``` in size.
+>       - **```d2B — array_like```** : Second derivative of basis vectors in
+>         ```B```. 
 >       - **```augment(y) — method```**: This function takes as input a data
 >         vector, ```y```, and returns an augmented vector ```y_```. The vector
 >         is padded with an appropriate number of zeros so that the
