@@ -404,25 +404,25 @@ coefficients are specified rather than data, the coefficients are used to
 generate the fit. The function returns a structure, described in detail below,
 which provides the fit, its derivatives, and the fit coefficients.
 
-This function is used by the ```Fit``` class to perform fits.
+This function is used by the ```Fit``` class. 
 
-```python
-import numpy as np
-from mathtools.legendre import create_legendre_basis
-from mathtools.utils import best_fit
-
-# Generate some noisy data to fit.
-x = np.linspace(0, 3*np.pi, 200)
-y = np.cos(x/4) + np.random.randn(len(x))
-
-# Create a basis for fiting this noisy data.
-basis = create_legendre_basis(x, 15)
-
-# Fit the noisy data!
-fit = best_fit(basis, y)
-
-# Check out the coefficients.
-fit.coefs # ==>  
-
-```
+> ```python
+> import numpy as np
+> from mathtools.legendre import create_legendre_basis
+> from mathtools.utils import best_fit
+> 
+> # Generate some noisy data to fit.
+> x = np.linspace(0, 3*np.pi, 200)
+> y = np.cos(x/4) + np.random.randn(len(x))
+> 
+> # Create a basis for fiting this noisy data.
+> basis = create_legendre_basis(x, 15)
+> 
+> # Fit the noisy data!
+> fit = best_fit(basis, y)
+> 
+> # Check out the coefficients.
+>  fit.coefs # ==>  
+> 
+> ```
 
