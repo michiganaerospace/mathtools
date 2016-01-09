@@ -52,6 +52,7 @@ verify that all unit tests are passing.
     - [examples](#examples)
 - [legendre.legendre_basis](#legendre)
 - [legendre.d_legendre_basis](#d_legendre)
+- [legendre.d2_legendre_basis](#d2_legendre)
 
 ### ```fit.Fit```
 
