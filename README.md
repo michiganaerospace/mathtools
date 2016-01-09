@@ -287,7 +287,7 @@ basis is recomputed and all fit coefficients are discarded.
 <a name="legendre"></a>
 ### ```legendre.legendre_basis(x, nb_bases)```
 
-Define the Legendre polynomial basis on a specified domain.
+Computes the Legendre polynomial basis on a specified domain.
 
 > ARGUMENTS    
 >   - **```x — array_like```**: The domain over which we are defining the
@@ -301,7 +301,7 @@ Define the Legendre polynomial basis on a specified domain.
 <a name="d_legendre"></a>
 ### ```legendre.d_legendre_basis(x, nb_bases)```
 
-Define the derivative of the Legendre polynomial basis on a specified domain.
+Computes the derivative of the Legendre polynomial basis on a specified domain.
 
 > ARGUMENTS    
 >   - **```x — array_like```**: The domain over which we are defining the
