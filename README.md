@@ -354,10 +354,13 @@ data on the specified domain.
 > ARGUMENTS    
 > **```x — array_like```**: The domain over which we are defining
 > the basis. An ```nb_samples``` length vector.
+>
 > **```nb_bases — int```**: The number of basis vectors to generate.
+>
 > **```reg_coefs — array_like```**: A list or array of three regularization
 > coefficients for penalizing the magnitude of the fit and its first and second
 > derivatives, respectively. 
+>
 > **```x_ref — array_like```**: An optional reference domain. This is useful
 > for resampling data.  It ensures that data is mapped to the interval [-1, 1]
 > in a consistent same way, and allows us to avoid attempting to fit data
