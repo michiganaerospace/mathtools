@@ -369,4 +369,9 @@ data on the specified domain.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
+>         ```B```.  
+ 
+>       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
+>         ```nb_samples x nb_bases``` in size.
+>       - **```d2B — array_like```**: Second derivative of basis vectors in
 >         ```B```.   
