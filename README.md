@@ -362,9 +362,14 @@ data on the specified domain.
 >         derivative to be close to zero, as dictated by the regularization
 >         coefficients.  In fact, only those components with nonzero
 >         regularization coefficients are included in the brick, in order to
->         minimize
->         computational overhead during computation of the SVD.
+>         minimize computational overhead during computation of the SVD. The
+>         matrix ```I``` is an ```nb_bases x nb_bases``` sized identity
+>         matrix. It serves to penalize the L2 norm of the fit coefficients.  
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         ```nb_samples x nb_bases``` in size.
->       - **```d2B — array_like```** : Second derivative of basis vectors in
->         ```B```.   
+>       - **```d2B — array_like```**: Second derivative of basis vectors in
+>         ```B```.
+>       - **```inverse```**: The pseudoinverse of the brick. This can be used
+>         to compute fit coefficients to data. For data ```y```, the fit
+>         coefficients are simply, ```coefs = inverse.dot(y)```.
+
