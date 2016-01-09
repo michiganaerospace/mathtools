@@ -365,7 +365,7 @@ data on the specified domain.
 >         invalid, and are excluded when the fit is computed.
 >       - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >         Legendre polynomial basis (column) vectors.
->       - **```B_ — array_like```** The so-called 'brick'. The brick is a
+>       - **```B_ — array_like```** The so-called *brick*. The brick is a
 >         vertical concatenation of the ```B```, ```I```, ```dB```, ```d2B```
 >         matrices.  The brick matrix allows us to force the solution and its
 >         derivative to be close to zero, as dictated by the regularization
