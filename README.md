@@ -383,7 +383,7 @@ data on the specified domain.
 >         the ```basis.augment()``` method to ensure the data vector has
 >         the appropriate dimensions.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
->         ```nb_samples x nb_bases``` in size.
+>         An ```nb_samples x nb_bases``` sized array.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
->         ```B```.  
+>         ```B```. An ```nb_samples x nb_bases``` sized array.
  
