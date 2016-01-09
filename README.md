@@ -49,7 +49,7 @@ verify that all unit tests are passing.
   least squares using different bases.
     - [methods](#methods)
     - [properties](#properties)
-    - [examples](#examples)
+    - [usage](#usage)
 - [legendre.legendre_basis](#legendre) — Function for generating a Legendre
 polynomial basis.
 - [legendre.d_legendre_basis](#d_legendre) — Generates the first derivative of 
