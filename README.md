@@ -166,7 +166,8 @@ the [usage](#fit_usage) section.
 >     second derivatives, respectively. 
 >   - **```x — array_like```**: The domain on which the basis was built.
 >
-> **USAGE** <a name='fit_usage'></a>
+> <a name='fit_usage'></a>
+> **USAGE** 
 > 
 > To get a sense of what the ```Fit``` class can do, let's try to fit some
 > noisy data. We'll generate a sine wave and add a little noise to it, as
