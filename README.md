@@ -184,7 +184,6 @@ y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
 
 The noisy sine data is shown in the following figure.
 
-![Noisy Data](https://goo.gl/elq37W =200px)
 <img src='https://goo.gl/elq37W' width='500'/>
 
 We'd like to fit this data with a smooth curve. We can use the ```Fit``` class
@@ -216,7 +215,7 @@ let's plot the fit on top of the original, noisy data.
 plot(r.x, r.y, linewidth=2)
 ```
 
-![A Good Fit](https://goo.gl/9ozbXw)
+<img src='https://goo.gl/9ozbXw' width='500'/>
 
 Note that although the blue curve smoothly fits the red data points, we are not
 explicitly penalizing the derivatives here (the regularization coefficients
