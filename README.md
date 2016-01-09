@@ -47,9 +47,6 @@ verify that all unit tests are passing.
 
 - [```fit.Fit```](#fitfit) — The ```Fit``` class provides algorithms for
   regularised least squares using different bases.
-    - [methods](#methods)
-    - [properties](#properties)
-    - [usage](#usage)
 - [```legendre.legendre_basis```](#legendre) — Function for generating a
   Legendre polynomial basis.
 - [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
