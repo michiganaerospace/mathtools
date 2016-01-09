@@ -369,3 +369,4 @@ data on the specified domain.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
 >         ```B```.
+>       - Why does this not work?
