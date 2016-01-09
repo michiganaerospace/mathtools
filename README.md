@@ -347,6 +347,9 @@ domain.
 <a name='create_legendre'></a>
 ### ```legendre.create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None)```
 
+This function creates a Legendre polynomial basis object. The basis object 
+contains everything one needs to perform a regularized least squares fit of
+data on the specified domain.
 
 > ARGUMENTS    
 > **```x — array_like```**: the domain over which we are defining the basis. An
@@ -363,7 +366,6 @@ domain.
 > the same way, and allows us to avoid attempting to fit data outside of the
 > original domain.
 >
-> OUTPUTS   
-> **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
-> of the array are the second derivative of the Legendre polynomial basis
-> vectors.
+> OUTPUTS <a name='basis_object'></a>  
+> **```basis — object```**: A basis object. Basis objects consolidate all the 
+> information needed to fit data with a given basis. The basis object  
