@@ -13,7 +13,8 @@ if __name__ == '__main__':
     t_new = np.linspace(-pi, 6*np.pi, 400)
     noise_amplitude = 0.1
     y = np.sin(2*np.pi/5*t) + noise_amplitude * np.random.randn(len(t))
-    f = Fit(t, 15, reg_coefs=[0,1e-3,0e-2])
+    reg_coefs = [0, 0, 0]
+    f = Fit(t, 15, reg_coefs=reg_coefs)
 
     # Perform the fit to the data.
     fit = f.fit(y)

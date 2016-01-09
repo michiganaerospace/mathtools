@@ -174,19 +174,17 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
                 - nb_bases: The number of basis vectors.
                 - reg_coefs: A list of regularization coefficients.
                 - x: The domain over which the basis will be defined.
-                - valid_idx: indices of the domain that are valid -- that
-                             is, those values inside the reference domain,
-                             if specified. If not specified, the entire
-                             vector is valid.
+                - valid_idx: indices of the domain that are valid -- that is,
+                  those values inside the reference domain, if specified. If
+                  not specified, the entire vector is valid.
                 - B: Legendre basis vectors (as columns).
                 - I: Identity matrix (times reg_coefs[0]).
-                - dB: Derivative of basis vectors in B (times reg_coefs[1]).
-                - d2B: Second derivative of basis vectors in B (times 
-                       reg_coefs[2]).
+                - dB: Derivative of basis vectors in B 
+                - d2B: Second derivative of basis vectors in B 
                 - B_: The 'brick', a concatenation of B, I, dB, and d2B.
                 - inverse: The pseudo-inverse of the brick, B_.
-                - condition_number: The condition number associated with the 
-                                    brick inverse.
+                - condition_number: The condition number associated with the
+                  brick inverse.
     '''
     # Build a structure to hold the data.
     basis           = Struct()
@@ -203,7 +201,7 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
     # Is there a reference domain? 
     if (x_ref is not None):
         x_ref_map, shift, scale = map_to_interval(x_ref, [-1,1], \
-                                                  return_all=True)
+                return_all=True)
 
         # Map current domain using reference domain scale and shift.
         x_ = scale * (x - shift)
@@ -216,18 +214,24 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
     basis.dB     = d_legendre_basis(x_, nb_bases)
     basis.d2B    = d2_legendre_basis(x_, nb_bases)
 
-    # Create the 'brick' by stacking these bases on top of one another.
-    basis.B_     = np.r_[basis.B, 
-                         reg_coefs[0]*basis.I, 
-                         reg_coefs[1]*basis.dB, 
-                         reg_coefs[2]*basis.d2B] 
+    # Create the 'brick' by stacking these bases on top of one another. Only
+    # include those components that have nonzero regularization coefficients.
+    # This can substantially speed up the SVD computation.
+    basis.B_ = basis.B
+    if reg_coefs[0] > 0:
+        basis.B_ = np.r_[basis.B_, reg_coefs[0] * basis.I]
+    if reg_coefs[1] > 0:
+        basis.B_ = np.r_[basis.B_, reg_coefs[1] * basis.dB]
+    if reg_coefs[2] > 0:
+        basis.B_ = np.r_[basis.B_, reg_coefs[2] * basis.d2B]
 
     # Find the inverse of the brick. Keep the condition number around, too.
     basis.inverse, basis.condition_number = pseudoinverse(basis.B_, True)
 
     # Define the data augmention function.
     def augment(y):
-        return np.r_[y, np.zeros(nb_bases), np.zeros(2*len(x))]
+        nb_zeros = basis.B_.shape[0] - len(y)
+        return np.r_[y, np.zeros(nb_zeros)]
 
     # Attach augment function to the basis object.
     basis.augment = augment

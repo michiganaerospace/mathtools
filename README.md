@@ -371,7 +371,12 @@ data on the specified domain.
 > with the basis. The basis object contains the following properties:
 >
 >   - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
-> Legendre polynomial basis (column) vectors.
+>     Legendre polynomial basis (column) vectors.
 >
 >   - **```dB — array_like```**: Derivative of basis vectors in B.
 >     ```nb_samples x nb_bases``` in size.
+>
+>   - **```augment(y) — function```**: This function takes as input a data
+>     vector, ```y```, and returns an augmented vector ```y_```. The vector is
+>     padded with zeros of an appropriate number so that the regularization 
+>     is properly implemented as a least squares problem.

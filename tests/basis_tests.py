@@ -85,7 +85,7 @@ def create_legendre_shape_test():
 def create_legendre_shape_test():
     x = np.linspace(0,5,100)
     nb_bases = 25
-    basis = create_legendre_basis(x, nb_bases)
+    basis = create_legendre_basis(x, nb_bases, reg_coefs=[1e-3, 1e-3, 1e-3])
     assert_equals(basis.inverse.shape, (25, 325))
 
 
@@ -100,7 +100,8 @@ def x_ref_test():
     x = np.linspace(0,5,100)
     x_ref = np.linspace(1,4,100)
     nb_bases = 25
-    basis = create_legendre_basis(x, nb_bases, x_ref=x_ref)
+    basis = create_legendre_basis(x, nb_bases, x_ref=x_ref, \
+            reg_coefs=[1e-3, 1e-3, 1e-3])
     assert_equals(len(basis.valid_idx), 60)
     assert_equals(basis.B_.shape, (205, 25))
 
@@ -108,10 +109,58 @@ def x_ref_test():
 def augment_test():
     x = np.linspace(0,5,100)
     nb_bases = 25
-    basis = create_legendre_basis(x, nb_bases)
+    basis = create_legendre_basis(x, nb_bases, reg_coefs=[1e-3, 1e-3, 1e-3])
 
     y = np.random.rand(100)
     y_aug = basis.augment(y)
 
     assert_equals(y_aug.shape, (325,))
     assert_array_almost_equal_nulp(y_aug, np.r_[y, np.zeros(225)])
+
+
+def brick_size_test_01():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases, reg_coefs=[1e-3, 0, 0])
+
+    y = np.random.rand(100)
+    y_aug = basis.augment(y)
+
+    assert_equals(basis.B_.shape, (100+25, 25))
+    assert_equals(y_aug.shape, (100+25,))
+
+
+def brick_size_test_02():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases, reg_coefs=[0, 1, 0])
+
+    y = np.random.rand(100)
+    y_aug = basis.augment(y)
+
+    assert_equals(basis.B_.shape, (100+100, 25))
+    assert_equals(y_aug.shape, (100+100,))
+
+
+def brick_size_test_03():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases, reg_coefs=[0, 0, 1])
+
+    y = np.random.rand(100)
+    y_aug = basis.augment(y)
+
+    assert_equals(basis.B_.shape, (100+100, 25))
+    assert_equals(y_aug.shape, (100+100,))
+
+
+def brick_size_test_04():
+    x = np.linspace(0,5,100)
+    nb_bases = 25
+    basis = create_legendre_basis(x, nb_bases, reg_coefs=[1, 1, 1])
+
+    y = np.random.rand(100)
+    y_aug = basis.augment(y)
+
+    assert_equals(basis.B_.shape, (100+225, 25))
+    assert_equals(y_aug.shape, (100+225,))
