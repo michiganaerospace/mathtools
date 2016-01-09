@@ -317,7 +317,7 @@ Computes the derivative of the Legendre polynomial basis on a specified domain.
 <a name="d2_legendre"></a>
 ### ```legendre.d2_legendre_basis(x, nb_bases)```
 
-Define the second derivative of the Legendre polynomial basis on a specified
+Computes the second derivative of the Legendre polynomial basis on a specified
 domain.
 
 > ARGUMENTS    
