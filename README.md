@@ -267,9 +267,8 @@ at the first derivative, for example, we can plot ```r.dy```:
 plot(r.x, r.dy, linewidth=2)
 ```
 
-![Derivative of Fit](https://goo.gl/t5Wjms)
+<img src='https://goo.gl/t5Wjms' width='500'/>
 
-<img src='https://goo.gl/9ozbXw' width='500'/>
 We may want to alter our fit in some way — perhaps by choosing a different 
 basis, or selecting a different number of basis vectors. The ```Fit``` class's
  ```config``` method allows us to easily change parameters and recompute the 
