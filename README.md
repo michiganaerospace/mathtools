@@ -63,7 +63,8 @@ verify that all unit tests are passing.
 
 The ```Fit``` class is a machine that allows you to easily fit data using
 regularized least squares. It provides a convenient interface to the core basis
-generation and fitting routines. 
+generation and fitting routines. To see how to use this class, jump right to 
+the [usage](#fit_usage) section.
 
 > **METHODS**
    
@@ -165,8 +166,7 @@ generation and fitting routines.
 >     second derivatives, respectively. 
 >   - **```x — array_like```**: The domain on which the basis was built.
 >
-> **USAGE**
->
+> **USAGE** <a name='fit_usage'></a>
 > 
 > To get a sense of what the ```Fit``` class can do, let's try to fit some
 > noisy data. We'll generate a sine wave and add a little noise to it, as
