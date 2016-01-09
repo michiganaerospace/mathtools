@@ -56,7 +56,7 @@ polynomial basis.
 a Legendre polynomial basis.
 - [legendre.d2_legendre_basis](#d2_legendre) — Generates the second derivative
 of a Legendre polynomial basis.
-- [create_legendre_basis](#create_legendre) — Generate a Legendre `:w basis
+- [create_legendre_basis](#create_legendre) — Generate a Legendre basis
   object.
 
 ### ```fit.Fit```
