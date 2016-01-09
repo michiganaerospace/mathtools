@@ -131,7 +131,7 @@ must have been run before the fit can be resampled.
 ##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 
 Recomputes the basis given a change in the underlying parameters. When the 
-basis is update, all existing fit results are discarded. 
+basis is updated, all existing fit coefficients are discarded. 
 
 > ARGUMENTS    
 >   - **```x — array_like```**: Vector of abscissa values — an ```nb_samples```
@@ -382,6 +382,9 @@ data on the specified domain.
 >         ```basis.inverse.dot(basis.augment(y))```, where we have also used
 >         the ```basis.augment()``` method to ensure the data vector has
 >         the appropriate dimensions.
+>       - **```nb_bases```**: Number of basis vectors used.
+>       - **```reg_coefs```**: The regularization coefficients that were used
+>         to construct the basis.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
 >         An ```nb_samples x nb_bases``` sized array.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
