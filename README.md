@@ -335,7 +335,7 @@ domain.
 ### ```legendre.create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None)```
 
 This function creates a Legendre polynomial basis object. The basis object 
-contains everything one needs to perform a regularized least squares fit of
+contains everything required to perform a regularized least squares fit of
 data on the specified domain.
 
 > ARGUMENTS    
