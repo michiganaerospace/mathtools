@@ -109,7 +109,7 @@ generation and fitting routines. The details of these routines may be found at
 >       - ```d2y — array_like```: The second derivative of the fit.
 >       - ```coefs — array_like```: The coefficients of the fit.
 >
-> RESAMPLE 
+> **```Fit.resample(x)```** 
 
 ##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 
