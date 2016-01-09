@@ -50,8 +50,8 @@ verify that all unit tests are passing.
     - [methods](#methods)
     - [properties](#properties)
     - [examples](#examples)
-- [legendre.legendre_basis](#legendrelegendre_basisx-nb_bases)
-- [legendre.d_legendre_basis](#abcd)
+- [legendre.legendre_basis](#legendre)
+- [legendre.d_legendre_basis](#d_legendre)
 
 ### ```fit.Fit```
 
@@ -286,7 +286,7 @@ f.nb_bases # ==> 10
 Other parameters can be changed similarly. When ```config``` is called, the
 basis is recomputed and all fit coefficients are discarded.
 
-### ```legendre.legendre_basis(x, nb_bases)```
+### ```legendre.legendre_basis(x, nb_bases)```<a name="legendre"></a>
 
 Define the Legendre polynomial basis on a specified domain.
 
@@ -300,8 +300,7 @@ Define the Legendre polynomial basis on a specified domain.
 > **```B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
 > of the array are the Legendre polynomial basis vectors.
 
-
-### ```legendre.d_legendre_basis(x, nb_bases)```<a name="abcd"></a>
+### ```legendre.d_legendre_basis(x, nb_bases)```<a name="d_legendre"></a>
 
 Define the derivative of the Legendre polynomial basis on a specified domain.
 
