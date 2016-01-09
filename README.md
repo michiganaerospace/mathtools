@@ -363,7 +363,7 @@ data on the specified domain.
 >     interval [-1, 1] in a consistent same way, and allows us to avoid
 >     attempting to fit data outside of the original domain.
 >
-> OUTPUTS <a name='basis_object'></a>    
+> OUTPUTS <a name='basis_object'></a>   
 >   - **```basis — object```**: A basis object. Basis objects consolidate all
 >     the information required to fit data with the basis. The basis object
 >     contains the following properties and methods:
