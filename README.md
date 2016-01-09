@@ -342,3 +342,8 @@ domain.
 > **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
 > of the array are the second derivative of the Legendre polynomial basis
 > vectors.
+
+
+<a name='create_legendre'></a>
+### ```legendre.create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0],
+x_ref=None)```
