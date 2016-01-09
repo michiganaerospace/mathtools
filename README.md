@@ -147,12 +147,12 @@ generation and fitting routines.
 > >
 > > OUTPUTS   
 > >   - None.
-
-#### Properties
-
-When the ```Fit``` class is instantiated, it makes several properties available
-to the user.
-
+>
+> **PROPERTIES**
+> 
+> When the ```Fit``` class is instantiated, it makes several properties available
+> to the user.
+>
 >   - **```basis — object```**: The current basis object. For details on what
 >     basis objects are and how to use them, check out the discussion of [basis
 >     objects](#basis_object).
