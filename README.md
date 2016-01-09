@@ -148,7 +148,7 @@ generation and fitting routines.
 > > OUTPUTS   
 > >   - None.
 >
-> **PROPERTIES**
+> **PROPERTIES** <a name='fit-properties'></a>
 > 
 > When the ```Fit``` class is instantiated, it makes several properties
 > available to the user.
