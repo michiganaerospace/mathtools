@@ -50,9 +50,12 @@ verify that all unit tests are passing.
     - [methods](#methods)
     - [properties](#properties)
     - [examples](#examples)
-- [legendre.legendre_basis](#legendre)
-- [legendre.d_legendre_basis](#d_legendre)
-- [legendre.d2_legendre_basis](#d2_legendre)
+- [legendre.legendre_basis](#legendre) — Function for generating a Legendre
+polynomial basis.
+- [legendre.d_legendre_basis](#d_legendre) — Generates the first derivative of 
+a Legendre polynomial basis.
+- [legendre.d2_legendre_basis](#d2_legendre) — Generates the second derivative
+of a Legendre polynomial basis.
 
 ### ```fit.Fit```
 
