@@ -370,7 +370,8 @@ data on the specified domain.
 > OUTPUTS <a name='basis_object'></a>    
 > **```basis — object```**: A basis
 > object. Basis objects consolidate all the information required to fit data
-> with the basis. The basis object contains the following properties:
+> with the basis. The basis object contains the following properties and
+> methods:
 >
 >   - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >     Legendre polynomial basis (column) vectors.
