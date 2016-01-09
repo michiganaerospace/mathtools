@@ -369,8 +369,3 @@ data on the specified domain.
 >         ```nb_samples x nb_bases``` in size.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
 >         ```B```.
->       - inverse 
->       - **```inverse```**: The pseudoinverse of the brick. This can be used
->         to compute fit coefficients to data. For data ```y```, the fit
->         coefficients are simply, ```coefs = inverse.dot(y)```.
-
