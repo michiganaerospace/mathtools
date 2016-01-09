@@ -308,7 +308,7 @@ Define the derivative of the Legendre polynomial basis on a specified domain.
 >
 > OUTPUTS   
 >   - **```dB — array_like```**: An ```nb_samples x nb_bases``` array. The
->     columns of the array are the first derivative of the Legendre polynomial
+>     columns of the array are the first derivatives of the Legendre polynomial
 >     basis vectors.
 
 
