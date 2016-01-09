@@ -107,7 +107,7 @@ generation and fitting routines. The details of these routines may be found at
 >       - ```y — array_like```: The fit sampled on the domain. 
 >       - ```dy — array_like```: The derivative of the fit.
 >       - ```d2y — array_like```: The second derivative of the fit.
-> >     - ```coefs — array_like```: The coefficients of the fit.
+>       - ```coefs — array_like```: The coefficients of the fit.
 > 
 > ```Fit.resample(x)```
 > 
