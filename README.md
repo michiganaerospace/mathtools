@@ -172,8 +172,11 @@ generation and fitting routines.
 > noisy data. We'll generate a sine wave and add a little noise to it, as
 > illustrated in the following code snippet.
 >
-> ```python # Create some noisy data.  t = np.linspace(0,15*np.pi, 300) y =
-> np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t)) ```
+> ```python 
+> # Create some noisy data.  
+> t = np.linspace(0,15*np.pi, 300) 
+> y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t)) 
+```
 > 
 > The noisy sine data is shown in the following figure.
 > 
@@ -184,21 +187,29 @@ generation and fitting routines.
 > class, intializing it with the domain on which we'd like to fit the data, and
 > the number of basis vectors we want to use, 
 > 
-> ```python # Create a fit object with 15 basis vectors.  f = Fit(t, 15) ```
+> ```python 
+> # Create a fit object with 15 basis vectors.  
+> f = Fit(t, 15) 
+> ```
 > 
 > This will create an instance of a ```Fit``` object, generate a Legendre
 > polynomial basis for the provided abscissa (the Legendre polynomial basis is
 > the default; others may be specified) — here, the vector ```t``` — with 15
 > basis vectors. To fit the data, we use the object's ```fit``` method,
 > 
-> ```python # Fit the noisy data.  r = f.fit(y) ```
+> ```python 
+> # Fit the noisy data.  
+> r = f.fit(y) 
+> ```
 > 
 > The fit method returns a structure, here ```r```, which contains the fit
 > coefficients, the fit itself, and its first two derivatives. For convenience,
 > the original domain is also included in the structure. To see how well we
 > did, let's plot the fit on top of the original, noisy data.
 > 
-> ```python plot(r.x, r.y, linewidth=2) ```
+> ```python 
+> plot(r.x, r.y, linewidth=2) 
+> ```
 > 
 > <img src='https://goo.gl/dh3EWo' width='500'/>
 > 
