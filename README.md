@@ -86,7 +86,7 @@ bases to be specified.
 >     0.0, 0.0]```.
 >
 > OUTPUTS    
-> None
+>   - None
 
 ##### ```Fit.fit(y)```
 
