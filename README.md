@@ -86,8 +86,8 @@ generation and fitting routines. The details of these routines may be found at
 >   second derivatives, respectively. The default value is ```reg_coefs=[0.0,
 >   0.0, 0.0]```.   
 >
-> OUTPUTS    
-> - None 
+> > OUTPUTS    
+> > - None 
 > 
 > **```Fit.fit(y)```**
 >
