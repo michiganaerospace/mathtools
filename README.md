@@ -287,7 +287,8 @@ f.nb_bases # ==> 10
 Other parameters can be changed similarly. When ```config``` is called, the
 basis is recomputed and all fit coefficients are discarded.
 
-### ```legendre.legendre_basis(x, nb_bases)```<a name="legendre"></a>
+<a name="legendre"></a>
+### ```legendre.legendre_basis(x, nb_bases)```
 
 Define the Legendre polynomial basis on a specified domain.
 
@@ -300,7 +301,6 @@ Define the Legendre polynomial basis on a specified domain.
 > OUTPUTS   
 > **```B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
 > of the array are the Legendre polynomial basis vectors.
-
 
 <a name="d_legendre"></a>
 ### ```legendre.d_legendre_basis(x, nb_bases)```
