@@ -361,10 +361,10 @@ data on the specified domain.
 >     coefficients for penalizing the magnitude of the fit and its first and
 >     second derivatives, respectively. 
 >
-> **```x_ref — array_like```**: An optional reference domain. This is useful
-> for resampling data.  It ensures that data is mapped to the interval [-1, 1]
-> in a consistent same way, and allows us to avoid attempting to fit data
-> outside of the original domain.
+>   - **```x_ref — array_like```**: An optional reference domain. This is
+>     useful for resampling data.  It ensures that data is mapped to the
+>     interval [-1, 1] in a consistent same way, and allows us to avoid
+>     attempting to fit data outside of the original domain.
 >
 > OUTPUTS <a name='basis_object'></a>    
 > **```basis — object```**: A basis
