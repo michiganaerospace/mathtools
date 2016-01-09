@@ -417,7 +417,7 @@ This function is used by the ```Fit``` class.
 > x = np.linspace(0, 3*np.pi, 200)
 > y = np.cos(x/4) + np.random.randn(len(x))
 > 
-> # Create a basis for fiting this noisy data.
+> # Create a basis for fitting this noisy data.
 > basis = create_legendre_basis(x, 15)
 > 
 > # Fit the noisy data!
