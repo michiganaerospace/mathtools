@@ -254,7 +254,11 @@ generation and fitting routines.
 > vectors, rather than fifteen, as above. We simply call ```config()``` with
 > the parameters we wish to change:
 > 
-> ```python f.nb_bases # ==> 15 f.config(nb_bases=10) f.nb_bases # ==> 10 ```
+> ```python 
+> f.nb_bases # ==> 15 
+> f.config(nb_bases=10) 
+> f.nb_bases # ==> 10 
+> ```
 > 
 > Other parameters can be changed similarly. When ```config``` is called, the
 > basis is recomputed and all fit coefficients are discarded.
