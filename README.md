@@ -406,6 +406,13 @@ which provides the fit, its derivatives, and the fit coefficients.
 
 This function is used by the ```Fit``` class. 
 
+> ARGUMENTS
+>   - **```basis```**: A basis object. See the detailed discussion
+>     [here](#basis_object).
+> 
+> 
+> 
+> USAGE
 > ```python
 > import numpy as np
 > from mathtools.legendre import create_legendre_basis
