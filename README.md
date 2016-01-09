@@ -170,29 +170,29 @@ generation and fitting routines.
 > **USAGE**
 >
 > 
-> To get a sense of what the ```Fit``` class can do, let's try to fit some noisy
-> data. We'll generate a sine wave and add a little noise to it, as illustrated
-> in the following code snippet.
+> To get a sense of what the ```Fit``` class can do, let's try to fit some
+> noisy data. We'll generate a sine wave and add a little noise to it, as
+> illustrated in the following code snippet.
 >
 > ```python
 > # Create some noisy data.
 > t = np.linspace(0,15*np.pi, 300)
 > y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
 > ```
-
-The noisy sine data is shown in the following figure.
-
-<img src='https://goo.gl/RcHxfz' width='500'/>
-
-We'd like to fit this data with a smooth curve. We can use the ```Fit``` class
-to do this quite easily. We first create an instance of the ```Fit``` class,
-intializing it with the domain on which we'd like to fit the data, and the
-number of basis vectors we want to use, 
-
-```python
-# Create a fit object with 15 basis vectors. 
-f = Fit(t, 15)
-```
+> 
+> The noisy sine data is shown in the following figure.
+> 
+> <img src='https://goo.gl/RcHxfz' width='500'/>
+> 
+> We'd like to fit this data with a smooth curve. We can use the ```Fit``` class
+> to do this quite easily. We first create an instance of the ```Fit``` class,
+> intializing it with the domain on which we'd like to fit the data, and the
+> number of basis vectors we want to use, 
+> 
+> ```python
+> # Create a fit object with 15 basis vectors. 
+> f = Fit(t, 15)
+> ```
 
 This will create an instance of a ```Fit``` object, generate a Legendre
 polynomial basis for the provided abscissa (the Legendre polynomial basis is
