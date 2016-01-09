@@ -88,11 +88,12 @@ generation and fitting routines. The details of these routines may be found at
 >
 > OUTPUTS    
 > - None
+>
+> ```Fit.fit(y)```
+>
 
-##### ```Fit.fit(y)```
-
-The method fits the data, ```y```, using the current configurations of the ```Fit```
-object.
+> The method fits the data, ```y```, using the current configurations of the
+> ```Fit``` object.
 
 > ARGUMENTS   
 >   - **```y — array_like```**: Vector of data samples that we want to fit. The
