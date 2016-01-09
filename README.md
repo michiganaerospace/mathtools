@@ -304,7 +304,7 @@ Define the Legendre polynomial basis on a specified domain.
 > **```x — array_like```**: The domain over which we are defining the basis. An
 > ```nb_samples``` length vector.
 >
-> **```nb_bases — int```**: the number of basis vectors to generate.
+> **```nb_bases — int```**: The number of basis vectors to generate.
 >
 > OUTPUTS   
 > **```B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
@@ -319,7 +319,7 @@ Define the derivative of the Legendre polynomial basis on a specified domain.
 > **```x — array_like```**: The domain over which we are defining the basis. An
 > ```nb_samples``` length vector.
 >
-> **```nb_bases — int```**: the number of basis vectors to generate.
+> **```nb_bases — int```**: The number of basis vectors to generate.
 >
 > OUTPUTS   
 > **```dB — array_like```**: An ```nb_samples x nb_bases``` array. The columns
@@ -337,7 +337,7 @@ domain.
 > **```x — array_like```**: The domain over which we are defining the basis. An
 > ```nb_samples``` length vector.
 >
-> **```nb_bases — int```**: the number of basis vectors to generate.
+> **```nb_bases — int```**: The number of basis vectors to generate.
 >
 > OUTPUTS   
 > **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
