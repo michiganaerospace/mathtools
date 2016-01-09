@@ -127,54 +127,26 @@ generation and fitting routines.
 > >      - ```dy — array_like```: The derivative of the fit.
 > >      - ```d2y — array_like```: The second derivative of the fit.
 > >      - ```coefs — array_like```: The coefficients of the fit.
-
-
-
-
-
-
-
-
-
-> ```Fit.resample(x)```
+>
+> ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
 > 
-> Resamples the current fit to the specified domain ```x``` using the existing
-> coefficients. If any part of ```x``` lies outside the original domain of the
-> fit, the values for the fit in that region are set to zero. The ```fit()``` 
-> must have been run before the fit can be resampled.
->
+> Recomputes the basis given a change in the underlying parameters. When the 
+> basis is updated, all existing fit coefficients are discarded. 
+> 
 > > ARGUMENTS    
->   - **```x — array_like```**: A vector of abscissa values — an
->     ```nb_samples``` length vector of x-values.
->
-> > OUTPUTS  
->   - **```results — object```**: An object containing fit results. It has the
->     following properties:
->       - ```x — array_like```: The domain associated with the fit.
->       - ```y — array_like```: The fit sampled on the domain.
->       - ```dy — array_like```: The derivative of the fit.
->       - ```d2y — array_like```: The second derivative of the fit.
->       - ```coefs — array_like```: The coefficients of the fit.
-
-##### ```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```
-
-Recomputes the basis given a change in the underlying parameters. When the 
-basis is updated, all existing fit coefficients are discarded. 
-
-> ARGUMENTS    
->   - **```x — array_like```**: Vector of abscissa values — an ```nb_samples```
->   - **```nb_bases — int```**: The number of basis vectors to use when fitting
->     the data.  In the case of a cubic spline basis, this corresponds to the
->     number of knots used.
->   - **```basis_type — str```**: The type of basis to use for the fitting. May
->     have values of ```legendre```, ```fourier```, or```cubic-spline```.
->   - **```reg_coefs — array_like```**: A list or array of three regularization
->     coefficients for penalizing the magnitude of the fit and its first and
->     second derivatives, respectively. The default value is ```reg_coefs=[0.0,
->     0.0, 0.0]```.
->
-> OUTPUTS   
->   - None.
+> >   - **```x — array_like```**: Vector of abscissa values — an ```nb_samples```
+> >   - **```nb_bases — int```**: The number of basis vectors to use when fitting
+> >     the data.  In the case of a cubic spline basis, this corresponds to the
+> >     number of knots used.
+> >   - **```basis_type — str```**: The type of basis to use for the fitting. May
+> >     have values of ```legendre```, ```fourier```, or```cubic-spline```.
+> >   - **```reg_coefs — array_like```**: A list or array of three regularization
+> >     coefficients for penalizing the magnitude of the fit and its first and
+> >     second derivatives, respectively. The default value is ```reg_coefs=[0.0,
+> >     0.0, 0.0]```.
+> >
+> > OUTPUTS   
+> >   - None.
 
 #### Properties
 
