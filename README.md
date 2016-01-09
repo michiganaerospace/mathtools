@@ -334,14 +334,14 @@ Define the second derivative of the Legendre polynomial basis on a specified
 domain.
 
 > ARGUMENTS    
-> **```x — array_like```**: The domain over which we are defining the basis. An
-> ```nb_samples``` length vector.
-> **```nb_bases — int```**: The number of basis vectors to generate.
+>   - **```x — array_like```**: The domain over which we are defining the
+>     basis. An ```nb_samples``` length vector.
+>   - **```nb_bases — int```**: The number of basis vectors to generate.
 >
 > OUTPUTS   
-> **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The columns
-> of the array are the second derivative of the Legendre polynomial basis
-> vectors.
+> - **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The
+>   columns of the array are the second derivative of the Legendre polynomial
+>   basis vectors.
 
 
 <a name='create_legendre'></a>
