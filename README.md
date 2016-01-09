@@ -353,8 +353,8 @@ of the [```Fit```](#fit) class.
 >
 > OUTPUTS <a name='basis_object'></a>   
 >   - **```basis — object```**: A basis object. Basis objects consolidate all
->     the information required to fit data with the basis. The basis object
->     contains the following properties and methods:
+>     the information required to fit data. The basis object contains the
+>     following properties and methods:
 >       - **```augment(y)```**: A method that takes in an ```nb_samples```
 >         length data vector, ```y```, and returns a properly augmented data
 >         vector.  The vector is concatenated with the proper number of zeros

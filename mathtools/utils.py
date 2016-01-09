@@ -112,7 +112,7 @@ def pseudoinverse(M, return_condition_number=False):
         return M_pinv
 
 
-def best_fit(basis, data=None, coefs=None):
+def best_fit(basis, y=None, coefs=None):
     '''Find the least square fit to one-dimensional data using the specified 
        basis. If coefficients are specified rather than data, the coefficients
        are used to generate the fit. The number of coefficients must match
@@ -122,7 +122,7 @@ def best_fit(basis, data=None, coefs=None):
             A mathtools basis object (see mathtools.legendre, e.g.)
         coefs - array_like
             Coefficients used to project basis generate fit.
-        data - array_like
+        y - array_like
             One dimensional array of data to fit.
     OUTPUT
        fit - Struct
@@ -137,10 +137,10 @@ def best_fit(basis, data=None, coefs=None):
     # Do we have data, or must we do the fit?
     if (data is not None):
         # Augment the data (for regularization).
-        augmented_data = basis.augment(data)
+        augmented_y = basis.augment(y)
 
         # Least squares!
-        coefs = basis.inverse.dot(augmented_data)
+        coefs = basis.inverse.dot(augmented_y)
 
     if (coefs is None):
         raise ValueError('Cannot project onto basis! No data or coefficients!')
