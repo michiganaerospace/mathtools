@@ -358,6 +358,11 @@ data on the specified domain.
 >         length data vector, ```y```, and returns a properly augmented data
 >         vector.  The vector is concatenated with the proper number of zeros
 >         so that regularized least squares just works.
+>       - **```x```**: The domain over which the basis is defined.
+>       - **```valid_idx```**: The indices of valid entries in the domain. If a
+>         reference domain, ```x_ref``` is specified, regions of the domain
+>         ```x``` that fall outside of the reference domain are considered
+>         invalid, and are excluded when the fit is computed.
 >       - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
 >         Legendre polynomial basis (column) vectors.
 >       - **```B_ — array_like```** The so-called 'brick'. The brick is a
