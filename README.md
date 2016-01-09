@@ -340,7 +340,9 @@ domain.
 
 This function creates a Legendre polynomial basis object. The basis object 
 contains everything required to perform a regularized least squares fit of
-data on the specified domain.
+data on the specified domain. Basis objects are typically used to fit data
+through the use of the [```best_fit```](#best_fit) helper function, or as part
+of the [```Fit```](#fit) class.
 
 > ARGUMENTS    
 >   - **```x — array_like```**: The domain over which we are defining the
@@ -394,3 +396,11 @@ data on the specified domain.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
 >         ```B```. An ```nb_samples x nb_bases``` sized array.
  
+
+<a name='best_fit'></a>
+### ```utils.best_fit(basis, data=None, coefs=None)```
+
+Find the least square fit to one-dimensional data using the specified basis. If
+coefficients are specified rather than data, the coefficients are used to
+generate the fit. The number of coefficients must match the basis.nb_bases.
+
