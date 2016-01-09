@@ -345,5 +345,4 @@ domain.
 
 
 <a name='create_legendre'></a>
-### ```legendre.create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0],
-x_ref=None)```
+### ```legendre.create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None)```
