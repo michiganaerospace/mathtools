@@ -59,7 +59,7 @@ verify that all unit tests are passing.
 - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
   Legendre basis object.
 - [```utils.best_fit```](#best_fit) — Map a vector to specified interval.
-- [utils.map_to_interval](#map_to_interval) — Map a vector to specified
+- [```utils.map_to_interval```](#map_to_interval) — Map a vector to specified
   interval.
 
 ### ```fit.Fit```
