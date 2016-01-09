@@ -38,14 +38,14 @@ f = Fit(x, nb_bases=15)
 All code in the ```mathtools``` is fully tested. The tests are available in the
 ```/tests``` directory, and can be run using the nose testing framework. For a
 good introduction to nose, check out this
-[resource](http://pythontesting.net/framework/nose/nose-introduction/). 
+[resource](http://goo.gl/hfzYPz). 
 
 As a general rule, before any code is checked in to the repository, one should
 verify that all unit tests are passing.
 
 ## Tools 
 
-- [fit.Fit](#fitfit) — The ```fit``` class provides algorithms for reguarlize```
+- [fit.Fit](#fitfit) — The ```fit``` class provides algorithms for regularised
   least squares using different bases.
     - [methods](#methods)
     - [properties](#properties)
