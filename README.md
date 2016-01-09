@@ -358,10 +358,11 @@ data on the specified domain.
 >         Legendre polynomial basis (column) vectors.
 >       - **```B_ — array_like```** The so-called 'brick'. The brick is a
 >         concatenation of the ```B```, ```I```, ```dB```, ```d2B``` matrices.
->         The matrix allows us to force the solution and its derivative to be
->         close to zero, as dictated by the regularization coefficients. In
->         fact, only those components with nonzero regularization coefficients
->         are included in the brick, in order to minimize computational 
+>         The brick matrix allows us to force the solution and its derivative
+>         to be close to zero, as dictated by the regularization coefficients.
+>         In fact, only those components with nonzero regularization
+>         coefficients
+>         are included in the brick, in order to minimize computational
 >         overhead.
 >       - **```dB — array_like```**: Derivative of basis vectors in B.
 >         ```nb_samples x nb_bases``` in size.
