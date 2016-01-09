@@ -174,9 +174,10 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
                 - nb_bases: The number of basis vectors.
                 - reg_coefs: A list of regularization coefficients.
                 - x: The domain over which the basis will be defined.
-                - invalid_idx: indices of the domain that are not valid -- that
-                               is, those values outside the reference domain,
-                               if specified.
+                - valid_idx: indices of the domain that are valid -- that
+                             is, those values inside the reference domain,
+                             if specified. If not specified, the entire
+                             vector is valid.
                 - B: Legendre basis vectors (as columns).
                 - I: Identity matrix (times reg_coefs[0]).
                 - dB: Derivative of basis vectors in B (times reg_coefs[1]).
