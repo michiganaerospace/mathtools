@@ -290,7 +290,7 @@ basis is recomputed and all fit coefficients are discarded.
 Define the Legendre polynomial basis on a specified domain.
 
 > ARGUMENTS    
->   - **```x — *array_like*```**: The domain over which we are defining the
+>   - **```x — array_like```**: The domain over which we are defining the
 >     basis. An ```nb_samples``` length vector.
 >   - **```nb_bases — int```**: The number of basis vectors to generate.
 >
