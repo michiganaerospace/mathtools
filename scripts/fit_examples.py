@@ -35,7 +35,7 @@ if __name__ == '__main__':
         savefig('docs/images/noisy_sine.png')
 
     
-    figure(200)
+    figure(200, figsize=(5,3))
     plot(t, y, 'o', markerfacecolor=pomegranate, markeredgecolor=pomegranate,\
          alpha=0.6)
     hold(True)

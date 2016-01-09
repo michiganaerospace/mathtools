@@ -184,7 +184,7 @@ y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
 
 The noisy sine data is shown in the following figure.
 
-![Noisy Data](https://goo.gl/elq37W)
+![Noisy Data](https://goo.gl/elq37W =200px)
 
 We'd like to fit this data with a smooth curve. We can use the ```Fit``` class
 to do this quite easily. We first create an instance of the ```Fit``` class,
