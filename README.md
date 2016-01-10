@@ -367,15 +367,15 @@ of the [```Fit```](#fit) class.
 >         minimize computational overhead during computation of the SVD. The
 >         matrix ```I``` is an ```nb_bases x nb_bases``` sized identity
 >         matrix. It serves to penalize the L2 norm of the fit coefficients.  
->       - **```condition_number```**: The condition number associated with the
->         pseudoinversion of the matrix ```B_```.
->       - **```inverse```**: The pseudoinverse of the ```B_``` matrix. May be
->         used to compute the fit coefficients to a data vector. For example,
->         to find the fit coefficients to a vector ```y```, we compute
->         ```basis.inverse.dot(basis.augment(y))```, where we have also used
->         the ```basis.augment()``` method to ensure the data vector has
+>       - **```condition_number — float```**: The condition number associated
+>         with the pseudoinversion of the matrix ```B_```.
+>       - **```inverse — array_like```**: The pseudoinverse of the ```B_```
+>         matrix. May be used to compute the fit coefficients to a data vector.
+>         For example, to find the fit coefficients to a vector ```y```, we
+>         compute ```basis.inverse.dot(basis.augment(y))```, where we have also
+>         used the ```basis.augment()``` method to ensure the data vector has
 >         the appropriate dimensions.
->       - **```nb_bases```**: Number of basis vectors used.
+>       - **```nb_bases — int```**: Number of basis vectors used.
 >       - **```reg_coefs```**: The regularization coefficients that were used
 >         to construct the basis.
 >       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
