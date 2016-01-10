@@ -462,21 +462,18 @@ this mapping.
 <a name='pseudoinverse'></a>
 ### ```utils.pseudoinverse(M, return_condition_number=False)```
 
-Find the pseudoinverse of the matrix M using singular value decomposition.
+Find the pseudoinverse of the matrix ```M``` using singular value
+decomposition.
 
 > ARGUMENTS
->   - **```x — array_like```**: A one dimensional array of data. 
->   - **```interval — array_like```**: A two element list, array, or tuple
->     defining the minimum and maximum boundaries of the interval into which we
->     wish to shift and scale the data in the array ```x```.
->   - **```return_all — Boolean```**: Boolean flag (defaults to false), which
->     determines whether to return the shift and scale factors for later use.
-> 
-> OUTPUT
->   - **```x_ — array_like```**: The original data array, scaled and shifted so
->     that its elements live in the specified interval.
->   - **```shift — float```**: The shift factor. Only returned if
->     ```return_all``` is set to True.  
->   - **```scale```**: The scale factor. Only returned if ```return_all``` is
->     set to True.  
+>   - **```M — array_like```**: An (m x n) matrix whose pseudoinverse we want
+>     to find.
+>   - **```return_condition_number — Boolean```**: If set to True, function
+>     will return the condition number of the pseudoinverse as well. Defaults
+>     to False.
+> OUTPUTS
+>   - **```pinv```**: An ```(n x m)``` matrix, the pseudoinverse of ```M```.
+>   - **```condition_number```**: The condition number of the pseudoinverse.
+>     This is only ```returned``` if return_condition_number is set to True.
+
 
