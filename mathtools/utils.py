@@ -135,7 +135,7 @@ def best_fit(basis, y=None, coefs=None):
     '''
 
     # Do we have data, or must we do the fit?
-    if (data is not None):
+    if (y is not None):
         # Augment the data (for regularization).
         augmented_y = basis.augment(y)
 
