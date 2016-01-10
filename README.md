@@ -432,13 +432,14 @@ This function is used by the ```Fit``` class.
 ### ```utils.map_to_interval(x, interval, return_all=False)```
 
 Shift and scale array so that its elements live in the specified interval. The
-function finds shift and scale factors such that,
+function finds shift and scale factors,
 
 ```python
 x_ = scale * (x - shift)
 ```
 
-If requested, the function will return the scale and shift factors that perform
+Such that the elements of ```x_``` are in the interval specified.  If
+requested, the function will return the scale and shift factors that perform
 this mapping.
 
 > ARGUMENTS
