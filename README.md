@@ -471,7 +471,8 @@ decomposition.
 >   - **```return_condition_number — Boolean```**: If set to True, function
 >     will return the condition number of the pseudoinverse as well. Defaults
 >     to False.
-> OUTPUTS
+>
+> OUTPUT
 >   - **```pinv```**: An ```(n x m)``` matrix, the pseudoinverse of ```M```.
 >   - **```condition_number```**: The condition number of the pseudoinverse.
 >     This is only ```returned``` if return_condition_number is set to True.
