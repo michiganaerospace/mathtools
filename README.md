@@ -85,7 +85,7 @@ the [usage](#fit_usage) section.
 > >   second derivatives, respectively. The default value is ```reg_coefs=[0.0,
 > >   0.0, 0.0]```.   
 >
-> > OUTPUTS    
+> > OUTPUT    
 > > - None 
 > 
 > **```Fit.fit(y)```**
@@ -98,7 +98,7 @@ the [usage](#fit_usage) section.
 > >   data in the vector ```y``` must correspond to the domain ```x``` for
 > >   which the basis was constructed.
 > >
-> > OUTPUTS  
+> > OUTPUT  
 > >   - **```results — object```**: An object containing fit results. It has
 > >     the following properties:
 > >       - ```x — array_like```: The domain associated with the fit.
@@ -118,7 +118,7 @@ the [usage](#fit_usage) section.
 > >   - **```x — array_like```**: A vector of abscissa values — an
 > >     ```nb_samples``` length vector of x-values.
 > > 
-> > OUTPUTS
+> > OUTPUT
 > >  - **```results — object```**: An object containing fit results. It has the
 > >    following properties:
 > >      - ```x — array_like```: The domain associated with the fit.
@@ -144,7 +144,7 @@ the [usage](#fit_usage) section.
 > >     its first and second derivatives, respectively. The default value is
 > >     ```reg_coefs=[0.0, 0.0, 0.0]```.
 > >
-> > OUTPUTS   
+> > OUTPUT   
 > >   - None.
 >
 > **PROPERTIES** <a name='fit-properties'></a>
@@ -285,7 +285,7 @@ Computes the Legendre polynomial basis on a specified domain.
 >     basis. An ```nb_samples``` length vector.
 >   - **```nb_bases — int```**: The number of basis vectors to generate.
 >
-> OUTPUTS   
+> OUTPUT   
 >   - **```B — array_like```**: An ```nb_samples x nb_bases``` array. The
 >     columns of the array are the Legendre polynomial basis vectors.
 
@@ -299,7 +299,7 @@ Computes the derivative of the Legendre polynomial basis on a specified domain.
 >     basis. An ```nb_samples``` length vector.
 >   - **```nb_bases — int```**: The number of basis vectors to generate.
 >
-> OUTPUTS   
+> OUTPUT   
 >   - **```dB — array_like```**: An ```nb_samples x nb_bases``` array. The
 >     columns of the array are the first derivatives of the Legendre polynomial
 >     basis vectors.
@@ -316,7 +316,7 @@ domain.
 >     basis. An ```nb_samples``` length vector.
 >   - **```nb_bases — int```**: The number of basis vectors to generate.
 >
-> OUTPUTS   
+> OUTPUT   
 > - **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The
 >   columns of the array are the second derivativeis of the Legendre polynomial
 >   basis vectors.
@@ -343,7 +343,7 @@ of the [```Fit```](#fit) class.
 >     interval [-1, 1] in a consistent manner, and allows us to avoid
 >     attempting to fit data outside of the original domain.
 >
-> OUTPUTS <a name='basis_object'></a>   
+> OUTPUT <a name='basis_object'></a>   
 >   - **```basis — object```**: A basis object. Basis objects consolidate all
 >     the information required to fit data. The basis object contains the
 >     following properties and methods:
@@ -404,7 +404,7 @@ This function is used by the ```Fit``` class.
 >     coefficients must be compatible with the basis object. ```coefs``` is
 >     optional; if it is not provided, data must be provided.
 > 
-> OUTPUTS
+> OUTPUT
 >   - **```fit```**: A fit object with the following properties: 
 >
 > USAGE
