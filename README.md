@@ -428,3 +428,16 @@ This function is used by the ```Fit``` class.
 > 
 > ```
 
+<a name='map_interval'></a>
+### ```utils.map_to_interval(x, interval, return_all=False)```
+
+Shift and scale vector so that its elements live in the specified interval.
+
+> ARGUMENTS
+>   - **```x — array_like```**: A one dimensional array of data. 
+>   - **```interval — array_like```**: A two element list, array, or tuple
+>     defining the minimum and maximum boundaries of the interval into which we
+>     wish to shift and scale the data in the array ```x```.
+>   - **```return_all — Boolean```**: Boolean flag (defaults to false), which
+>     determines whether to return the shift and scale factors for later use.
+> 
