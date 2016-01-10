@@ -438,7 +438,7 @@ function finds shift and scale factors,
 x_ = scale * (x - shift)
 ```
 
-Such that the elements of ```x_``` are in the interval specified.  If
+such that the elements of ```x_``` are in the interval specified.  If
 requested, the function will return the scale and shift factors that perform
 this mapping.
 
