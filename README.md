@@ -431,7 +431,15 @@ This function is used by the ```Fit``` class.
 <a name='map_interval'></a>
 ### ```utils.map_to_interval(x, interval, return_all=False)```
 
-Shift and scale array so that its elements live in the specified interval.
+Shift and scale array so that its elements live in the specified interval. The
+function finds shift and scale factors such that,
+
+```python
+x_ = scale * (x - shift)
+```
+
+If requested, the function will return the scale and shift factors that perform
+this mapping.
 
 > ARGUMENTS
 >   - **```x — array_like```**: A one dimensional array of data. 
@@ -441,3 +449,8 @@ Shift and scale array so that its elements live in the specified interval.
 >   - **```return_all — Boolean```**: Boolean flag (defaults to false), which
 >     determines whether to return the shift and scale factors for later use.
 > 
+> OUTPUT
+>   - **```x_ — array_like```**: The original data array, scaled and shifted so
+>     that its elements are guaranteed to live in the specified interval.
+>   - **```shift — float```**: 
+>     that its elements are guaranteed to live in the specified interval.
