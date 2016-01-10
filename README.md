@@ -466,8 +466,8 @@ Find the pseudoinverse of the matrix ```M``` using singular value
 decomposition.
 
 > ARGUMENTS
->   - **```M — array_like```**: An (m x n) matrix whose pseudoinverse we want
->     to find.
+>   - **```M — array_like```**: An ```(m x n)``` matrix whose pseudoinverse we
+>     want to find.
 >   - **```return_condition_number — Boolean```**: If set to True, function
 >     will return the condition number of the pseudoinverse as well. Defaults
 >     to False.
