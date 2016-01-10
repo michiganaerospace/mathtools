@@ -431,7 +431,7 @@ This function is used by the ```Fit``` class.
 <a name='map_interval'></a>
 ### ```utils.map_to_interval(x, interval, return_all=False)```
 
-Shift and scale vector so that its elements live in the specified interval.
+Shift and scale array so that its elements live in the specified interval.
 
 > ARGUMENTS
 >   - **```x — array_like```**: A one dimensional array of data. 
