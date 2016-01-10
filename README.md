@@ -451,6 +451,9 @@ this mapping.
 > 
 > OUTPUT
 >   - **```x_ — array_like```**: The original data array, scaled and shifted so
->     that its elements are guaranteed to live in the specified interval.
->   - **```shift — float```**: 
->     that its elements are guaranteed to live in the specified interval.
+>     that its elements live in the specified interval.
+>   - **```shift — float```**: The shift factor. Only returned if
+>     ```return_all``` is set to True.  
+>   - **```scale```**: The scale factor. Only returned if ```return_all``` is
+>     set to True.  
+
