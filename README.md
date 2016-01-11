@@ -46,26 +46,29 @@ verify that all unit tests are passing.
 - ```fit```
     - [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
       regularized least squares using different bases.
-- [```fourier.fourier_basis```](#fourier) — Function for generating a Fourier
-  series basis.
-- [```fourier.d_fourier_basis```](#d_fourier) — Function for generating the
-  derivatives of Fourier series basis.
-- [```fourier.d2_fourier_basis```](#d2_fourier) — Function for generating the
-  second derivatives of a Fourier series basis.
-- [```fourier.create_fourier_basis```](#create_fourier) — Generate a
-  Fourier basis object.
-- [```legendre.legendre_basis```](#legendre) — Function for generating a
-  Legendre polynomial basis.
-- [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
-  derivative of a Legendre polynomial basis.
-- [```legendre.d2_legendre_basis```](#d2_legendre) — Generates the second
-  derivative of a Legendre polynomial basis.
-- [```legendre.create_legendre_basis```](#create_legendre) — Generate a
-  Legendre basis object.
-- [```utils.best_fit```](#best_fit) — Find the least square fit to
-  one-dimensional data using a specified basis.
-- [```utils.map_to_interval```](#map_interval) — Map an array into specified
-  interval.
+- ```fourier```
+    - [```fourier.fourier_basis```](#fourier) — Function for generating a
+      Fourier series basis.
+    - [```fourier.d_fourier_basis```](#d_fourier) — Function for generating the
+      derivatives of Fourier series basis.
+    - [```fourier.d2_fourier_basis```](#d2_fourier) — Function for generating
+      the second derivatives of a Fourier series basis.
+    - [```fourier.create_fourier_basis```](#create_fourier) — Generate a
+      Fourier basis object.
+- ```legendre```
+    - [```legendre.legendre_basis```](#legendre) — Function for generating a
+      Legendre polynomial basis.
+    - [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
+      derivative of a Legendre polynomial basis.
+    - [```legendre.d2_legendre_basis```](#d2_legendre) — Generates the second
+      derivative of a Legendre polynomial basis.
+    - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
+      Legendre basis object.
+- ```utils```
+    - [```utils.best_fit```](#best_fit) — Find the least square fit to
+      one-dimensional data using a specified basis.
+    - [```utils.map_to_interval```](#map_interval) — Map an array into
+      specified interval.
 
 <a name='fit'></a>
 ### ```fit.Fit```
