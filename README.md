@@ -51,6 +51,8 @@ verify that all unit tests are passing.
   derivatives of Fourier series basis.
 - [```fourier.d2_fourier_basis```](#d2_fourier) — Function for generating the
   second derivatives of a Fourier series basis.
+- [```fourier.create_fourier_basis```](#create_fourier) — Generate a
+  Fourier basis object.
 - [```legendre.legendre_basis```](#legendre) — Function for generating a
   Legendre polynomial basis.
 - [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
@@ -333,6 +335,69 @@ the specified domain.
 >     columns of the array are the second derivatives of the Fourier series
 >     basis vectors.
 
+
+
+<a name='create_fourier'></a>
+### ```fourier.create_fourier_basis(x, nb_bases, freq=1.0 reg_coefs=[0,0,0], x_ref=None)```
+
+This function creates a Legendre polynomial basis object. The basis object 
+contains everything required to perform a regularized least squares fit of
+data on the specified domain. Basis objects are typically used to fit data
+through the use of the [```best_fit```](#best_fit) helper function, or as part
+of the [```Fit```](#fit) class.
+
+> ARGUMENTS    
+>   - **```x — array_like```**: The domain over which we are defining the
+>     basis. An ```nb_samples``` length vector.
+>   - **```nb_bases — int```**: The number of basis vectors to generate.
+>   - **```freq — float```**: The fundamental frequency of the series.
+>   - **```reg_coefs — array_like```**: A list or array of three regularization
+>     coefficients for penalizing the magnitude of the fit and its first and
+>     second derivatives, respectively. 
+>   - **```x_ref — array_like```**: An optional reference domain. This is
+>     useful for resampling data.  It ensures that data is mapped to the
+>     interval [-1, 1] in a consistent manner, and allows us to avoid
+>     attempting to fit data outside of the original domain.
+>
+> OUTPUT <a name='basis_object'></a>   
+>   - **```basis — object```**: A basis object. Basis objects consolidate all
+>     the information required to fit data. The basis object contains the
+>     following properties and methods:
+>       - **```augment(y)```**: A method that takes in an ```nb_samples```
+>         length data vector, ```y```, and returns a properly augmented data
+>         vector.  The vector is concatenated with the proper number of zeros
+>         so that regularized least squares just works.
+>       - **```x```**: The domain over which the basis is defined.
+>       - **```valid_idx```**: The indices of valid entries in the domain. If a
+>         reference domain, ```x_ref``` is specified, regions of the domain
+>         ```x``` that fall outside of the reference domain are considered
+>         invalid, and are excluded when the fit is computed.
+>       - **```B — array_like```**: An ```nb_samples x nb_bases``` array of
+>         Legendre polynomial basis (column) vectors.
+>       - **```B_ — array_like```** The so-called *brick*. The brick is a
+>         vertical concatenation of the ```B```, ```I```, ```dB```, ```d2B```
+>         matrices.  The brick matrix allows us to force the solution and its
+>         derivative to be close to zero, as dictated by the regularization
+>         coefficients.  In fact, only those components with nonzero
+>         regularization coefficients are included in the brick, in order to
+>         minimize computational overhead during computation of the SVD. The
+>         matrix ```I``` is an ```nb_bases x nb_bases``` sized identity
+>         matrix. It serves to penalize the L2 norm of the fit coefficients.  
+>       - **```condition_number — float```**: The condition number associated
+>         with the pseudoinversion of the matrix ```B_```.
+>       - **```inverse — array_like```**: The pseudoinverse of the ```B_```
+>         matrix. May be used to compute the fit coefficients to a data vector.
+>         For example, to find the fit coefficients to a vector ```y```, we
+>         compute ```basis.inverse.dot(basis.augment(y))```, where we have also
+>         used the ```basis.augment()``` method to ensure the data vector has
+>         the appropriate dimensions.
+>       - **```nb_bases — int```**: Number of basis vectors used.
+>       - **```reg_coefs```**: The regularization coefficients that were used
+>         to construct the basis.
+>       - **```dB — array_like```**: Derivative of basis vectors in ```B```.
+>         An ```nb_samples x nb_bases``` sized array.
+>       - **```d2B — array_like```**: Second derivative of basis vectors in
+>         ```B```. An ```nb_samples x nb_bases``` sized array.
 
 <a name="legendre"></a>
 ### ```legendre.legendre_basis(x, nb_bases)```
