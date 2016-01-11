@@ -1,3 +1,4 @@
+'''Implements cubic spline basis functions.'''
 import numpy as np
 
 
@@ -203,7 +204,6 @@ def d_cubic_spline_basis(x, nb_knots):
     return dB
 
 
-
 def d2_cubic_spline_basis(x, nb_knots):
     '''Compute the cubic spline basis for domain x using nb_knots uniformly
        distributed knots.
@@ -245,3 +245,88 @@ def d2_cubic_spline_basis(x, nb_knots):
 
     return d2B
 
+
+def create_spline_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
+    '''Build a spline basis object.
+    INPUTS
+        x - array_like
+            An array of points -- the domain on which we will build the basis.
+        nb_bases - int
+            The number of basis vectors to generate.
+        reg_coefs - array_like (default: [0.0, 0.0, 0.0])
+            An array or list of three numerical coefficients that specify 
+            the regularization penalty for the magnitude of coefficients, as
+            well as the the magnitude of the first and second derivatives.
+        x_ref - array_like
+            A reference domain. This is useful for resampling data. It ensures
+            we avoid attempting to fit data outside of the original domain.
+    OUTPUTS
+        basis - Struct object
+            A struct object containing the following methods and properties:
+                - nb_bases: The number of basis vectors.
+                - reg_coefs: A list of regularization coefficients.
+                - x: The domain over which the basis will be defined.
+                - valid_idx: indices of the domain that are valid -- that is,
+                  those values inside the reference domain, if specified. If
+                  not specified, the entire vector is valid.
+                - B: Spline basis vectors (as columns).
+                - dB: Derivative of basis vectors in B 
+                - d2B: Second derivative of basis vectors in B 
+                - B_: The 'brick', a concatenation of B, I, dB, and d2B.
+                - inverse: The pseudo-inverse of the brick, B_.
+                - condition_number: The condition number associated with the
+                  brick inverse.
+                - augment(y): A method that takes in an nb_samples length 
+                  data vector, y, and returns a properly augmented data vector.
+                  The vector is concatenated with the proper number of zeros
+                  so that regularized least squares just works.
+    '''
+    # Build a structure to hold the data.
+    basis           = Struct()
+    basis.nb_bases  = nb_bases 
+    basis.reg_coefs = reg_coefs
+    basis.x         = x
+    
+    # Define the invalid indices (empty set to start).
+    basis.valid_idx = np.arange(len(x)) 
+
+    # This is default shift and scaling.
+    x_ = x
+
+    # Is there a reference domain? Note in the case of splines, there is no
+    # need to scale data to live in the unit interval.
+    if (x_ref is not None):
+        x_min = x_ref.min()
+        x_max = x_ref.max()
+        basis.valid_idx = np.nonzero((x_ >= x_min) * (x_ <= x_max))[0]
+        x_ = x_[basis.valid_idx]
+
+    # Build bases and the 'brick'.
+    basis.B      = cubic_spline_basis(x_, nb_bases)
+    I            = np.eye(nb_bases)
+    basis.dB     = d_cubic_spline_basis(x_, nb_bases)
+    basis.d2B    = d2_cubic_spline_basis(x_, nb_bases)
+
+    # Create the 'brick' by stacking these bases on top of one another. Only
+    # include those components that have nonzero regularization coefficients.
+    # This can speed up the SVD computation.
+    basis.B_ = basis.B
+    if reg_coefs[0] > 0:
+        basis.B_ = np.r_[basis.B_, reg_coefs[0] * I]
+    if reg_coefs[1] > 0:
+        basis.B_ = np.r_[basis.B_, reg_coefs[1] * basis.dB]
+    if reg_coefs[2] > 0:
+        basis.B_ = np.r_[basis.B_, reg_coefs[2] * basis.d2B]
+
+    # Find the inverse of the brick. Keep the condition number around, too.
+    basis.inverse, basis.condition_number = pseudoinverse(basis.B_, True)
+
+    # Define the data augmention function.
+    def augment(y):
+        nb_zeros = basis.B_.shape[0] - len(y)
+        return np.r_[y, np.zeros(nb_zeros)]
+
+    # Attach augment function to the basis object.
+    basis.augment = augment
+
+    return basis
