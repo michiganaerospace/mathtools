@@ -320,7 +320,7 @@ This function powers the ```Fit``` class.
 > ```python
 > import numpy as np
 > from mathtools.legendre import create_legendre_basis
-> from mathtools.utils import best_fit
+> from mathtools.fit import least_squares
 > 
 > # Generate some noisy data to fit.
 > x = np.linspace(0, 3*np.pi, 200)
@@ -330,7 +330,7 @@ This function powers the ```Fit``` class.
 > basis = create_legendre_basis(x, 15)
 > 
 > # Fit the noisy data!
-> fit = best_fit(basis, y)
+> fit = least_squares(basis, y)
 > 
 > # Check out the coefficients.
 >  fit.coefs # ==>
