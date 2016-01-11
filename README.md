@@ -49,6 +49,8 @@ verify that all unit tests are passing.
   series basis.
 - [```fourier.d_fourier_basis```](#d_fourier) — Function for generating a
   Fourier series basis.
+- [```fourier.d2_fourier_basis```](#d2_fourier) — Function for generating a
+  Fourier series basis.
 - [```legendre.legendre_basis```](#legendre) — Function for generating a
   Legendre polynomial basis.
 - [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
@@ -309,8 +311,26 @@ the specified domain.
 >   - **```freq — float```**: The fundamental frequency of the series.
 >
 > OUTPUT   
->   - **```B — array_like```**: An ```nb_samples x nb_bases``` array. The
+>   - **```dB — array_like```**: An ```nb_samples x nb_bases``` array. The
 >     columns of the array are the Fourier series basis vectors.
+
+
+<a name='d2_fourier'></a>
+### ```fourier.d2_fourier_basis(x, nb_bases, freq=1.0)```
+
+Computes a basis corresponding to the second derivative of a Fourier series on
+the specified domain.
+
+> ARGUMENTS    
+>   - **```x — array_like```**: The domain over which we are defining the
+>     basis. An ```nb_samples``` length vector.
+>   - **```nb_bases — int```**: The number of basis vectors to generate.
+>   - **```freq — float```**: The fundamental frequency of the series.
+>
+> OUTPUT   
+>   - **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The
+>     columns of the array are the Fourier series basis vectors.
+
 
 <a name="legendre"></a>
 ### ```legendre.legendre_basis(x, nb_bases)```
