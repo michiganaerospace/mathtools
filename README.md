@@ -293,6 +293,23 @@ Computes a Fourier series basis on the specified domain.
 >   - **```B — array_like```**: An ```nb_samples x nb_bases``` array. The
 >     columns of the array are the Fourier series basis vectors.
 
+
+<a name='d_fourier'></a>
+### ```fourier.d_fourier_basis(x, nb_bases, freq=1.0)```
+
+Computes a basis corresponding to the first derivative of a Fourier series on
+the specified domain.
+
+> ARGUMENTS    
+>   - **```x — array_like```**: The domain over which we are defining the
+>     basis. An ```nb_samples``` length vector.
+>   - **```nb_bases — int```**: The number of basis vectors to generate.
+>   - **```freq — float```**: The fundamental frequency of the series.
+>
+> OUTPUT   
+>   - **```B — array_like```**: An ```nb_samples x nb_bases``` array. The
+>     columns of the array are the Fourier series basis vectors.
+
 <a name="legendre"></a>
 ### ```legendre.legendre_basis(x, nb_bases)```
 
