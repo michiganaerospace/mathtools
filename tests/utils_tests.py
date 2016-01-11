@@ -79,37 +79,3 @@ def pseudoinverse_test_3():
     assert_equals(condition_number<100, True)
 
 
-def best_fit_test():
-    t = np.linspace(0,5*np.pi,200)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-    basis = create_legendre_basis(t, 25)    
-    fit = best_fit(basis, y)
-    assert_equals(fit.y.shape, (200,))
-    assert_equals(fit.dy.shape, (200,))
-    assert_equals(fit.d2y.shape, (200,))
-    assert_equals(fit.x.shape, (200,))
-    assert_equals(fit.coefs.shape, (25,))
-
-    
-def best_fit_test_coefs():
-    t = np.linspace(0,5*np.pi,200)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-    basis = create_legendre_basis(t, 25)    
-    fit = best_fit(basis, y)
-    new_fit = best_fit(basis, coefs=fit.coefs)
-    assert_array_almost_equal_nulp(new_fit.y, fit.y)
-
-
-def raise_error_on_bad_coefs_test():
-    t = np.linspace(0,5*np.pi,200)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-    basis = create_legendre_basis(t, 25)    
-    bad_coefs = np.array([1,2,3,4,5])
-    assert_raises(ValueError, best_fit, basis, None, bad_coefs)
-
-
-def raise_error_on_no_data_or_coefs_test():
-    t = np.linspace(0,5*np.pi,200)
-    y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t))
-    basis = create_legendre_basis(t, 25)    
-    assert_raises(ValueError, best_fit, basis, None, None)

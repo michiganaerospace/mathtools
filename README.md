@@ -289,6 +289,54 @@ the [usage](#fit_usage) section.
 > Other parameters can be changed similarly. When ```config``` is called, the
 > basis is recomputed and all fit coefficients are discarded.
 
+<a name='best_fit'></a>
+### ```utils.best_fit(basis, data=None, coefs=None)```
+
+Find the least square fit to one-dimensional data using the specified basis. If
+coefficients are specified rather than data, the coefficients are used to
+generate the fit. The function returns a structure, described in detail below,
+which provides the fit, its derivatives, and the fit coefficients.
+
+This function is used by the ```Fit``` class. 
+
+> ARGUMENTS
+>   - **```basis```**: A basis object. See the detailed discussion
+>     [here](#basis_object).
+>   - **```y — array_like```**: A ```nb_samples``` length data array that we
+>     wish to fit. Providing ```y``` is optional; if it is not provided, then
+>     fit coefficients must be provided.
+>   - **```coefs — array_like```**: Coefficients defining the fit. This is
+>     useful for resampling a curve using a different basis. The number of
+>     coefficients must be compatible with the basis object. ```coefs``` is
+>     optional; if it is not provided, data must be provided.
+> 
+> OUTPUT
+>   - **```fit```**: A fit object with the following properties: 
+> TODO
+>
+> USAGE
+> ```python
+> import numpy as np
+> from mathtools.legendre import create_legendre_basis
+> from mathtools.utils import best_fit
+> 
+> # Generate some noisy data to fit.
+> x = np.linspace(0, 3*np.pi, 200)
+> y = np.cos(x/4) + np.random.randn(len(x))
+> 
+> # Create a basis for fitting this noisy data.
+> basis = create_legendre_basis(x, 15)
+> 
+> # Fit the noisy data!
+> fit = best_fit(basis, y)
+> 
+> # Check out the coefficients.
+>  fit.coefs # ==>
+> # array([ 0.34114583, -0.95155628, -0.47158956,  0.03764087,  0.14931675,
+> #        -0.27857014, -0.26873534,  0.28205916,  0.64860036, -0.16132168,
+> #        -0.11036244,  0.13654455,  0.03552914,  0.14698555,  0.33255431])
+> 
+> ```
 
 <a name='fourier'></a>
 ### ```fourier.fourier_basis(x, nb_bases, freq=1.0)```
@@ -513,54 +561,6 @@ of the [```Fit```](#fit) class.
 >       - **```d2B — array_like```**: Second derivative of basis vectors in
 >         ```B```. An ```nb_samples x nb_bases``` sized array.
  
-<a name='best_fit'></a>
-### ```utils.best_fit(basis, data=None, coefs=None)```
-
-Find the least square fit to one-dimensional data using the specified basis. If
-coefficients are specified rather than data, the coefficients are used to
-generate the fit. The function returns a structure, described in detail below,
-which provides the fit, its derivatives, and the fit coefficients.
-
-This function is used by the ```Fit``` class. 
-
-> ARGUMENTS
->   - **```basis```**: A basis object. See the detailed discussion
->     [here](#basis_object).
->   - **```y — array_like```**: A ```nb_samples``` length data array that we
->     wish to fit. Providing ```y``` is optional; if it is not provided, then
->     fit coefficients must be provided.
->   - **```coefs — array_like```**: Coefficients defining the fit. This is
->     useful for resampling a curve using a different basis. The number of
->     coefficients must be compatible with the basis object. ```coefs``` is
->     optional; if it is not provided, data must be provided.
-> 
-> OUTPUT
->   - **```fit```**: A fit object with the following properties: 
-> TODO
->
-> USAGE
-> ```python
-> import numpy as np
-> from mathtools.legendre import create_legendre_basis
-> from mathtools.utils import best_fit
-> 
-> # Generate some noisy data to fit.
-> x = np.linspace(0, 3*np.pi, 200)
-> y = np.cos(x/4) + np.random.randn(len(x))
-> 
-> # Create a basis for fitting this noisy data.
-> basis = create_legendre_basis(x, 15)
-> 
-> # Fit the noisy data!
-> fit = best_fit(basis, y)
-> 
-> # Check out the coefficients.
->  fit.coefs # ==>
-> # array([ 0.34114583, -0.95155628, -0.47158956,  0.03764087,  0.14931675,
-> #        -0.27857014, -0.26873534,  0.28205916,  0.64860036, -0.16132168,
-> #        -0.11036244,  0.13654455,  0.03552914,  0.14698555,  0.33255431])
-> 
-> ```
 
 <a name='map_interval'></a>
 ### ```utils.map_to_interval(x, interval, return_all=False)```

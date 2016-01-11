@@ -2,7 +2,7 @@
 and Fourier Series.'''
 import numpy as np    
 from mathtools.legendre import *
-from mathtools.utils import Struct, validate_type, best_fit
+from mathtools.utils import Struct, validate_type
 import pdb
 
 
@@ -74,7 +74,7 @@ class Fit(object):
             raise ValueError('Data is not the same length as domain!')
 
         # Fit the data!
-        fit = best_fit(self.basis, y)
+        fit = least_squares(self.basis, y)
         self.coefs = fit.coefs
         self.current_fit = fit
 
@@ -93,7 +93,7 @@ class Fit(object):
                 (x, self.nb_bases, x_ref=self.x)
 
         # Project coefficients onto the resampled basis.
-        fit = best_fit(resampled_basis, coefs=self.coefs)
+        fit = least_squares(resampled_basis, coefs=self.coefs)
 
         return fit
     
@@ -113,3 +113,51 @@ class Fit(object):
         if self.basis_type not in self.available_bases:
             raise ValueError('{} is not a valid basis type.'\
                     .format(self.basis_type))
+
+
+def least_squares(basis, y=None, coefs=None):
+    '''Find the least square fit to one-dimensional data using the specified 
+       basis. OR, if coefficients are specified rather than data, y, the
+       coefficients are used to generate the fit; in this case, the number of
+       coefficients must equal basis.nb_bases.
+    INPUT
+        basis - basis object
+            A mathtools basis object (see mathtools.legendre, e.g.)
+        y - array_like
+            One dimensional array of data to fit.
+        coefs - array_like
+            Coefficients used to project basis generate fit.
+    OUTPUT
+       fit - Struct
+            A Struct containing the following fields:
+                - x:    The domain on which fit is defined.
+                - y:    The best fit to the data.
+                - dy:   The derivative of the best fit.
+                - d2y:  The second derivative of the best fit.
+                - coefs The coefficients used for the fit.
+    '''
+
+    # Do we have data, or must we do the fit?
+    if (y is not None):
+        # Augment the data (for regularization).
+        augmented_y = basis.augment(y)
+
+        # Perform the least squares fit using the precomputed pseudoinverse!
+        coefs = basis.inverse.dot(augmented_y)
+
+    if (coefs is None):
+        raise ValueError('Cannot project onto basis! No data or coefficients!')
+
+    # Generate a fit Struct object to hold the results.
+    fit                         = Struct()
+    fit.coefs                   = coefs
+    fit.x                       = basis.x
+    fit.y                       = np.zeros_like(basis.x)
+    fit.dy                      = np.zeros_like(basis.x)
+    fit.d2y                     = np.zeros_like(basis.x)
+    fit.y[basis.valid_idx]      = basis.B.dot(coefs)
+    fit.dy[basis.valid_idx]     = basis.dB.dot(coefs)
+    fit.d2y[basis.valid_idx]    = basis.d2B.dot(coefs)
+
+    return fit
+
