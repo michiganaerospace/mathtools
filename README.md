@@ -46,6 +46,8 @@ verify that all unit tests are passing.
 - ```fit```
     - [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
       regularized least squares using different bases.
+    - [```fit.least_squares()```](#least_squares) — Perform a least square fit
+      to data, given a basis object.
 - ```fourier```
     - [```fourier.fourier_basis```](#fourier) — Function for generating a
       Fourier series basis.
@@ -289,8 +291,8 @@ the [usage](#fit_usage) section.
 > Other parameters can be changed similarly. When ```config``` is called, the
 > basis is recomputed and all fit coefficients are discarded.
 
-<a name='best_fit'></a>
-### ```utils.best_fit(basis, data=None, coefs=None)```
+<a name='least_squares'></a>
+### ```fit.least_squares(basis, data=None, coefs=None)```
 
 Find the least square fit to one-dimensional data using the specified basis. If
 coefficients are specified rather than data, the coefficients are used to
