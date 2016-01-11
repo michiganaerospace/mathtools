@@ -75,8 +75,8 @@ def d_fourier_basis(x, nb_bases, freq=1.0):
 
     # Construct the basis (column) vectors.
     for k in np.r_[0:nb_terms]:
-        dB[:,k+1] = -2.0 * np.sin(2.0 * np.pi * (k+1) * freq * x)
-        dB[:,k+1+nb_terms] = 2.0 * np.cos(2.0 * np.pi * (k+1) * freq * x)
+        dB[:,k+1] = -2.0*np.sin(2.0*np.pi*(k+1)*freq*x_)*(k+1)
+        dB[:,k+1+nb_terms] = 2.0*np.cos(2.0*np.pi*(k+1)*freq*x_)*(k+1)
 
     return dB
 
@@ -89,13 +89,13 @@ def d2_fourier_basis(x, nb_bases, freq=1.0):
             The domain on which we are building the Fourier basis; an 
             nb_samples length array.
         nb_bases - int
-            The number of Fourier bases to construct. Note that this is not the
+            The number of Fourier bases to construct. NOTE that this is not the
             number of terms in the individual sin and cos series. This is the
             total number of basis vectors. nb_bases = 2 * nb_terms + 1.
         freq - float [default: 1.0]
             The fundamental frequency of the series.
     OUTPUT
-        dB - array_like
+        d2B - array_like
             An nb_samples x nb_bases size array whose columns are the
             derivative of the Fourier basis vectors. 
     '''
@@ -110,23 +110,12 @@ def d2_fourier_basis(x, nb_bases, freq=1.0):
     # Initialize basis array.
     nb_terms = (nb_bases - 1)/2.0
     nb_samples = len(x_)
-    dB = np.zeros((nb_samples, 2*nb_terms+1), dtype='double')
-    dB[:,0] = 0.0
+    d2B = np.zeros((nb_samples, 2*nb_terms+1), dtype='double')
+    d2B[:,0] = 0.0
 
     # Construct the basis (column) vectors.
     for k in np.r_[0:nb_terms]:
-        dB[:,k+1] = -2.0*np.sin(2.0*np.pi*(k+1)*freq*x_)*(k+1)
-        dB[:,k+1+nb_terms] = 2.0*np.cos(2.0*np.pi*(k+1)*freq*x_)*(k+1)
+        d2B[:,k+1] = -2.0*np.cos(2.0*np.pi*(k+1)*freq*x_)*(k+1)**2
+        d2B[:,k+1+nb_terms] = -2.0*np.sin(2.0*np.pi*(k+1)*freq*x_)*(k+1)**2
 
-    return dB
-
-
-def FS_dbasis(R2,alpha,NFterms):
-    N = len(R2)
-    dbasis = zeros((N,2*NFterms+1),dtype='double')
-    dbasis[:,0] = 0.0
-    for k in r_[0:NFterms]:
-        dbasis[:,k+1] = -2.0*sin(2.0*pi*(k+1)*alpha*R2)*(k+1)
-        dbasis[:,k+1+NFterms] = 2.0*cos(2.0*pi*(k+1)*alpha*R2)*(k+1)
-
-    return dbasis
+    return d2B

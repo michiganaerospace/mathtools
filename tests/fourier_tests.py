@@ -1,6 +1,4 @@
-
-'''Test basis generation algorithms for cubic splines, Legendre polynomials,
-and Fourier series.'''
+'''Test basis generation algorithms for Fourier bases.'''
 from mathtools.fit import *
 import mathtools.refs.FS_Tools as fs
 from mathtools.utils import *
@@ -30,7 +28,7 @@ def basis_matches_fs_tools_implementation_test():
     assert_array_almost_equal_nulp(B, B_fs)
 
 
-def create_a_dervative_fourier_basis_test():
+def create_a_derivative_fourier_basis_test():
     x = np.linspace(0,5,100)
     B = d_fourier_basis(x, 25)
     assert_equals(B.shape, (100, 25))
@@ -41,6 +39,22 @@ def d_basis_matches_fs_tools_implementation_test():
     x_ = map_to_interval(x, [0,1])
     nb_bases = 51
     nb_terms = 25
-    B = d_fourier_basis(x, nb_bases)
-    B_fs = fs.FS_dbasis(x_, 1.0, nb_terms)
-    assert_array_almost_equal_nulp(B, B_fs)
+    dB = d_fourier_basis(x, nb_bases)
+    dB_fs = fs.FS_dbasis(x_, 1.0, nb_terms)
+    assert_array_almost_equal_nulp(dB, dB_fs)
+
+
+def create_a_second_derivative_fourier_basis_test():
+    x = np.linspace(0,5,100)
+    d2B = d_fourier_basis(x, 25)
+    assert_equals(d2B.shape, (100, 25))
+
+
+def d2_basis_matches_fs_tools_implementation_test():
+    x = np.linspace(0,5,100)
+    x_ = map_to_interval(x, [0,1])
+    nb_bases = 51
+    nb_terms = 25
+    d2B = d2_fourier_basis(x, nb_bases)
+    d2B_fs = fs.FS_d2basis(x_, 1.0, nb_terms)
+    assert_array_almost_equal_nulp(d2B, d2B_fs)
