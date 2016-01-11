@@ -283,6 +283,15 @@ the [usage](#fit_usage) section.
 
 Computes a Fourier series basis on the specified domain.
 
+> ARGUMENTS    
+>   - **```x — array_like```**: The domain over which we are defining the
+>     basis. An ```nb_samples``` length vector.
+>   - **```nb_bases — int```**: The number of basis vectors to generate.
+>
+> OUTPUT   
+>   - **```B — array_like```**: An ```nb_samples x nb_bases``` array. The
+>     columns of the array are the Legendre polynomial basis vectors.
+
 <a name="legendre"></a>
 ### ```legendre.legendre_basis(x, nb_bases)```
 
