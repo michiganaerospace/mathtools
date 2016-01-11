@@ -536,6 +536,7 @@ This function is used by the ```Fit``` class.
 > 
 > OUTPUT
 >   - **```fit```**: A fit object with the following properties: 
+> TODO
 >
 > USAGE
 > ```python
