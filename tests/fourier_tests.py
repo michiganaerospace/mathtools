@@ -159,14 +159,3 @@ def brick_size_test_04():
 
     assert_equals(basis.B_.shape, (100+225, 25))
     assert_equals(y_aug.shape, (100+225,))
-
-
-if __name__ == '__main__':
-    
-    x = np.linspace(0,5,100)
-    x_ref = np.linspace(1,4,100)
-    nb_bases = 25
-    basis = create_fourier_basis(x, nb_bases, x_ref=x_ref, \
-            reg_coefs=[1e-3, 1e-3, 1e-3])
-    assert_equals(len(basis.valid_idx), 60)
-    assert_equals(basis.B_.shape, (205, 25))
