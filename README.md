@@ -338,7 +338,7 @@ the specified domain.
 
 
 <a name='create_fourier'></a>
-### ```fourier.create_fourier_basis(x, nb_bases, freq=1.0 reg_coefs=[0,0,0], x_ref=None)```
+### ```fourier.create_fourier_basis(x, nb_bases, freq=1.0, reg_coefs=[0,0,0], x_ref=None)```
 
 This function creates a Legendre polynomial basis object. The basis object 
 contains everything required to perform a regularized least squares fit of
