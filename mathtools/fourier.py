@@ -40,6 +40,7 @@ def fourier_basis(x, nb_bases, freq=1.0):
 
     return B
 
+
 def d_fourier_basis(x, nb_bases, freq=1.0):
     '''Construct the first derivative of the Fourier series basis with phase
        2*pi*freq*x.
@@ -65,3 +66,17 @@ def d_fourier_basis(x, nb_bases, freq=1.0):
 
     # Map the domain to the interval [0, 1].
     x_ = map_to_interval(x, [0, 1])
+
+    # Initialize basis array.
+    nb_terms = (nb_bases - 1)/2.0
+    nb_samples = len(x_)
+    B = np.zeros((nb_samples, 2*nb_terms+1), dtype='double')
+    B[:,0] = 0.0
+
+    # Construct the basis (column) vectors.
+    for k in np.r_[0:nb_terms]:
+        dB[:,k+1] = -2.0 * sin(2.0 * np.pi * (k+1) * freq * x)
+        dB[:,k+1+nb_terms] = 2.0 * cos(2.0 * np.pi * (k+1) * freq * x)
+
+    return dB
+

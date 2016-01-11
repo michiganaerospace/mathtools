@@ -28,3 +28,10 @@ def basis_matches_fs_tools_implementation_test():
     B = fourier_basis(x, nb_bases)
     B_fs = fs.FS_basis(x_, 1.0, nb_terms)
     assert_array_almost_equal_nulp(B, B_fs)
+
+
+def create_a_dervative_fourier_basis_test():
+    x = np.linspace(0,5,100)
+    B = d_fourier_basis(x, 25)
+    assert_equals(B.shape, (100, 25))
+
