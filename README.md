@@ -44,7 +44,9 @@ verify that all unit tests are passing.
 ## Tools 
 
 - [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
-  regularised least squares using different bases.
+  regularized least squares using different bases.
+- [```fourier.fourier_basis```](#fourier) — Function for generating a Fourier
+  series basis.
 - [```legendre.legendre_basis```](#legendre) — Function for generating a
   Legendre polynomial basis.
 - [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
@@ -274,6 +276,12 @@ the [usage](#fit_usage) section.
 > 
 > Other parameters can be changed similarly. When ```config``` is called, the
 > basis is recomputed and all fit coefficients are discarded.
+
+
+<a name='fourier'></a>
+### ```fourier.fourier_basis(x, nb_bases, freq=1.0)```
+
+Computes a Fourier series basis on the specified domain.
 
 <a name="legendre"></a>
 ### ```legendre.legendre_basis(x, nb_bases)```
