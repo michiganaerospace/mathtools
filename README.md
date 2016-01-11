@@ -194,9 +194,10 @@ the [usage](#fit_usage) section.
 > ```
 > 
 > This will create an instance of a ```Fit``` object, generate a Legendre
-> polynomial basis for the provided abscissa (the Legendre polynomial basis is
-> the default; others may be specified) — here, the vector ```t``` — with 15
-> basis vectors. To fit the data, we use the object's ```fit``` method,
+> polynomial basis for the provided abscissa the default — here, the vector
+> ```t``` — with 15 basis vectors. (the Legendre polynomial basis is the
+> default; others may be specified. To fit the data, we use the object's
+> ```fit``` method,
 > 
 > ```python 
 > # Fit the noisy data.  
@@ -219,7 +220,7 @@ the [usage](#fit_usage) section.
 > coefficients are, by default, zero). We are instead *effectively*
 > regularizing by using a small number of Legendre polynomial basis vectors —
 > in this case, fifteen basis vectors. For more on this topic, check out the
-> techical discussion at ...
+> technical discussion at ...
 > 
 > But what if we wanted to sample this function at a different set of points?
 > As it stands, our smooth curve is sampled only at the values of ```x```
