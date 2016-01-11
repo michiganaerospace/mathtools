@@ -153,7 +153,7 @@ def d2_legendre_basis(x, nb_bases):
 
 
 def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
-    '''Build legendre polynomial bases.
+    '''Build Legendre polynomial basis object.
     INPUTS
         x - array_like
             An array of points -- the domain on which we will build the basis.

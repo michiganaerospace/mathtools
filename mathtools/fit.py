@@ -2,6 +2,8 @@
 and Fourier Series.'''
 import numpy as np    
 from mathtools.legendre import *
+from mathtools.fourier import *
+from mathtools.splines import *
 from mathtools.utils import Struct, validate_type
 import pdb
 
@@ -9,7 +11,8 @@ import pdb
 # Fit class. A general purpose regularized interpolation machine.
 class Fit(object):
 
-    def __init__(self, x, nb_bases=0, basis_type='legendre', reg_coefs=[0,0,0]):
+    def __init__(self, x, nb_bases=0, basis_type='legendre', freq=1.0, \
+            reg_coefs=[0,0,0]):
         '''Initialize the fit object. 
         INPUTS
             x - array_like
@@ -23,29 +26,50 @@ class Fit(object):
                 determine how much to penalize the solution magnitude, the
                 magnitude of the derivative and magnitude of the second
                 derivative, respectively.
+            freq - float [default: 1.0]
+                The frequency of the Fourier series basis functions. If a basis
+                other than Fourier is used, this parameter is ignored.
         '''
 
         # Currently available bases.
-        self.available_bases = ['legendre']
+        self.available_bases = ['legendre', 'fourier', 'cubic-spline']
 
-        self.basis_generators = {}
-        self.basis_generators['legendre'] = create_legendre_basis
+        # Define the basis generator functions.
         self.coefs = None
+        self.x_ref = None
 
         # Assign variables to the object.
         self.x = x
         self.basis_type = basis_type
         self.nb_bases = nb_bases
         self.reg_coefs = reg_coefs
+        self.freq = freq
 
         # Error checking.
         self._validate()
 
         # We're clean. Let's generate a basis!
-        self.basis = self.basis_generators[basis_type](x, nb_bases, reg_coefs)
+        self.basis = self._compute_basis_object(self.x, self.nb_bases,\
+                self.basis_type, self.freq, self.reg_coefs)
+        
+
+    def _compute_basis_object(self, x, nb_bases, basis_type, freq=1.0,\
+            reg_coefs=[0,0,0], x_ref=None):
+        '''Compute basis object.'''
+
+        # Determine current basis type; build the appropriate basis.
+        if self.basis_type == 'fourier':
+            basis = create_fourier_basis(x, nb_bases, freq, reg_coefs, x_ref)
+        elif self.basis_type == 'legendre':
+            basis = create_legendre_basis(x, nb_bases, reg_coefs, x_ref)
+        elif self.basis_type == 'cubic-spline':
+            basis = create_spline_basis(x, nb_bases, reg_coefs, x_ref)
+
+        return basis
 
 
-    def config(self, x=None, nb_bases=None, basis_type=None, reg_coefs=None):
+    def config(self, x=None, nb_bases=None, basis_type=None, freq=None, \
+            reg_coefs=None):
         ''' Reconfigure the fit object with new bases, regularization
             coefficients, etc.
         '''
@@ -57,13 +81,16 @@ class Fit(object):
             self.basis_type = basis_type
         if (reg_coefs is not None):
             self.reg_coefs = reg_coefs
-
-        # Now recompute the basis object with these changes.
-        self.basis = self.basis_generators[self.basis_type]\
-                (self.x, self.nb_bases, self.reg_coefs)
+        if (freq is not None):
+            self.freq = freq
 
         # Ensure that fit coefficients are set to zero.
         self.coefs = None
+        self.x_ref = None
+
+        # Recompute the basis.
+        self.basis = self._compute_basis_object(self.x, self.nb_bases, \
+                self.basis_type, self.freq, self.reg_coefs)
 
 
     def fit(self, y):
@@ -89,8 +116,8 @@ class Fit(object):
             raise ValueError('No data has been fit. Cannot resample.')
         
         # Generate a new basis.
-        resampled_basis = self.basis_generators[self.basis_type]\
-                (x, self.nb_bases, x_ref=self.x)
+        resampled_basis = self._compute_basis_object(x, self.nb_bases,\
+                self.basis_type, self.freq, self.reg_coefs, x_ref=self.x)
 
         # Project coefficients onto the resampled basis.
         fit = least_squares(resampled_basis, coefs=self.coefs)
