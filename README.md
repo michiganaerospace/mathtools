@@ -299,7 +299,7 @@ coefficients are specified rather than data, the coefficients are used to
 generate the fit. The function returns a structure, described in detail below,
 which provides the fit, its derivatives, and the fit coefficients.
 
-This function is used by the ```Fit``` class. 
+This function powers the ```Fit``` class. 
 
 > ARGUMENTS
 >   - **```basis```**: A basis object. See the detailed discussion
