@@ -69,8 +69,6 @@ verify that all unit tests are passing.
 - ```spline```
     - [```spline.spline_basis```](#spline) — Generates a cubic spline basis.
 - ```utils```
-    - [```utils.best_fit```](#best_fit) — Find the least square fit to
-      one-dimensional data using a specified basis.
     - [```utils.map_to_interval```](#map_interval) — Map an array into
       specified interval.
 
@@ -399,8 +397,8 @@ the specified domain.
 This function creates a Legendre polynomial basis object. The basis object 
 contains everything required to perform a regularized least squares fit of
 data on the specified domain. Basis objects are typically used to fit data
-through the use of the [```best_fit```](#best_fit) helper function, or as part
-of the [```Fit```](#fit) class.
+through the use of the [```least_squares```](#least_squares) helper function,
+or as part of the [```Fit```](#fit) class.
 
 > ARGUMENTS    
 >   - **```x — array_like```**: The domain over which we are defining the
@@ -508,8 +506,8 @@ domain.
 This function creates a Legendre polynomial basis object. The basis object 
 contains everything required to perform a regularized least squares fit of
 data on the specified domain. Basis objects are typically used to fit data
-through the use of the [```best_fit```](#best_fit) helper function, or as part
-of the [```Fit```](#fit) class.
+through the use of the [```least_squares```](#least_squares) helper function,
+or as part of the [```Fit```](#fit) class.
 
 > ARGUMENTS    
 >   - **```x — array_like```**: The domain over which we are defining the
