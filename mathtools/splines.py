@@ -1,5 +1,6 @@
 '''Implements cubic spline basis functions.'''
 import numpy as np
+from mathtools.utils import Struct, pseudoinverse
 
 
 def cubic_spline_basis_unit_interval(x):
