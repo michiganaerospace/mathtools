@@ -106,6 +106,7 @@ def pseudoinverse(M, return_condition_number=False):
     M_pinv = V.dot(np.diag(1/s)).dot(U.T)
     condition_number = s.max()/s.min() 
 
+    # If requested, return condition number; otherwise, don't
     if return_condition_number:
         return M_pinv, condition_number
     else:
