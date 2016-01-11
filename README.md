@@ -43,8 +43,9 @@ verify that all unit tests are passing.
 
 ## Tools 
 
-- [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
-  regularized least squares using different bases.
+- ```fit```
+    - [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
+      regularized least squares using different bases.
 - [```fourier.fourier_basis```](#fourier) — Function for generating a Fourier
   series basis.
 - [```fourier.d_fourier_basis```](#d_fourier) — Function for generating the
