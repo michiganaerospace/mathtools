@@ -195,7 +195,7 @@ the [usage](#fit_usage) section.
 > 
 > This will create an instance of a ```Fit``` object, generate a Legendre
 > polynomial basis for the provided abscissa the default — here, the vector
-> ```t``` — with 15 basis vectors. (the Legendre polynomial basis is the
+> ```t``` — with 15 basis vectors. The Legendre polynomial basis is the
 > default; others may be specified. To fit the data, we use the object's
 > ```fit``` method,
 > 
