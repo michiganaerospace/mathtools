@@ -47,10 +47,10 @@ verify that all unit tests are passing.
   regularized least squares using different bases.
 - [```fourier.fourier_basis```](#fourier) — Function for generating a Fourier
   series basis.
-- [```fourier.d_fourier_basis```](#d_fourier) — Function for generating a
-  Fourier series basis.
-- [```fourier.d2_fourier_basis```](#d2_fourier) — Function for generating a
-  Fourier series basis.
+- [```fourier.d_fourier_basis```](#d_fourier) — Function for generating the
+  derivatives of Fourier series basis.
+- [```fourier.d2_fourier_basis```](#d2_fourier) — Function for generating the
+  second derivatives of a Fourier series basis.
 - [```legendre.legendre_basis```](#legendre) — Function for generating a
   Legendre polynomial basis.
 - [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
@@ -312,7 +312,8 @@ the specified domain.
 >
 > OUTPUT   
 >   - **```dB — array_like```**: An ```nb_samples x nb_bases``` array. The
->     columns of the array are the Fourier series basis vectors.
+>     columns of the array are the derivatives of the Fourier series basis
+>     vectors.
 
 
 <a name='d2_fourier'></a>
@@ -329,7 +330,8 @@ the specified domain.
 >
 > OUTPUT   
 >   - **```d2B — array_like```**: An ```nb_samples x nb_bases``` array. The
->     columns of the array are the Fourier series basis vectors.
+>     columns of the array are the second derivatives of the Fourier series
+>     basis vectors.
 
 
 <a name="legendre"></a>
