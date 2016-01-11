@@ -47,6 +47,8 @@ verify that all unit tests are passing.
   regularized least squares using different bases.
 - [```fourier.fourier_basis```](#fourier) — Function for generating a Fourier
   series basis.
+- [```fourier.d_fourier_basis```](#d_fourier) — Function for generating a
+  Fourier series basis.
 - [```legendre.legendre_basis```](#legendre) — Function for generating a
   Legendre polynomial basis.
 - [```legendre.d_legendre_basis```](#d_legendre) — Generates the first
