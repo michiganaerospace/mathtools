@@ -52,6 +52,42 @@ def d2_unit_spline_matches_ref_test():
     assert_array_almost_equal_nulp(d2B, d2B_fs)
 
 
+def knot_generation_works_test():
+    x = np.linspace(0,5,100)
+    knots = uniform_knots(x, 20)
+    knots_fs = fs.get_uniform_knots(x, 20)
+    assert_array_almost_equal_nulp(knots, knots_fs)
+
+
+def generate_full_cubic_spline_basis_test():
+    x = np.linspace(0,5,100)
+    knots = uniform_knots(x, 20)
+    B = cubic_spline_basis(x, 20)
+    B_fs = fs.get_cubic_spline_basis(x, knots)
+    assert_array_almost_equal_nulp(B, B_fs)
+    
+
+def generate_full_d_cubic_spline_basis_test():
+    x = np.linspace(0,5,100)
+    knots = uniform_knots(x, 20)
+    dB = d_cubic_spline_basis(x, 20)
+    dB_fs = fs.get_dcubic_spline_basis(x, knots)
+    assert_array_almost_equal_nulp(dB, dB_fs)
+
+
+def generate_full_d2_cubic_spline_basis_test():
+    x = np.linspace(0,5,100)
+    knots = uniform_knots(x, 20)
+    d2B = d2_cubic_spline_basis(x, 20)
+    d2B_fs = fs.get_d2cubic_spline_basis(x, knots)
+    assert_array_almost_equal_nulp(d2B, d2B_fs)
+
+
+
+
+
+
+
 
 # def basis_matches_fs_tools_implementation_test():
 #     x = np.linspace(0,5,100)
