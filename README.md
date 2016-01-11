@@ -290,7 +290,7 @@ the [usage](#fit_usage) section.
 > basis is recomputed and all fit coefficients are discarded.
 
 <a name='least_squares'></a>
-### ```fit.least_squares(basis, data=None, coefs=None)```
+### ```fit.least_squares(basis, y=None, coefs=None)```
 
 Find the least square fit to one-dimensional data using the specified basis. If
 coefficients are specified rather than data, the coefficients are used to
