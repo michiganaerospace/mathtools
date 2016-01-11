@@ -64,6 +64,8 @@ verify that all unit tests are passing.
       derivative of a Legendre polynomial basis.
     - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
       Legendre basis object.
+- ```spline```
+    - [```spline.spline_basis```](#spline) — Generates a cubic spline basis.
 - ```utils```
     - [```utils.best_fit```](#best_fit) — Find the least square fit to
       one-dimensional data using a specified basis.
