@@ -224,7 +224,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > did, let's plot the fit on top of the original, noisy data.
 > 
 > ```python 
-> plot(r.x, r.y, linewidth=2) 
+> plot(r.x, r.y, '-.', linewidth=2) 
 > ```
 > 
 > <img src='https://goo.gl/dh3EWo' width='500'/>
