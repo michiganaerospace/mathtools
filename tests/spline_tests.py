@@ -13,41 +13,41 @@ import numpy as np
 # BEGIN TESTS ------------------------------------------------------
 
 # Create a spline basis? 
-def create_spline_basis_on_unit_interval_test():
+def create_spline_basis_on_knot_interval_test():
     x = np.linspace(0,5,100)
-    B = cubic_spline_basis_unit_interval(x)
+    B = cubic_spline_basis_knot_interval(x)
     assert_equals(B.shape, (100,4))
 
 
 def unit_spline_matches_ref_test():
     x = np.linspace(0,5,100)
-    B = cubic_spline_basis_unit_interval(x)
+    B = cubic_spline_basis_knot_interval(x)
     B_fs = fs.cubic_spline_interval(x)
     assert_array_almost_equal_nulp(B, B_fs)
 
 
-def create_spline_d_basis_on_unit_interval_test():
+def create_spline_d_basis_on_knot_interval_test():
     x = np.linspace(0,5,100)
-    dB = d_cubic_spline_basis_unit_interval(x)
+    dB = d_cubic_spline_basis_knot_interval(x)
     assert_equals(dB.shape, (100,4))
 
 
 def d_unit_spline_matches_ref_test():
     x = np.linspace(0,5,100)
-    dB = d_cubic_spline_basis_unit_interval(x)
+    dB = d_cubic_spline_basis_knot_interval(x)
     dB_fs = fs.dcubic_spline_interval(x)
     assert_array_almost_equal_nulp(dB, dB_fs)
 
 
-def create_spline_d2_basis_on_unit_interval_test():
+def create_spline_d2_basis_on_knot_interval_test():
     x = np.linspace(0,5,100)
-    d2B = d2_cubic_spline_basis_unit_interval(x)
+    d2B = d2_cubic_spline_basis_knot_interval(x)
     assert_equals(d2B.shape, (100,4))
 
 
 def d2_unit_spline_matches_ref_test():
     x = np.linspace(0,5,100)
-    d2B = d2_cubic_spline_basis_unit_interval(x)
+    d2B = d2_cubic_spline_basis_knot_interval(x)
     d2B_fs = fs.d2cubic_spline_interval(x)
     assert_array_almost_equal_nulp(d2B, d2B_fs)
 

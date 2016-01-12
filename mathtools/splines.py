@@ -3,7 +3,7 @@ import numpy as np
 from mathtools.utils import Struct, pseudoinverse
 
 
-def cubic_spline_basis_unit_interval(x):
+def cubic_spline_basis_knot_interval(x):
     '''Compute four basis vectors over unit interval for x for a cubic spline.
     ARGUMENTS
         x - array_like
@@ -32,7 +32,7 @@ def cubic_spline_basis_unit_interval(x):
     return B
 
 
-def d_cubic_spline_basis_unit_interval(x):
+def d_cubic_spline_basis_knot_interval(x):
     '''Compute four basis vectors over unit interval for x for the derivative
        of the cubic spline.
     ARGUMENTS
@@ -66,7 +66,7 @@ def d_cubic_spline_basis_unit_interval(x):
     return dB
 
 
-def d2_cubic_spline_basis_unit_interval(x):
+def d2_cubic_spline_basis_knot_interval(x):
     '''Compute four basis vectors over unit interval for x for the second
        derivative of the cubic spline.
     ARGUMENTS
@@ -153,7 +153,7 @@ def cubic_spline_basis(x, nb_knots):
         t = (x[idx_k] - knots[k])/(knots[k+1]-knots[k])
 
         # Find the local cubic spline basis.
-        local_B = cubic_spline_basis_unit_interval(t)
+        local_B = cubic_spline_basis_knot_interval(t)
 
         # Fill appropriate columns of full basis.
         B[idx_k, k-1]   = local_B[:,0]
@@ -194,7 +194,7 @@ def d_cubic_spline_basis(x, nb_knots):
         t = (x[idx_k] - knots[k])/h
 
         # Find the local cubic spline basis.
-        local_dB = d_cubic_spline_basis_unit_interval(t)
+        local_dB = d_cubic_spline_basis_knot_interval(t)
 
         # Fill appropriate columns of full basis.
         dB[idx_k, k-1]   = local_dB[:,0]/h
@@ -236,7 +236,7 @@ def d2_cubic_spline_basis(x, nb_knots):
         t = (x[idx_k] - knots[k])/h
 
         # Find the local cubic spline basis.
-        local_d2B = d2_cubic_spline_basis_unit_interval(t)
+        local_d2B = d2_cubic_spline_basis_knot_interval(t)
 
         # Fill appropriate columns of full basis.
         d2B[idx_k, k-1]   = local_d2B[:,0]/h2
