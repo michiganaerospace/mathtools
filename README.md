@@ -569,6 +569,35 @@ or as part of the [```Fit```](#fit) class.
 >         ```B```. An ```nb_samples x nb_bases``` sized array.
  
 
+<a name='spline_unit_basis'></a>
+### ```splines.cubic_spline_basis_unit_interval(x)```
+
+Compute the four basis vectors over the unit interval for x.
+
+> ARGUMENTS
+>   - **```x — array_like```**: A one dimensional array of data; the domain on
+>     which we wish to fit the data.
+> 
+> OUTPUT
+>   - **```B — array_like```**: The four basis vectors defining the cubic
+>     spline on the unit interval -- an (nb_samples x 4) size array. 
+
+
+<a name='spline_unit_basis'></a>
+### ```splines.d_cubic_spline_basis_unit_interval(x)```
+
+Compute the four basis vectors over the unit interval for x.
+
+> ARGUMENTS
+>   - **```x — array_like```**: A one dimensional array of data; the domain on
+>     which we wish to fit the data.
+> 
+> OUTPUT
+>   - **```dB — array_like```**: The four basis vectors defining the derivative
+>     of the cubic spline on the unit interval -- an (nb_samples x 4) size
+>     array. 
+
+
 <a name='map_interval'></a>
 ### ```utils.map_to_interval(x, interval, return_all=False)```
 
