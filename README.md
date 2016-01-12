@@ -67,14 +67,20 @@ verify that all unit tests are passing.
     - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
       Legendre basis object.
 - ```splines```
-    - [```splines.cubic_spline_basis_knot_interval```](#spline_unit_basis)
+    - [```splines.cubic_spline_basis_knot_interval```](#spline_knot_basis)
       — Generates a cubic spline basis on the unit interval.
-    - [```splines.d_cubic_spline_basis_knot_interval```](#spline_unit_d_basis)
-      — Generates the derivative of the cubic spline basis on the unit
-      interval.
-    - [```splines.d2_cubic_spline_basis_knot_interval```](#spline_unit_d2_basis)
-      — Generates the derivative of the cubic spline basis on the unit
-      interval.
+    - [```splines.d_cubic_spline_basis_knot_interval```](#spline_knot_d_basis)
+      — Generates the derivative of the cubic spline basis between knots. 
+    - [```splines.d2_cubic_spline_basis_knot_interval```](#spline_knot_d2_basis)
+      — Generates the derivative of the cubic spline basis between knots.
+    - [```splines.cubic_spline_basis```](#spline_basis)
+      — Generates the cubic spline basis on the domain.
+    - [```splines.d_cubic_spline_basis```](#d_spline_basis)
+      — Generates the derivative of the cubic spline basis on the domain.
+    - [```splines.d2_cubic_spline_basis```](#d2_spline_basis)
+      — Generates the derivative of the cubic spline basis on the domain.
+    - [```splines.create_spline_basis```](#create_spline_basis)
+      — Creates a cubic spline basis object. 
 - ```utils```
     - [```utils.map_to_interval```](#map_interval) — Map an array into
       specified interval.
@@ -592,7 +598,7 @@ Compute the four basis vectors over a knot interval for x.
 >     spline on the unit interval — an (nb_samples x 4) size array. 
 
 
-<a name='spline_unit_d_basis'></a>
+<a name='spline_knot_d_basis'></a>
 ### ```splines.d_cubic_spline_basis_knot_interval(x)```
 
 Compute the four derivative basis vectors over the knot interval for x.
