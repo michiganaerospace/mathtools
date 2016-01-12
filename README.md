@@ -67,7 +67,10 @@ verify that all unit tests are passing.
     - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
       Legendre basis object.
 - ```spline```
-    - [```spline.spline_basis```](#spline) — Generates a cubic spline basis.
+    - [```splines.cubic_spline_basis_unit_interval```](#spline_unit_basis)
+      — Generates a cubic spline basis on the unit interval.
+    - [```spline.spline_basis```](#spline_unit_basis) — Generates a cubic
+      spline basis.
 - ```utils```
     - [```utils.map_to_interval```](#map_interval) — Map an array into
       specified interval.
