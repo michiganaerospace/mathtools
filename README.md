@@ -46,7 +46,7 @@ verify that all unit tests are passing.
 - ```fit```
     - [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
       regularized least squares using different bases.
-    - [```fit.least_squares```](#least_squares) — Perform a least square fit
+    - [```fit.best_fit```](#best_fit) — Perform a least square fit
       to data, given a basis object.
 - ```fourier```
     - [```fourier.fourier_basis```](#fourier) — Function for generating a
@@ -298,8 +298,8 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > Other parameters can be changed similarly. When ```config``` is called, the
 > basis is recomputed and all fit coefficients are discarded.
 
-<a name='least_squares'></a>
-### ```fit.least_squares(basis, y=None, coefs=None)```
+<a name='best_fit'></a>
+### ```fit.best_fit(basis, y=None, coefs=None)```
 
 Find the least square fit to one-dimensional data using the specified basis. If
 coefficients are specified rather than data, the coefficients are used to
@@ -332,7 +332,7 @@ This function powers the ```Fit``` class.
 > ```python
 > import numpy as np
 > from mathtools.legendre import create_legendre_basis
-> from mathtools.fit import least_squares
+> from mathtools.fit import best_fit
 > 
 > # Generate some noisy data to fit.
 > x = np.linspace(0, 3*np.pi, 200)
@@ -342,7 +342,7 @@ This function powers the ```Fit``` class.
 > basis = create_legendre_basis(x, 15)
 > 
 > # Fit the noisy data!
-> fit = least_squares(basis, y)
+> fit = best_fit(basis, y)
 > 
 > # Check out the coefficients.
 >  fit.coefs # ==>
@@ -410,7 +410,7 @@ the specified domain.
 This function creates a Legendre polynomial basis object. The basis object 
 contains everything required to perform a regularized least squares fit of
 data on the specified domain. Basis objects are typically used to fit data
-through the use of the [```least_squares```](#least_squares) helper function,
+through the use of the [```best_fit```](#best_fit) helper function,
 or as part of the [```Fit```](#fit) class.
 
 > ARGUMENTS    
@@ -519,7 +519,7 @@ domain.
 This function creates a Legendre polynomial basis object. The basis object 
 contains everything required to perform a regularized least squares fit of
 data on the specified domain. Basis objects are typically used to fit data
-through the use of the [```least_squares```](#least_squares) helper function,
+through the use of the [```best_fit```](#best_fit) helper function,
 or as part of the [```Fit```](#fit) class.
 
 > ARGUMENTS    

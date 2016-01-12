@@ -101,7 +101,7 @@ class Fit(object):
             raise ValueError('Data is not the same length as domain!')
 
         # Fit the data!
-        fit = least_squares(self.basis, y)
+        fit = best_fit(self.basis, y)
         self.coefs = fit.coefs
         self.current_fit = fit
 
@@ -120,7 +120,7 @@ class Fit(object):
                 self.basis_type, self.freq, self.reg_coefs, x_ref=self.x)
 
         # Project coefficients onto the resampled basis.
-        fit = least_squares(resampled_basis, coefs=self.coefs)
+        fit = best_fit(resampled_basis, coefs=self.coefs)
 
         return fit
     
@@ -142,7 +142,7 @@ class Fit(object):
                     .format(self.basis_type))
 
 
-def least_squares(basis, y=None, coefs=None):
+def best_fit(basis, y=None, coefs=None):
     '''Find the least square fit to one-dimensional data using the specified 
        basis. OR, if coefficients are specified rather than data, y, the
        coefficients are used to generate the fit; in this case, the number of
