@@ -277,7 +277,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > a look at the first derivative, for example, we can plot ```r.dy```:
 > 
 > ```python 
-> plot(r.x, r.dy, linewidth=2) 
+> plot(r.x, r.dy, '-.', linewidth=2) 
 > ```
 > 
 > <img src='https://goo.gl/t5Wjms' width='500'/>
