@@ -147,7 +147,7 @@ the [usage](#fit_usage) section.
 > >      - ```d2y — array_like```: The second derivative of the fit.
 > >      - ```coefs — array_like```: The coefficients of the fit.
 >
-> **```Fit.config(x=None, nb_bases=0, basis_type=None, reg_coefs=None)```**
+> **```Fit.config(x=None, nb_bases=0, basis_type=None, freq=1.0, reg_coefs=None)```**
 > 
 > Recomputes the basis given a change in the underlying parameters. When the
 > basis is updated, all existing fit coefficients are discarded. 
@@ -157,6 +157,9 @@ the [usage](#fit_usage) section.
 > >   - **```nb_bases — int```**: The number of basis vectors to use when
 > >     fitting the data.  In the case of a cubic spline basis, this
 > >     corresponds to the number of knots used.
+> >   - **```basis_type — str```**: The type of basis to use for the fitting.
+> >     May have values of ```legendre```, ```fourier```, or
+> >     ```cubic-spline```.
 > >   - **```basis_type — str```**: The type of basis to use for the fitting.
 > >     May have values of ```legendre```, ```fourier```, or
 > >     ```cubic-spline```.
