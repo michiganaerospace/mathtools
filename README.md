@@ -575,10 +575,10 @@ or as part of the [```Fit```](#fit) class.
 >         ```B```. An ```nb_samples x nb_bases``` sized array.
  
 
-<a name='spline_unit_basis'></a>
+<a name='spline_knot_basis'></a>
 ### ```splines.cubic_spline_basis_knot_interval(x)```
 
-Compute the four basis vectors over the unit interval for x.
+Compute the four basis vectors over a knot interval for x.
 
 > ARGUMENTS
 >   - **```x — array_like```**: A one dimensional array of data; the domain on
@@ -592,7 +592,22 @@ Compute the four basis vectors over the unit interval for x.
 <a name='spline_unit_d_basis'></a>
 ### ```splines.d_cubic_spline_basis_knot_interval(x)```
 
-Compute the four basis vectors over the unit interval for x.
+Compute the four derivative basis vectors over the knot interval for x.
+
+> ARGUMENTS
+>   - **```x — array_like```**: A one dimensional array of data; the domain on
+>     which we wish to fit the data.
+> 
+> OUTPUT
+>   - **```dB — array_like```**: The four basis vectors defining the derivative
+>     of the cubic spline on the unit interval — an (nb_samples x 4) size
+>     array.
+
+ 
+<a name='spline_knot_d2_basis'></a>
+### ```splines.d2_cubic_spline_basis_knot_interval(x)```
+
+Compute the four second derivative basis vectors over the knot interval for x.
 
 > ARGUMENTS
 >   - **```x — array_like```**: A one dimensional array of data; the domain on
