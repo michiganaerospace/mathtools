@@ -317,7 +317,7 @@ This function powers the ```Fit``` class.
 >   - **```coefs — array_like```**: Coefficients defining the fit. This is
 >     useful for resampling a curve using a different basis. The number of
 >     coefficients must be compatible with the basis object. ```coefs``` is
->     optional; if it is not provided, data must be provided.
+>     optional; but if it is not provided, data must be provided.
 > 
 > OUTPUT
 >   - **```fit```**: A fit object with the following properties: 
