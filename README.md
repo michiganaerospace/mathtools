@@ -312,8 +312,8 @@ This function powers the ```Fit``` class.
 >   - **```basis```**: A basis object. See the detailed discussion
 >     [here](#basis_object).
 >   - **```y — array_like```**: An ```nb_samples``` length data array that we
->     wish to fit. Providing ```y``` is optional; if it is not provided, then
->     fit coefficients must be provided.
+>     wish to fit. Providing ```y``` is optional; if it is not provided, fit
+>     coefficients must be provided.
 >   - **```coefs — array_like```**: Coefficients defining the fit. This is
 >     useful for resampling a curve using a different basis. The number of
 >     coefficients must be compatible with the basis object. ```coefs``` is
