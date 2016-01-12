@@ -71,7 +71,7 @@ verify that all unit tests are passing.
 - ```utils```
     - [```utils.map_to_interval```](#map_interval) — Map an array into
       specified interval.
-    - [```utils.pseudoinverse```](#map_interval) — Find the pseudoinverse of a
+    - [```utils.pseudoinverse```](#pseudoinverse) — Find the pseudoinverse of a
       matrix M using singular value decomposition.
  
       specified interval.
