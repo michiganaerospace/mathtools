@@ -243,12 +243,16 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > ```resample``` method. For example, suppose we wish to sample on a larger
 > number of points, and on a different domain.
 > 
-> ```python t_new = np.linspace(-np.pi, 6*np.pi, 500) ```
+> ```python 
+> t_new = np.linspace(-np.pi, 6*np.pi, 500) 
+> ```
 > 
 > Note that we are now sampling at 500 points, extending from -pi to 6pi. Using
 > the previously computed ```Fit``` object, we compute a new results object,
 > 
-> ```python rs = f.resample(t_new) ```
+> ```python 
+> rs = f.resample(t_new) 
+> ```
 > 
 > The new fit now samples the same curve (i.e., using the same fit
 > coefficients), but at different points. In this example, we have deliberately
