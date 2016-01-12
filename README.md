@@ -662,7 +662,7 @@ nb_knots uniformly distributed knots.
 >     containing (column) derivative cubic spline basis vectors.
 
 
-<a name='d_spline_basis'></a>
+<a name='d2_spline_basis'></a>
 ### ```splines.d2_cubic_spline_basis(x, nb_knots)```
 
 Compute the second derivative of the cubic spline basis for domain ```x```
@@ -678,8 +678,7 @@ using nb_knots uniformly distributed knots.
 >   - **```d2B — array_like```**: The ```nb_samples x nb_knots``` array
 >     containing (column) second derivative cubic spline basis vectors.
 
-
-
+<a name='create_spline_basis'></a>
 ### ```splines.create_spline_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None)```
 
 This function creates a cubic spline basis object. The basis object contains
