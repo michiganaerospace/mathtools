@@ -46,7 +46,7 @@ verify that all unit tests are passing.
 - ```fit```
     - [```fit.Fit```](#fit) — The ```Fit``` class provides algorithms for
       regularized least squares using different bases.
-    - [```fit.least_squares()```](#least_squares) — Perform a least square fit
+    - [```fit.least_squares```](#least_squares) — Perform a least square fit
       to data, given a basis object.
 - ```fourier```
     - [```fourier.fourier_basis```](#fourier) — Function for generating a
