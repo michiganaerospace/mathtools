@@ -262,7 +262,9 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > fit to zero in those regions that do not intersect the original domain. We
 > illustrate this by plotting the resampled data:
 > 
-> ```python plot(rs.x, rs.y, linewidth=2) ```
+> ```python 
+> plot(rs.x, rs.y, linewidth=2) 
+> ```
 > 
 > <img src='https://goo.gl/jWgAxa' width='500'/>
 > 
@@ -274,7 +276,9 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > method also contains the derivatives of the fit, which may be useful. To take
 > a look at the first derivative, for example, we can plot ```r.dy```:
 > 
-> ```python plot(r.x, r.dy, linewidth=2) ```
+> ```python 
+> plot(r.x, r.dy, linewidth=2) 
+> ```
 > 
 > <img src='https://goo.gl/t5Wjms' width='500'/>
 > 
