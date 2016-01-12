@@ -2,7 +2,9 @@
 To preview the colors defined below, check out:
     http://flatuicolors.com/
 '''
-from pylab import *
+# Import some common plotting commands, but not all of pylab.
+from pylab import plot, xlabel, ylabel, grid, title, ion, figure, close, xlim,\
+        ylim, matplotlib, hold, imshow
 
 
 # Define a reasonable, consistent color scheme.
