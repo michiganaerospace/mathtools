@@ -84,7 +84,8 @@ verify that all unit tests are passing.
 The ```Fit``` class is a machine that allows you to easily fit data using
 regularized least squares. It provides a convenient interface to the core basis
 generation and fitting routines. To see how to use this class, jump right to 
-the [usage](#fit_usage) section.
+the [usage](#fit_usage) section. Additionally, example code can be found in the
+[scripts](https://goo.gl/tQl9E8) directory.
 
 > **METHODS**
    
