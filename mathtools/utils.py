@@ -102,11 +102,11 @@ def pseudoinverse(M, return_condition_number=False):
     U, s, Vt = np.linalg.svd(M, full_matrices=False)
     V = Vt.T
 
-    # What is the effective rank?
+    # Construct the pseudoinverse and compute the condition number.
     M_pinv = V.dot(np.diag(1/s)).dot(U.T)
     condition_number = s.max()/s.min() 
 
-    # If requested, return condition number; otherwise, don't
+    # If requested, return condition number; otherwise, don't.
     if return_condition_number:
         return M_pinv, condition_number
     else:
