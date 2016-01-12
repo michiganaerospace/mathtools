@@ -645,5 +645,17 @@ decomposition.
 >   - **```condition_number```**: The condition number of the pseudoinverse.
 >     This is only returned if ```return_condition_number``` is set to
 >     ```True```.
+>
+> USAGE
+>
+> ```python
+> import numpy as np
+> from mathtools.utils import pseudoinverse
+>
+> M = np.random.rand(150,15)
+> M_pinv, condition_number = pseudoinverse(M, True)
+> M_pinv.shape     # ==> (15, 150)
+> condition_number # ==> 9.12
+> ```
 
 
