@@ -583,7 +583,7 @@ Compute the four basis vectors over the unit interval for x.
 >     spline on the unit interval -- an (nb_samples x 4) size array. 
 
 
-<a name='spline_unit_basis'></a>
+<a name='spline_unit_d_basis'></a>
 ### ```splines.d_cubic_spline_basis_unit_interval(x)```
 
 Compute the four basis vectors over the unit interval for x.
