@@ -296,7 +296,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 Find the least square fit to one-dimensional data using the specified basis. If
 coefficients are specified rather than data, the coefficients are used to
 generate the fit. The function returns a structure, described in detail below,
-which provides the fit, its derivatives, and the fit coefficients.
+which provides the fit, its derivatives, and the coefficients.
 
 This function powers the ```Fit``` class. 
 
