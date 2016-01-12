@@ -619,6 +619,57 @@ Compute the four second derivative basis vectors over the knot interval for x.
 >     array. 
 
 
+<a name='spline_basis'></a>
+### ```splines.cubic_spline_basis(x, nb_knots)```
+
+Compute the cubic spline basis for domain ```x``` using nb_knots uniformly
+distributed knots.
+
+> ARGUMENTS
+>   - **```x — array_like```**: A one dimensional array of data; the domain on
+>     which we wish to fit the data.
+>   - **```nb_knots — array_like```**: The number of uniformly distributed
+>     knots to use in constructing the basis.
+> 
+> OUTPUT
+>   - **```B — array_like```**: The ```nb_samples x nb_knots``` array
+>     containing (column) cubic spline basis vectors.
+
+
+<a name='d_spline_basis'></a>
+### ```splines.d_cubic_spline_basis(x, nb_knots)```
+
+Compute the derivative of the cubic spline basis for domain ```x``` using
+nb_knots uniformly distributed knots.
+
+> ARGUMENTS
+>   - **```x — array_like```**: A one dimensional array of data; the domain on
+>     which we wish to fit the data.
+>   - **```nb_knots — array_like```**: The number of uniformly distributed
+>     knots to use in constructing the basis.
+> 
+> OUTPUT
+>   - **```dB — array_like```**: The ```nb_samples x nb_knots``` array
+>     containing (column) derivative cubic spline basis vectors.
+
+
+<a name='d_spline_basis'></a>
+### ```splines.d2_cubic_spline_basis(x, nb_knots)```
+
+Compute the second derivative of the cubic spline basis for domain ```x```
+using nb_knots uniformly distributed knots.
+
+> ARGUMENTS
+>   - **```x — array_like```**: A one dimensional array of data; the domain on
+>     which we wish to fit the data.
+>   - **```nb_knots — array_like```**: The number of uniformly distributed
+>     knots to use in constructing the basis.
+> 
+> OUTPUT
+>   - **```d2B — array_like```**: The ```nb_samples x nb_knots``` array
+>     containing (column) second derivative cubic spline basis vectors.
+
+
 <a name='map_interval'></a>
 ### ```utils.map_to_interval(x, interval, return_all=False)```
 
