@@ -66,7 +66,7 @@ verify that all unit tests are passing.
       derivative of a Legendre polynomial basis.
     - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
       Legendre basis object.
-- ```spline```
+- ```splines```
     - [```splines.cubic_spline_basis_unit_interval```](#spline_unit_basis)
       — Generates a cubic spline basis on the unit interval.
     - [```splines.d_cubic_spline_basis_unit_interval```](#spline_unit_d_basis)
