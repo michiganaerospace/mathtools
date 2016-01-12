@@ -73,8 +73,6 @@ verify that all unit tests are passing.
       specified interval.
     - [```utils.pseudoinverse```](#pseudoinverse) — Find the pseudoinverse of a
       matrix M using singular value decomposition.
- 
-      specified interval.
 
 <a name='fit'></a>
 ### ```fit.Fit```
