@@ -67,9 +67,9 @@ verify that all unit tests are passing.
     - [```legendre.create_legendre_basis```](#create_legendre) — Generate a
       Legendre basis object.
 - ```splines```
-    - [```splines.cubic_spline_basis_unit_interval```](#spline_unit_basis)
+    - [```splines.cubic_spline_basis_knot_interval```](#spline_unit_basis)
       — Generates a cubic spline basis on the unit interval.
-    - [```splines.d_cubic_spline_basis_unit_interval```](#spline_unit_d_basis)
+    - [```splines.d_cubic_spline_basis_knot_interval```](#spline_unit_d_basis)
       — Generates the derivative of the cubic spline basis on the unit
       interval.
 - ```utils```
@@ -576,7 +576,7 @@ or as part of the [```Fit```](#fit) class.
  
 
 <a name='spline_unit_basis'></a>
-### ```splines.cubic_spline_basis_unit_interval(x)```
+### ```splines.cubic_spline_basis_knot_interval(x)```
 
 Compute the four basis vectors over the unit interval for x.
 
@@ -590,7 +590,7 @@ Compute the four basis vectors over the unit interval for x.
 
 
 <a name='spline_unit_d_basis'></a>
-### ```splines.d_cubic_spline_basis_unit_interval(x)```
+### ```splines.d_cubic_spline_basis_knot_interval(x)```
 
 Compute the four basis vectors over the unit interval for x.
 
