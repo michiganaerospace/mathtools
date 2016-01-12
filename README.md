@@ -580,7 +580,7 @@ Compute the four basis vectors over the unit interval for x.
 > 
 > OUTPUT
 >   - **```B — array_like```**: The four basis vectors defining the cubic
->     spline on the unit interval -- an (nb_samples x 4) size array. 
+>     spline on the unit interval — an (nb_samples x 4) size array. 
 
 
 <a name='spline_unit_d_basis'></a>
@@ -594,7 +594,7 @@ Compute the four basis vectors over the unit interval for x.
 > 
 > OUTPUT
 >   - **```dB — array_like```**: The four basis vectors defining the derivative
->     of the cubic spline on the unit interval -- an (nb_samples x 4) size
+>     of the cubic spline on the unit interval — an (nb_samples x 4) size
 >     array. 
 
 
