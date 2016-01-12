@@ -128,11 +128,11 @@ def least_squares(basis, y=None, coefs=None):
     OUTPUT
        fit - Struct
             A Struct containing the following fields:
-                - x:    The domain on which fit is defined.
-                - y:    The best fit to the data.
-                - dy:   The derivative of the best fit.
-                - d2y:  The second derivative of the best fit.
-                - coefs The coefficients used for the fit.
+                - x:        The domain on which fit is defined.
+                - y:        The best fit to the data.
+                - dy:       The derivative of the best fit.
+                - d2y:      The second derivative of the best fit.
+                - coefs:    The coefficients used for the fit.
     '''
 
     # Do we have data, or must we do the fit?
