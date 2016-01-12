@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     # Create some noisy data.
     t = np.linspace(0,5*np.pi, 300)
-    t_new = np.linspace(-pi, 6*np.pi, 400)
+    t_new = np.linspace(-np.pi, 6*np.pi, 400)
     noise_amplitude = 0.1
     y = np.sin(2*np.pi/5*t) + noise_amplitude * np.random.randn(len(t))
     reg_coefs = [0, 1e-2, 1e-2]

@@ -11,12 +11,12 @@ if __name__ == '__main__':
 
     # Create some noisy data.
     t = np.linspace(0,5*np.pi, 300)
-    t_new = np.linspace(-pi, 6*np.pi, 400)
+    t_new = np.linspace(-np.pi, 6*np.pi, 400)
     noise_amplitude = 0.1
     y = np.sin(2*np.pi/5*t) + noise_amplitude * np.random.randn(len(t))
     reg_coefs = [0, 1e-2, 5e-2]
     reg_coefs = [0, 1e-2, 0]
-    f = Fit(t, 25, basis_type='fourier', freq=0.2, reg_coefs=reg_coefs)
+    f = Fit(t, 15, basis_type='fourier', freq=0.2, reg_coefs=reg_coefs)
 
     # Perform the fit to the data.
     fit = f.fit(y)
