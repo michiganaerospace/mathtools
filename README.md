@@ -312,7 +312,12 @@ This function powers the ```Fit``` class.
 > 
 > OUTPUT
 >   - **```fit```**: A fit object with the following properties: 
-> TODO
+>       - ```x — array_like```: The domain on which the fit is defined.
+>       - ```y — array_like```: The best fit to the data.
+>       - ```dy — array_like```: The derivative of the best fit to the data.
+>       - ```d2y — array_like```: The second derivative of the best fit to the
+>         data.
+>       - ```coefs — array_like```: The coefficients used for the fit.
 >
 > USAGE
 > ```python
