@@ -596,9 +596,9 @@ this mapping.
 >   - **```x_ — array_like```**: The original data array, scaled and shifted so
 >     that its elements live in the specified interval.
 >   - **```shift — float```**: The shift factor. Only returned if
->     ```return_all``` is set to True.  
+>     ```return_all``` is set to ```True```.  
 >   - **```scale```**: The scale factor. Only returned if ```return_all``` is
->     set to True.  
+>     set to ```True```.  
 
 
 <a name='pseudoinverse'></a>
@@ -617,6 +617,7 @@ decomposition.
 > OUTPUT
 >   - **```pinv```**: An ```(n x m)``` matrix, the pseudoinverse of ```M```.
 >   - **```condition_number```**: The condition number of the pseudoinverse.
->     This is only returned if ```return_condition_number``` is set to True.
+>     This is only returned if ```return_condition_number``` is set to
+>     ```True```.
 
 
