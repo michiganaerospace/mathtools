@@ -415,7 +415,7 @@ or as part of the [```Fit```](#fit) class.
 >     second derivatives, respectively. 
 >   - **```x_ref — array_like```**: An optional reference domain. This is
 >     useful for resampling data.  It ensures that data is mapped to the
->     interval [-1, 1] in a consistent manner, and allows us to avoid
+>     interval [0, 1] in a consistent manner, and allows us to avoid
 >     attempting to fit data outside of the original domain.
 >
 > OUTPUT <a name='basis_object'></a>   
