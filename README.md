@@ -646,5 +646,4 @@ decomposition.
 >     This is only returned if ```return_condition_number``` is set to
 >     ```True```.
 
-> USAGE
 
