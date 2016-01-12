@@ -88,7 +88,7 @@ the [usage](#fit_usage) section.
 
 > **METHODS**
    
-> **```Fit(x=None, nb_bases=0, basis_type='legendre', reg_coefs=[0,0,0])```**
+> **```Fit(x=None, nb_bases=0, basis_type='legendre', freq=1.0, reg_coefs=[0,0,0])```**
 
 > Creates a new ```Fit``` object.   
 
@@ -100,6 +100,9 @@ the [usage](#fit_usage) section.
 > >   number of knots used.
 > > - **```basis_type — str```**: The type of basis to use for the fitting. May
 > >   have values of ```legendre```, ```fourier```, or ```cubic-spline```.
+> > - **```freq — float```**: The fundamental frequency of a Fourier series
+> >   basis. If a basis other than Fourier is selected, this parameter is
+> >   ignored. 
 > > - **```reg_coefs — array_like```**: A list or array of three regularization
 > >   coefficients for penalizing the magnitude of the fit and its first and
 > >   second derivatives, respectively. The default value is ```reg_coefs=[0.0,
