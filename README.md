@@ -263,7 +263,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > illustrate this by plotting the resampled data:
 > 
 > ```python 
-> plot(rs.x, rs.y, linewidth=2) 
+> plot(rs.x, rs.y, '-.', linewidth=2) 
 > ```
 > 
 > <img src='https://goo.gl/jWgAxa' width='500'/>
