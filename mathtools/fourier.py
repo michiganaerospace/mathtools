@@ -136,7 +136,7 @@ def create_fourier_basis(x, nb_bases, freq=1.0, reg_coefs=[0,0,0], x_ref=None):
             well as the the magnitude of the first and second derivatives.
         x_ref - array_like
             A reference domain. This is useful for resampling data.  It ensures
-            that data is mapped to the interval [-1, 1] in the same way, and
+            that data is mapped to the interval [0, 1] in the same way, and
             allows us to avoid attempting to fit data outside of the original
             domain.
     OUTPUTS
