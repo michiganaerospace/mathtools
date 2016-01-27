@@ -86,6 +86,8 @@ verify that all unit tests are passing.
       specified interval.
     - [```utils.pseudoinverse```](#pseudoinverse) — Find the pseudoinverse of a
       matrix M using singular value decomposition.
+    - [```utils.Vessel```](#vessel) — Provides a convenient container for
+      storing, saving, and loading data.
 
 <a name='fit'></a>
 ### ```fit.Fit```
@@ -790,4 +792,25 @@ decomposition.
 >     ```True```.
 
 
+<a name='vessel'></a>
+### ```utils.Vessel(filename=None)```
 
+Create a convenient container object that holds data, including lists, arrays,
+dictionaries, etc. The object can be easily saved and loaded.
+
+
+> **METHODS**
+   
+> **```Vessel(filename=None)```**
+
+> Creates a new ```Vessel``` object.   
+
+> > ARGUMENTS
+> > - **```filename — str```**: An optional filename for where the data should
+> >   be saved. If a filename is specified, the Vessel object will look for a
+> >   file at that location; if a valid file is found, it will load the
+> >   contents of that file into the object. Otherwise, it will set the
+> >   object's current_filename to filename.
+>
+> > OUTPUT    
+> > - None 
