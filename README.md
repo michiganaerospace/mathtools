@@ -846,16 +846,23 @@ dictionaries, etc. The object can be easily saved and loaded.
 > When the ```Fit``` class is instantiated, it makes several properties
 > available to the user.
 >
->   - **```basis — object```**: The current basis object. For details on what
->     basis objects are and how to use them, check out the discussion of [basis
->     objects](#basis_object).
->   - **```basis_type — str```**: The type of basis to use for the fitting. May
->     have values of ```legendre```, ```fourier```, or ```cubic-spline```.
->   - **```coefs — array_like```**: The current fit coefficients. If there is
->     no active fit, the coefficients are set to  ``None``.
->   - **```nb_bases — int```**: The number of basis vectors currently used in
->     the basis.
->   - **```reg_coefs — array_like```**: A list or array of three regularization
->     coefficients for penalizing the magnitude of the fit and its first and
->     second derivatives, respectively. 
->   - **```x — array_like```**: The domain on which the basis was built.
+>   - **```keys - list```**: The currently available properties on the object.
+>   - **```current_filename```**: The current filenname of the object. If the
+>     save method is called without input, this filename will be used.
+>
+> USAGE
+> ```python
+> import numpy as np
+> from mathtools.legendre import create_legendre_basis
+> from mathtools.fit import best_fit
+> 
+> # Generate some noisy data to fit.
+> x = np.linspace(0, 3*np.pi, 200)
+> y = np.cos(x/4) + np.random.randn(len(x))
+> 
+> # Create a basis for fitting this noisy data.
+> basis = create_legendre_basis(x, 15)
+> 
+> # Fit the noisy data!
+> fit = best_fit(basis, y)
+> 
