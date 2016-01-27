@@ -238,7 +238,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(r.x, r.y, '-.', linewidth=2) 
 > ```
 > 
-> <img src='https://goo.gl/dh3EWo' width='500'/>
+> <img src=''https://goo.gl/q041hz width='500'/>
 > 
 > Note that although the blue curve smoothly fits the red data points, we are
 > not explicitly penalizing the derivatives here (the regularization
@@ -277,7 +277,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(rs.x, rs.y, '-.', linewidth=2) 
 > ```
 > 
-> <img src='https://goo.gl/jWgAxa' width='500'/>
+> <img src='https://goo.gl/yQZjFV' width='500'/>
 > 
 > Where the resampled domain intersects the support of the original data, we
 > reproduce the fit. However, once we venture beyond the support of that data,
@@ -291,7 +291,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(r.x, r.dy, '-.', linewidth=2) 
 > ```
 > 
-> <img src='https://goo.gl/t5Wjms' width='500'/>
+> <img src='https://goo.gl/qNy1Nq' width='500'/>
 > 
 > We may want to alter our fit in some way — perhaps by choosing a different
 > basis, or selecting a different number of basis vectors. The ```Fit```
