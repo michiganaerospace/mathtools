@@ -793,7 +793,7 @@ decomposition.
 
 
 <a name='vessel'></a>
-### ```utils.Vessel(filename=None)```
+### ```utils.Vessel```
 
 Create a convenient container object that holds data, including lists, arrays,
 dictionaries, etc. The object can be easily saved and loaded.
@@ -811,6 +811,19 @@ dictionaries, etc. The object can be easily saved and loaded.
 > >   file at that location; if a valid file is found, it will load the
 > >   contents of that file into the object. Otherwise, it will set the
 > >   object's current_filename to filename.
+>
+> > OUTPUT    
+> > - None 
+
+> **```Vessel.save(filename=None)```**
+
+> Saves the content of the object to the specified filename using cPickle's
+> highest protocol. If no filename is specified, the object will use its 
+> current filename. If none exists, an error is thrown.
+
+> > ARGUMENTS
+> > - **```filename — str```**: An optional filename for where the data should
+> >   be saved. 
 >
 > > OUTPUT    
 > > - None 
