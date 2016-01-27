@@ -847,8 +847,8 @@ dictionaries, etc. The object can be easily saved and loaded.
 > available to the user.
 >
 >   - **```keys - list```**: The currently available properties on the object.
->   - **```current_filename```**: The current filename of the object. If the
->     save method is called without input, this filename will be used.
+>   - **```current_filename - str```**: The current filename of the object. If
+>     the save method is called without input, this filename will be used.
 >
 > **USAGE** <a name='vessel-usage'></a>
 >
