@@ -843,26 +843,40 @@ dictionaries, etc. The object can be easily saved and loaded.
 >
 > **PROPERTIES** <a name='fit-properties'></a>
 > 
-> When the ```Fit``` class is instantiated, it makes several properties
+> When the ```Vessel``` class is instantiated, it makes several properties
 > available to the user.
 >
 >   - **```keys - list```**: The currently available properties on the object.
 >   - **```current_filename```**: The current filenname of the object. If the
 >     save method is called without input, this filename will be used.
 >
-> USAGE
+> **USAGE** <a name='vessel-usage'></a>
+>
+> The Vessel class is a convenient way to store, save, and reload data. Under
+> the hood it uses cPickle to efficiently store a wide range of data types. To
+> get a sense of what it can do, check out the following examples.
+>
 > ```python
 > import numpy as np
-> from mathtools.legendre import create_legendre_basis
-> from mathtools.fit import best_fit
+> from mathtools.utils import Vessel
 > 
 > # Generate some noisy data to fit.
+> experiment_name = 'sine wave'
 > x = np.linspace(0, 3*np.pi, 200)
 > y = np.cos(x/4) + np.random.randn(len(x))
 > 
-> # Create a basis for fitting this noisy data.
-> basis = create_legendre_basis(x, 15)
+> # Create a vessel to store this data.
+> v = Vessel('my_sine_data.dat') # note that extension is arbitrary.
+> v.name = experiment_name
+> v.x = x
+> v.y = y
 > 
-> # Fit the noisy data!
-> fit = best_fit(basis, y)
-> 
+> # Save the data.
+> v.save()
+>
+> # Many years pass...
+>
+> g = Vessel('my_sine_data.dat')
+> g.name # => 'sine wave'
+> g.x    # ==> array([ 0.        ,  0.04736069,  0.09472139, ...
+> # etc...
