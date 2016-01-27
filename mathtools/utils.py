@@ -235,6 +235,8 @@ class Vessel(object):
         Variables are added as attributes to the object.  '''
         if ignore_variable_names:
             self.ignore_variable_names = ignore_variable_names
+        else:
+            self.ignore_variable_names = []
         for key in var_dict.keys():
             if key not in self.ignore_variable_names:
                 self.__dict__[key] = var_dict[key]

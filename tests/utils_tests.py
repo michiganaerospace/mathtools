@@ -4,6 +4,7 @@ from mathtools.legendre import *
 from nose.tools import assert_equals, assert_almost_equals, assert_raises
 from numpy.testing import assert_array_almost_equal_nulp, assert_array_equal
 from nose import with_setup
+import os, glob
 import numpy as np
 
 
@@ -79,3 +80,57 @@ def pseudoinverse_test_3():
     assert_equals(condition_number<100, True)
 
 
+def vessel_init_test():
+    v = Vessel()
+    v.name = 'Matthew Lewis'
+    assert_equals(v.name, 'Matthew Lewis')
+
+
+def vessel_filename_test():
+    v = Vessel('myfilename.dat')
+    assert_equals(v.current_filename, 'myfilename.dat')
+
+
+def vessel_save_test():
+    v = Vessel('myfilename.dat')
+    v.payload = [1,2,3]
+    v.save()
+    assert_equals(glob.glob('*.dat')[0], 'myfilename.dat')
+
+    # Clean up after ourselves.
+    for filename in glob.glob('*.dat'):
+        os.remove(filename)
+
+
+def vessel_save_error_test():
+    v = Vessel() 
+    v.payload = [3,1,4,1,5]
+    assert_raises(ValueError, v.save)
+
+
+def vessel_load_test():
+    v = Vessel('myfilename.dat')
+    v.payload = [1,2,3]
+    v.save()
+
+    g = Vessel(v.current_filename)
+    assert_equals(g.payload, v.payload)
+
+    # Clean up after ourselves.
+    for filename in glob.glob('*.dat'):
+        os.remove(filename)
+
+
+def vessel_ingest_test():
+    v = Vessel('myfilename.dat')
+    data = {'name':'Matt', 'age': 39}
+    v.ingest(data)
+    assert_equals(v.name, 'Matt')
+    assert_equals(v.age, 39)
+
+
+def vessel_keys_test():
+    v = Vessel()
+    v.name = 'Matt'
+    v.kids = ['Sophie', 'Claire', 'Hugo']
+    assert_array_equal(v.keys, ['kids', 'name', 'current_filename'])
