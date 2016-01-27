@@ -207,7 +207,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > 
 > The noisy sine data is shown in the following figure.
 > 
-> <img src='https://goo.gl/RcHxfz' width='500'/>
+> <img src='https://goo.gl/KXEhH7' width='500'/>
 > 
 > We'd like to fit this data with a smooth curve. We can use the ```Fit```
 > class to do this quite easily. We first create an instance of the ```Fit```
