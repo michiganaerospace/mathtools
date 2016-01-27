@@ -795,7 +795,7 @@ decomposition.
 <a name='vessel'></a>
 ### ```utils.Vessel```
 
-Create a convenient container object that holds data, including lists, arrays,
+A convenient container object for holding data, including lists, arrays,
 dictionaries, etc. The object can be easily saved and loaded.
 
 
