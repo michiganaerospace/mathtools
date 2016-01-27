@@ -10,7 +10,6 @@ import numpy as np
 
 # BEGIN TESTS ------------------------------------------------------
 
-# Can we test for valid types?
 def validate_type_test():
     valid_types = [list]
     is_good = validate_type([1,2,3], valid_types)
@@ -22,7 +21,6 @@ def fail_single_type_validation_test():
     assert_raises(ValueError, validate_type, 42, valid_types)
 
 
-# Mapping data to a specified interval.
 def scale_vector_data_to_unit_interval_test():
     x = np.random.rand(50)
     x_ = map_to_interval(x, [0, 1])
@@ -133,4 +131,5 @@ def vessel_keys_test():
     v = Vessel()
     v.name = 'Matt'
     v.kids = ['Sophie', 'Claire', 'Hugo']
-    assert_array_equal(v.keys, ['kids', 'name', 'current_filename'])
+    v.ages = [11, 8, 0]
+    assert_array_equal(v.keys, ['ages', 'kids', 'name', 'current_filename'])

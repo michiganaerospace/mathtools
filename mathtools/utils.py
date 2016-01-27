@@ -245,6 +245,7 @@ class Vessel(object):
     def keys(self):
         keys = self.__dict__.keys()
         keys.remove('_filename') # don't show internal filename.
+        keys.sort()
         keys.append('current_filename')
         return keys
 
@@ -265,7 +266,7 @@ class Vessel(object):
         f = open(self._filename, 'rb')
         loaded_object = cPickle.load(f)
         f.close()
-        # Unpack the data object and add variables as properties to this object.
+        # Unpack the object and add variables as properties to this object.
         for key, val in loaded_object.iteritems():
             self.__dict__[key] = val
 
