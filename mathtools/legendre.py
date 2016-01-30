@@ -213,7 +213,7 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
 
     # Build bases and the 'brick'.
     basis.B      = legendre_basis(x_, nb_bases)
-    I            = np.eye(nb_bases)
+    basis.I      = np.eye(nb_bases)
     basis.dB     = d_legendre_basis(x_, nb_bases)
     basis.d2B    = d2_legendre_basis(x_, nb_bases)
 
@@ -222,7 +222,7 @@ def create_legendre_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
     # This can speed up the SVD computation.
     basis.B_ = basis.B
     if reg_coefs[0] > 0:
-        basis.B_ = np.r_[basis.B_, reg_coefs[0] * I]
+        basis.B_ = np.r_[basis.B_, reg_coefs[0] * basis.I]
     if reg_coefs[1] > 0:
         basis.B_ = np.r_[basis.B_, reg_coefs[1] * basis.dB]
     if reg_coefs[2] > 0:

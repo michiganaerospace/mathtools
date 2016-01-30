@@ -303,17 +303,17 @@ def create_spline_basis(x, nb_bases, reg_coefs=[0,0,0], x_ref=None):
         x_ = x_[basis.valid_idx]
 
     # Build bases and the 'brick'.
-    basis.B      = cubic_spline_basis(x_, nb_bases)
-    I            = np.eye(nb_bases)
-    basis.dB     = d_cubic_spline_basis(x_, nb_bases)
-    basis.d2B    = d2_cubic_spline_basis(x_, nb_bases)
+    basis.B     = cubic_spline_basis(x_, nb_bases)
+    basis.I     = np.eye(nb_bases)
+    basis.dB    = d_cubic_spline_basis(x_, nb_bases)
+    basis.d2B   = d2_cubic_spline_basis(x_, nb_bases)
 
     # Create the 'brick' by stacking these bases on top of one another. Only
     # include those components that have nonzero regularization coefficients.
     # This can speed up the SVD computation.
     basis.B_ = basis.B
     if reg_coefs[0] > 0:
-        basis.B_ = np.r_[basis.B_, reg_coefs[0] * I]
+        basis.B_ = np.r_[basis.B_, reg_coefs[0] * basis.I]
     if reg_coefs[1] > 0:
         basis.B_ = np.r_[basis.B_, reg_coefs[1] * basis.dB]
     if reg_coefs[2] > 0:
