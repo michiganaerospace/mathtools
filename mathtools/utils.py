@@ -270,3 +270,40 @@ class Vessel(object):
         for key, val in loaded_object.iteritems():
             self.__dict__[key] = val
 
+
+def mahal(x, mu=None, S=None, return_stats=False):
+    '''Find the Mahalanobis distance between row vectors in x and mean mu, with
+       covariance S. If mu and S are not provided, the mean and covariance of
+       x are used instead.
+    INPUTS
+        x - array_like
+            A matrix of row vectors.
+        mu - array_like
+            Mean vector. mu.shape[1] must equal x.shape[1].
+        S - array_like
+            The covariance matrix. S.shape[0] == S.shape[1] == x.shape[1]
+        return_stats - boolean
+            If True, returns the mean and covariance used in the calcuations.
+    OUTPUTS
+        mahal_dist - array_like
+            An array of the Mahalanobis distances associated with the vectors
+            in x.
+        mu - array_like
+            The mean vector used in Mahalanobis calculations.  
+        S - array_like
+            The covariance matrix used.
+        '''
+    x = np.array(x)
+    if (mu is None):
+        mu = x.mean(0)
+        S = np.cov(x.T)
+
+    mahal_dist = np.zeros(x.shape[0])
+    inv_S = np.linalg.inv(S)
+    for i, x_i in enumerate(x):
+        mahal_dist[i] = (x_i - mu).T.dot(inv_S).dot((x_i - mu))
+
+    if return_stats:
+        return (mahal_dist, mu, S)
+    else:
+        return mahal_dist

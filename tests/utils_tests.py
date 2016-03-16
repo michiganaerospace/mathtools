@@ -133,3 +133,29 @@ def vessel_keys_test():
     v.kids = ['Sophie', 'Claire', 'Hugo']
     v.ages = [11, 8, 0]
     assert_array_equal(v.keys, ['ages', 'kids', 'name', 'current_filename'])
+
+
+def mahal_test():
+    x = np.random.rand(100, 5)
+    (d, mu, S) = mahal(x, return_stats=True)
+    assert_equals(d.shape, (100,))
+    assert_equals(mu.shape, (5,))
+    assert_equals(S.shape, (5,5))
+
+
+def mahal_simple_test():
+    x = np.random.rand(100, 5)
+    d = mahal(x)
+    assert_equals(d.shape, (100,))
+
+
+def mahal_with_mean_test():
+    x = np.random.rand(100,10)
+    mu = x.mean(0)
+    S = np.cov(x.T)
+    (d, mu_out, S_out) = mahal(x, mu, S, True)
+    assert_array_almost_equal_nulp(mu, mu_out)
+    assert_array_almost_equal_nulp(S, S_out)
+
+    
+
