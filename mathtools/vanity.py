@@ -35,6 +35,26 @@ concrete        = '#95a5a6'
 asbestos        = '#7f8c8d'
 
 
+# Create a list of colors.
+colors  = [
+        peter_river,
+        pomegranate,
+        emerald,
+        sunflower,
+        wet_asphalt,
+        asbestos,
+        wisteria,
+        pumpkin,
+        belize_hole,
+        green_sea,
+        sunflower,
+        concrete,
+        orange,
+        silver,
+        midnight_blue
+        ]
+
+
 def setup_plotting():
     '''Set up plotting. Make things look nice.'''
     # Turn on interactive plotting.
