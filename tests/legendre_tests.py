@@ -24,7 +24,7 @@ def matches_fs_tools_implementation_test():
     nb_bases = 25
     B = legendre_basis(x, nb_bases)
     B_fs = fs.Legendre_basis(nb_bases, x)
-    print (B-B_fs).max()
+    # print (B-B_fs).max()
     assert((B - B_fs).max() < 1e-13)
     assert_array_almost_equal_nulp(B, B_fs)
 
