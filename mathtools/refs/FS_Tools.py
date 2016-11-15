@@ -736,8 +736,8 @@ def FS_Test():
     FGE = FS_inner_product(cc_gauss,cc_gauss)
     NGA = dx*(ygauss.sum())
     NGE = dx*((ygauss**2).sum())
-    print 'Area of Gaussian FS/Numerical: {0:g} / {1:g},\nEnergy of Gaussian FS/Numerical: {2:g} / {3:g}'.format(FGA,NGA,FGE,NGE)
-    print 'These are identical - so - Awesome!'
+    # print('Area of Gaussian FS/Numerical: {0:g} / {1:g},\nEnergy of Gaussian FS/Numerical: {2:g} / {3:g}'.format(FGA,NGA,FGE,NGE))
+    # print 'These are identical - so - Awesome!'
 
     # example of deconvolution...
     noise = (1.0e-6)*randn(N)
@@ -783,7 +783,7 @@ def FS_Test():
     grid(True)
     title('log of fourier coefs vs projection onto quadratic freqs')
     hold(False)
-    print 'sigma/est {0:g} / {1:g}'.format(sigma,sqrt(2)*sqrt(-fit_ecc[2])/(2*pi)), 'Awesome Again !!'
+    # print 'sigma/est {0:g} / {1:g}'.format(sigma,sqrt(2)*sqrt(-fit_ecc[2])/(2*pi)), 'Awesome Again !!'
     legend(loc=0)
 
     # now let's do it the other way around - yank the gaussian out of the data - and estimate its width...
@@ -826,7 +826,7 @@ def FS_Test():
     title('gaussian reconstruction')
     legend(loc=0)
 
-    print 'sigma/est2 {0:g} / {1:g}, using 0:{2:d}'.format(sigma,sqrt(2)*sqrt(-fit_ecc2[2])/(2*pi),Nqr), 'Awesome Yet Again (with regularization)!!!'
+    # print 'sigma/est2 {0:g} / {1:g}, using 0:{2:d}'.format(sigma,sqrt(2)*sqrt(-fit_ecc2[2])/(2*pi),Nqr), 'Awesome Yet Again (with regularization)!!!'
     #print 'sigma/est1 {0:g} / {1:g}, using 0:{2:d}'.format(sigma,sqrt(2)*sqrt(-fit_ecc1[2])/(2*pi),Nqr), 'Awesome Yet Again (w/o regularization)!!!'
 
     # Now do it with our canned width calculator...
@@ -835,7 +835,7 @@ def FS_Test():
     width2,avg2 = FS_gauss_width(cc_dcv_g,Nqi,Nqr,betaR=betaR,iweight=1)
 
     #print 'function: sigma/est1 {0:g} / {1:g}, using {2:d}:{3:d}'.format(sigma,width1,Nqi,Nqr) # regularization is better
-    print 'function: sigma/est2 {0:g} / {1:g}, using {2:d}:{3:d}'.format(sigma,width2,Nqi,Nqr)
+    # print 'function: sigma/est2 {0:g} / {1:g}, using {2:d}:{3:d}'.format(sigma,width2,Nqi,Nqr)
  
     # Basic width process is...
     #cc_dcv_g = FS_deconv(cc_data,cc_FP,sigma2=1.0e-12,beta1=0.0,beta2=1.0e-6)
@@ -844,7 +844,7 @@ def FS_Test():
     # what if there is some multiplier - will we still get the right width and average? - YEP!
     cc_g3 = 15.0*cc_gauss
     width3,avg3 = FS_gauss_width(cc_g3,Nqi,Nqr,betaR=betaR,iweight=1)
-    print 'width3, avg3 {0:g}, {1:g}'.format(width3,avg3)
+    # print 'width3, avg3 {0:g}, {1:g}'.format(width3,avg3)
         
     Bprd = np.load('basis.npy')
     zprd = np.load('dmn.npy')

@@ -5,7 +5,8 @@ To preview the colors defined below, check out:
 # Import some common plotting commands, but not all of pylab.
 from pylab import plot, xlabel, ylabel, grid, title, ion, figure, close, xlim,\
         ylim, matplotlib, hold, imshow, subplot, axis, text, legend, savefig, \
-        clf
+        clf, ioff, gca, scatter
+import matplotlib as mpl
 
 
 # Define a reasonable, consistent color scheme.
@@ -39,6 +40,7 @@ asbestos        = '#7f8c8d'
 colors  = [
         peter_river,
         pomegranate,
+        amethyst,
         emerald,
         sunflower,
         wet_asphalt,
@@ -53,6 +55,9 @@ colors  = [
         silver,
         midnight_blue
         ]
+
+
+mpl.rcParams['axes.color_cycle'] = colors
 
 
 def setup_plotting():

@@ -1,6 +1,9 @@
 '''Utility functions for mathtools... tools.'''
 import numpy as np
-import cPickle
+try: 
+    import cPickle as pickle
+except:
+    import pickle
 import glob
 
 
@@ -243,7 +246,7 @@ class Vessel(object):
 
     @property
     def keys(self):
-        keys = self.__dict__.keys()
+        keys = list(self.__dict__.keys())
         keys.remove('_filename') # don't show internal filename.
         keys.sort()
         keys.append('current_filename')
@@ -257,17 +260,17 @@ class Vessel(object):
         '''Save the data into a file with the specified name.'''
         self._set_filename(filename)
         f = open(self._filename, 'wb')
-        cPickle.dump(self.__dict__, f, protocol=cPickle.HIGHEST_PROTOCOL)
+        pickle.dump(self.__dict__, f, protocol=pickle.HIGHEST_PROTOCOL)
         f.close()
 
     def load(self, filename=None):
         '''Load object from specified file.'''
         self._set_filename(filename)
         f = open(self._filename, 'rb')
-        loaded_object = cPickle.load(f)
+        loaded_object = pickle.load(f)
         f.close()
         # Unpack the object and add variables as properties to this object.
-        for key, val in loaded_object.iteritems():
+        for key, val in loaded_object.items():
             self.__dict__[key] = val
 
 
