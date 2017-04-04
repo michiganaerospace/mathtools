@@ -203,7 +203,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > # Create some noisy data.  
 > t = np.linspace(0,15*np.pi, 300) 
 > y = np.sin(2*np.pi/5*t) + 0.2 * np.random.randn(len(t)) 
-```
+> ```
 > 
 > The noisy sine data is shown in the following figure.
 > 
