@@ -5,7 +5,7 @@ To preview the colors defined below, check out:
 # Import some common plotting commands, but not all of pylab.
 from pylab import plot, xlabel, ylabel, grid, title, ion, figure, close, xlim,\
         ylim, matplotlib, hold, imshow, subplot, axis, text, legend, savefig, \
-        clf, ioff, gca, scatter
+        clf, ioff, gca, scatter, show
 import matplotlib as mpl
 
 
