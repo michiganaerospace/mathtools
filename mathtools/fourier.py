@@ -28,7 +28,7 @@ def fourier_basis(x, nb_bases, freq=1.0):
     x_ = map_to_interval(x, [0, 1])
 
     # Initialize basis array.
-    nb_terms = (nb_bases - 1)/2.0
+    nb_terms = int((nb_bases - 1)/2)
     nb_samples = len(x_)
     B = np.zeros((nb_samples, 2*nb_terms+1), dtype='double')
     B[:,0] = 1.0
@@ -68,7 +68,7 @@ def d_fourier_basis(x, nb_bases, freq=1.0):
     x_ = map_to_interval(x, [0, 1])
 
     # Initialize basis array.
-    nb_terms = (nb_bases - 1)/2.0
+    nb_terms = int((nb_bases - 1)/2)
     nb_samples = len(x_)
     dB = np.zeros((nb_samples, 2*nb_terms+1), dtype='double')
     dB[:,0] = 0.0
@@ -108,7 +108,7 @@ def d2_fourier_basis(x, nb_bases, freq=1.0):
     x_ = map_to_interval(x, [0, 1])
 
     # Initialize basis array.
-    nb_terms = (nb_bases - 1)/2.0
+    nb_terms = int((nb_bases - 1)/2)
     nb_samples = len(x_)
     d2B = np.zeros((nb_samples, 2*nb_terms+1), dtype='double')
     d2B[:,0] = 0.0

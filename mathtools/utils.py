@@ -302,7 +302,7 @@ def mahal(x, mu=None, S=None, return_stats=False):
         S = np.cov(x.T)
 
     mahal_dist = np.zeros(x.shape[0])
-    inv_S = np.linalg.inv(S)
+    inv_S = np.linalg.pinv(S)
     for i, x_i in enumerate(x):
         mahal_dist[i] = (x_i - mu).T.dot(inv_S).dot((x_i - mu))
 
