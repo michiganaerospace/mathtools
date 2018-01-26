@@ -277,7 +277,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(rs.x, rs.y, '-.', linewidth=2) 
 > ```
 > 
-> <img src='docs/images/noisy_sine_fit_new_domain.png' width='500'/>
+> <img src='docs/images/noisy_sine_new_domain.png' width='500'/>
 > 
 > Where the resampled domain intersects the support of the original data, we
 > reproduce the fit. However, once we venture beyond the support of that data,
