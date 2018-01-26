@@ -238,7 +238,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(r.x, r.y, '-.', linewidth=2) 
 > ```
 > 
-> <img src=''https://goo.gl/q041hz width='500'/>
+> <img src='docs/images/noisy_sine.png' width='500'/>
 > 
 > Note that although the blue curve smoothly fits the red data points, we are
 > not explicitly penalizing the derivatives here (the regularization
