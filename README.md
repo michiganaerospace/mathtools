@@ -207,7 +207,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > 
 > The noisy sine data is shown in the following figure.
 > 
-> <img src='https://goo.gl/KXEhH7' width='500'/>
+> <img src='docs/images/noisy_sine.png' width='500'/>
 > 
 > We'd like to fit this data with a smooth curve. We can use the ```Fit```
 > class to do this quite easily. We first create an instance of the ```Fit```
@@ -238,7 +238,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(r.x, r.y, '-.', linewidth=2) 
 > ```
 > 
-> <img src='docs/images/noisy_sine.png' width='500'/>
+> <img src='docs/images/noisy_sine_fit.png' width='500'/>
 > 
 > Note that although the blue curve smoothly fits the red data points, we are
 > not explicitly penalizing the derivatives here (the regularization
@@ -277,7 +277,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(rs.x, rs.y, '-.', linewidth=2) 
 > ```
 > 
-> <img src='https://goo.gl/yQZjFV' width='500'/>
+> <img src='docs/images/noisy_fit_new_domain.png' width='500'/>
 > 
 > Where the resampled domain intersects the support of the original data, we
 > reproduce the fit. However, once we venture beyond the support of that data,
@@ -291,7 +291,7 @@ the [usage](#fit_usage) section. Additionally, example code can be found in the
 > plot(r.x, r.dy, '-.', linewidth=2) 
 > ```
 > 
-> <img src='https://goo.gl/qNy1Nq' width='500'/>
+> <img src='docs/images/noisy_sine_fit_deriv.png' width='500'/>
 > 
 > We may want to alter our fit in some way — perhaps by choosing a different
 > basis, or selecting a different number of basis vectors. The ```Fit```
